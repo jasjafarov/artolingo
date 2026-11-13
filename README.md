@@ -6,5 +6,5 @@ A Duolingo-style course in art literacy, built as a Telegram Mini App. Starts wi
 - `content/paintings.json` — painting catalog; images are fetched from Wikimedia Commons into `images/` by the GitHub Action.
 - `index.html`, `app.js`, `style.css` — the app (no build step).
 - Progress is saved in Telegram Cloud Storage (and the browser), so no server is needed.
-- Hosted on Vercel (static, no build). `.github/workflows/images.yml` fetches new images when the catalog changes.
+- Published to GitHub Pages by `.github/workflows/deploy.yml`; `.github/workflows/images.yml` fetches new images when the catalog changes.
 - `ALLOWED_USERS` in `app.js` locks the app to listed Telegram user ids.
