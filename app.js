@@ -10,7 +10,7 @@
   const MAX_REVIEW_IN_LESSON = 2, MAX_REVIEW_SESSION = 10;
   const STORE_KEY = "artolingo_state_v1";
   // Telegram user ids allowed to open the app. Empty = anyone with the link.
-  const ALLOWED_USERS = [];
+  const ALLOWED_USERS = [470617127];
 
   const UI = {
     en: {
