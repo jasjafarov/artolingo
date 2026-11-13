@@ -1,21 +1,16 @@
-name: Build and publish
+name: Fetch painting images
 
 on:
   push:
     branches: [claude/project-thread-vbuwjl, main]
+    paths: [content/paintings.json, tools/fetch_images.py]
   workflow_dispatch:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
-  build:
+  images:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,21 +22,3 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add images
           git diff --cached --quiet || (git commit -m "Add painting images" && git push)
-      - name: Prepare site
-        run: |
-          mkdir -p _site
-          cp -r index.html app.js style.css content images _site/
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4

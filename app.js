@@ -9,6 +9,8 @@
   const XP_LESSON = 10, XP_PERFECT = 5, XP_REVIEW = 2;
   const MAX_REVIEW_IN_LESSON = 2, MAX_REVIEW_SESSION = 10;
   const STORE_KEY = "artolingo_state_v1";
+  // Telegram user ids allowed to open the app. Empty = anyone with the link.
+  const ALLOWED_USERS = [];
 
   const UI = {
     en: {
@@ -363,6 +365,10 @@
 
   // ---------- boot ----------
   async function boot() {
+    if (ALLOWED_USERS.length) {
+      const uid = tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.id;
+      if (!ALLOWED_USERS.includes(uid)) { app.innerHTML = '<div class="loading">🔒 Artolingo is private.</div>'; return; }
+    }
     if (tg) { try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {} }
     const [p, c, s] = await Promise.all([
       fetch("content/paintings.json").then(r => r.json()),
