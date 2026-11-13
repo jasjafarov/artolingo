@@ -1,0 +1,21 @@
+name: Daily reminder
+
+on:
+  schedule:
+    - cron: "0 15 * * *"   # 20:00 in Tashkent (UTC+5)
+  workflow_dispatch:
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram reminder
+        env:
+          TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TOKEN" ] || [ -z "$CHAT" ]; then echo "Secrets not set, skipping"; exit 0; fi
+          curl -sS -X POST "https://api.telegram.org/bot${TOKEN}/sendMessage" \
+            -H 'Content-Type: application/json' \
+            -d "{\"chat_id\": \"${CHAT}\", \"text\": \"🎨 4 минуты на живопись? Не прерывай серию 🔥\\n4 minutes of art today? Keep your streak 🔥\", \"reply_markup\": {\"inline_keyboard\": [[{\"text\": \"Artolingo\", \"web_app\": {\"url\": \"https://jasjafarov.github.io/artolingo/\"}}]]}}" \
+            | grep -q '"ok":true'
