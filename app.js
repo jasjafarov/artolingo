@@ -10,7 +10,7 @@
   const MAX_REVIEW_IN_LESSON = 2, MAX_REVIEW_SESSION = 10;
   const STORE_KEY = "artolingo_state_v1";
   // Telegram user ids allowed to open the app. Empty = anyone with the link.
-  const ALLOWED_USERS = [470617127];
+  const ALLOWED_USERS = []; // TODO: add the owner's id once confirmed (shown at the bottom of the home screen)
 
   const UI = {
     en: {
@@ -160,6 +160,8 @@
       home.appendChild(row);
     });
     home.appendChild(h(`<div class="footer-note">${esc(t().footer)}</div>`));
+    const me = tg && tg.initDataUnsafe && tg.initDataUnsafe.user;
+    home.appendChild(h(`<div class="footer-note" style="opacity:.5">Telegram id: ${esc(me ? me.id : "—")}</div>`));
     app.appendChild(home);
   }
   function toast(msg) { if (tg && tg.showAlert) { try { tg.showAlert(msg); return; } catch (e) {} } console.log(msg); }
@@ -367,7 +369,7 @@
   async function boot() {
     if (ALLOWED_USERS.length) {
       const uid = tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.id;
-      if (!ALLOWED_USERS.includes(uid)) { app.innerHTML = '<div class="loading">🔒 Artolingo is private.</div>'; return; }
+      if (!ALLOWED_USERS.includes(uid)) { app.innerHTML = `<div class="loading">🔒 Artolingo is private.<br><small>id: ${esc(uid || "none")}</small></div>`; return; }
     }
     if (tg) { try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {} }
     const [p, c, s] = await Promise.all([
