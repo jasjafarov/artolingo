@@ -31,11 +31,11 @@ def api(params):
 
 def info_for(entry):
     common = {"action": "query", "prop": "imageinfo", "iiprop": "url|mime|size", "iiurlwidth": WIDTH}
+    pages = []
     if entry.get("file"):
         data = api({**common, "titles": "File:" + entry["file"]})
-        pages = data["query"]["pages"]
-    else:
-        pages = []
+        pages = [p for p in data["query"]["pages"] if not p.get("missing")]
+    if not pages:
         for q in (entry["query"] + " filetype:bitmap", entry["query"], " ".join(entry["query"].split()[:4])):
             data = api({**common, "generator": "search", "gsrnamespace": 6, "gsrlimit": 10, "gsrsearch": q})
             pages = sorted(data.get("query", {}).get("pages", []), key=lambda p: p.get("index", 99))
