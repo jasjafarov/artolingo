@@ -12,7 +12,7 @@
         {"type": "story", "img": "monet_sunrise",
          "text": {"en": "1874, Paris. Painters rejected by the official Salon held their own show. A critic mocked this painting and called the whole group \"Impressionists\". The name stuck.",
                   "ru": "1874 год, Париж. Художники, которых не брал официальный Салон, устроили свою выставку. Критик высмеял эту картину и назвал всю группу «импрессионистами». Название прижилось."}},
-        {"type": "mcq", "img": "monet_sunrise", "crop": {"x": 47, "y": 62, "z": 3},
+        {"type": "mcq", "img": "monet_sunrise", "crop": {"x": 64, "y": 58, "z": 3},
          "q": {"en": "This is the sun's reflection in the water. What is it made of?", "ru": "Это отражение солнца в воде. Из чего оно состоит?"},
          "options": [{"en": "A few quick orange dashes", "ru": "Несколько быстрых оранжевых мазков"},
                      {"en": "Hundreds of fine strokes", "ru": "Сотни тонких штрихов"},
