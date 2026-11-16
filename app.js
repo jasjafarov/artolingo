@@ -30,7 +30,7 @@
       ai: "Art helper", aiHello: "Hi! Ask me anything about this painting, the lesson, or art in general. I'll explain it simply.",
       aiPlaceholder: "Ask a question…", aiSend: "Send", aiThinking: "Thinking…", aiNew: "New chat", aiKeyMenu: "AI key",
       aiSetupTitle: "Turn on the helper (once)", aiSetupText: "The helper needs a free key from Google. 1) Tap the button below and press \"Create API key\". 2) Copy the key. 3) Come back and paste it here. Free, no card needed. The key is saved only in your Telegram.",
-      aiGetKey: "Get a free key from Google", aiPaste: "Paste key here (starts with AIza…)", aiSave: "Save and start", aiBadKey: "That doesn't look like a key. It should start with AIza (Google) or sk-ant (Anthropic).",
+      aiGetKey: "Get a free key from Google", aiPaste: "Paste key here (starts with AQ. or AIza)", aiSave: "Save and start", aiBadKey: "That doesn't look like a key. A Google key starts with AQ. or AIza.",
       aiRemove: "Remove key", aiError: "Something went wrong:", aiSuggest: ["Explain this simply", "Who painted this and when?", "What should I look at here?", "What does this word mean?"]
     },
     ru: {
@@ -50,7 +50,7 @@
       ai: "Помощник", aiHello: "Привет! Спросите меня что угодно об этой картине, уроке или искусстве вообще. Объясню просто.",
       aiPlaceholder: "Задайте вопрос…", aiSend: "Отправить", aiThinking: "Думаю…", aiNew: "Новый чат", aiKeyMenu: "Ключ ИИ",
       aiSetupTitle: "Включить помощника (один раз)", aiSetupText: "Помощнику нужен бесплатный ключ от Google. 1) Нажмите кнопку ниже и затем «Create API key». 2) Скопируйте ключ. 3) Вернитесь и вставьте его сюда. Бесплатно, карта не нужна. Ключ хранится только в вашем Telegram.",
-      aiGetKey: "Получить бесплатный ключ Google", aiPaste: "Вставьте ключ (начинается с AIza…)", aiSave: "Сохранить и начать", aiBadKey: "Это не похоже на ключ. Он должен начинаться с AIza (Google) или sk-ant (Anthropic).",
+      aiGetKey: "Получить бесплатный ключ Google", aiPaste: "Вставьте ключ (начинается с AQ. или AIza)", aiSave: "Сохранить и начать", aiBadKey: "Это не похоже на ключ. Ключ Google начинается с AQ. или AIza.",
       aiRemove: "Удалить ключ", aiError: "Что-то пошло не так:", aiSuggest: ["Объясни просто", "Кто это написал и когда?", "На что здесь смотреть?", "Что значит это слово?"]
     }
   };
@@ -644,7 +644,7 @@ ${aiContext()}`;
       inp.oninput = () => { save.disabled = inp.value.trim().length < 20; };
       save.onclick = () => {
         const k = inp.value.trim().replace(/\s/g, "");
-        if (!/^(AIza|sk-ant)/.test(k)) { err.textContent = t().aiBadKey; err.classList.remove("hidden"); return; }
+        if (!/^(AIza|AQ\.|sk-ant)/.test(k)) { err.textContent = t().aiBadKey; err.classList.remove("hidden"); return; }
         saveAiKey(k); renderHelper();
       };
       return;
@@ -690,7 +690,7 @@ ${aiContext()}`;
       if (!ALLOWED_USERS.includes(uid)) { app.innerHTML = `<div class="loading">🔒 Artolingo is private.<br><small>id: ${esc(uid || "none")}</small></div>`; return; }
     }
     if (tg) { try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {} }
-    const v = "?v=7";
+    const v = "?v=8";
     const [p, c, s, g] = await Promise.all([
       fetch("content/paintings.json" + v).then(r => r.json()),
       fetch("content/lessons.json" + v).then(r => r.json()),
