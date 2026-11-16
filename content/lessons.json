@@ -1,329 +1,1513 @@
 {
-  "unit": {
-    "id": "u1",
-    "title": {"en": "From Impressionism to Post-Impressionism", "ru": "От импрессионизма к постимпрессионизму"}
-  },
-  "lessons": [
+ "unit": {
+  "id": "u1",
+  "title": {
+   "en": "From Impressionism to Post-Impressionism",
+   "ru": "От импрессионизма к постимпрессионизму"
+  }
+ },
+ "lessons": [
+  {
+   "id": "l1",
+   "title": {
+    "en": "Painting the moment",
+    "ru": "Поймать мгновение"
+   },
+   "idea": {
+    "en": "Light matters more than the object",
+    "ru": "Свет важнее предмета"
+   },
+   "cards": [
     {
-      "id": "l1",
-      "title": {"en": "Painting the moment", "ru": "Поймать мгновение"},
-      "idea": {"en": "Light matters more than the object", "ru": "Свет важнее предмета"},
-      "cards": [
-        {"type": "story", "img": "monet_sunrise",
-         "text": {"en": "1874, Paris. Painters rejected by the official Salon held their own show. A critic mocked this painting and called the whole group \"Impressionists\". The name stuck.",
-                  "ru": "1874 год, Париж. Художники, которых не брал официальный Салон, устроили свою выставку. Критик высмеял эту картину и назвал всю группу «импрессионистами». Название прижилось."}},
-        {"type": "mcq", "img": "monet_sunrise", "crop": {"x": 64, "y": 58, "z": 3},
-         "q": {"en": "This is the sun's reflection in the water. What is it made of?", "ru": "Это отражение солнца в воде. Из чего оно состоит?"},
-         "options": [{"en": "A few quick orange dashes", "ru": "Несколько быстрых оранжевых мазков"},
-                     {"en": "Hundreds of fine strokes", "ru": "Сотни тонких штрихов"},
-                     {"en": "A smooth blended surface", "ru": "Гладкая растушёвка"}],
-         "answer": 0,
-         "explain": {"en": "Monet used just a handful of strokes. The eye fills in the rest.", "ru": "Моне хватило нескольких мазков. Остальное достраивает глаз."}},
-        {"type": "pick", "imgs": ["monet_sunrise", "cabanel_venus"],
-         "q": {"en": "Which one would the Salon jury have praised?", "ru": "Какую из них похвалило бы жюри Салона?"},
-         "answer": 1,
-         "explain": {"en": "Cabanel: smooth finish, invisible brushwork, a myth as the subject. Napoleon III bought it in 1863.", "ru": "Кабанель: гладкая поверхность, незаметные мазки, мифологический сюжет. Наполеон III купил её в 1863 году."}},
-        {"type": "mcq", "img": "monet_sunrise",
-         "q": {"en": "Why did critics call Monet's painting \"unfinished\"?", "ru": "Почему критики назвали картину Моне «незаконченной»?"},
-         "options": [{"en": "Visible brushstrokes and no fine detail", "ru": "Видны мазки и нет мелких деталей"},
-                     {"en": "It was painted on cardboard", "ru": "Она написана на картоне"},
-                     {"en": "It had no signature", "ru": "На ней нет подписи"}],
-         "answer": 0,
-         "explain": {"en": "To academic eyes, a painting was finished only when brushstrokes disappeared.", "ru": "Для академистов картина считалась законченной, только когда мазков не видно."}},
-        {"type": "mcq",
-         "q": {"en": "Monet painted outdoors, fast. Why the hurry?", "ru": "Моне писал на улице и быстро. Зачем спешить?"},
-         "options": [{"en": "The light changes within minutes", "ru": "Свет меняется за минуты"},
-                     {"en": "Paint was expensive", "ru": "Краски были дорогими"},
-                     {"en": "Outdoor painting was illegal", "ru": "Писать на улице было запрещено"}],
-         "answer": 0,
-         "explain": {"en": "New paint in metal tubes made outdoor work easy; the challenge was catching the light before it moved.", "ru": "Краски в тюбиках позволили писать на улице, а главной задачей стало успеть за светом."}},
-        {"type": "mcq", "imgs": ["monet_rouen_morning", "monet_rouen_sunset"],
-         "q": {"en": "Same building, same painter. What is the real subject?", "ru": "Одно здание, один художник. Что на самом деле изображено?"},
-         "options": [{"en": "The light at that hour", "ru": "Свет в этот час"},
-                     {"en": "The cathedral's architecture", "ru": "Архитектура собора"},
-                     {"en": "The weather forecast", "ru": "Погода"}],
-         "answer": 0,
-         "explain": {"en": "Monet painted the facade more than 30 times. The stone stays; the light is the subject.", "ru": "Моне написал фасад больше 30 раз. Камень тот же, меняется свет, он и есть сюжет."}},
-        {"type": "pick", "imgs": ["ingres_odalisque", "sisley_flood", "david_socrates"],
-         "q": {"en": "Tap the Impressionist painting.", "ru": "Найдите импрессиониста."},
-         "answer": 1,
-         "explain": {"en": "Sisley: everyday scene, outdoor light, loose strokes. The other two are polished academic work.", "ru": "Сислей: обычная сцена, дневной свет, свободные мазки. Две другие картины гладкие, академические."}},
-        {"type": "multi", "img": "morisot_summer", "unseen": true,
-         "q": {"en": "Impressionist or not? Pick two clues.", "ru": "Импрессионизм или нет? Выберите две подсказки."},
-         "options": [{"en": "Quick visible strokes", "ru": "Быстрые заметные мазки"},
-                     {"en": "Outdoor light on water", "ru": "Дневной свет на воде"},
-                     {"en": "Polished smooth surface", "ru": "Гладкая полированная поверхность"},
-                     {"en": "A scene from mythology", "ru": "Сюжет из мифологии"}],
-         "answers": [0, 1],
-         "explain": {"en": "Impressionist. Berthe Morisot showed in the 1874 exhibition.", "ru": "Импрессионизм. Берта Моризо участвовала в выставке 1874 года."}},
-        {"type": "mcq",
-         "q": {"en": "In one phrase, what were the Impressionists really painting?", "ru": "Что на самом деле писали импрессионисты?"},
-         "options": [{"en": "A moment of light", "ru": "Мгновение света"},
-                     {"en": "Famous people", "ru": "Знаменитостей"},
-                     {"en": "Ancient history", "ru": "Древнюю историю"}],
-         "answer": 0,
-         "explain": {"en": "Keep this: a moment of light.", "ru": "Запомните: мгновение света."}}
-      ]
+     "type": "story",
+     "img": "monet_sunrise",
+     "text": {
+      "en": "Here it is: the painting that gave the movement its name. Claude Monet, Impression, Sunrise, 1872: the harbor of Le Havre at dawn, seen through morning mist. Notice how little detail there is.",
+      "ru": "Вот она, картина, давшая имя целому направлению. Клод Моне, «Впечатление. Восходящее солнце», 1872: порт Гавра на рассвете, сквозь утренний туман. Заметьте, как мало в ней деталей."
+     }
     },
     {
-      "id": "l2",
-      "title": {"en": "Modern life", "ru": "Современная жизнь"},
-      "idea": {"en": "Cafés, streets and ballet become art", "ru": "Кафе, улицы и балет становятся искусством"},
-      "cards": [
-        {"type": "story", "img": "renoir_moulin",
-         "text": {"en": "Before the Impressionists, serious art meant gods, kings and battles. Renoir painted ordinary Parisians dancing on a Sunday afternoon in Montmartre. Modern life itself became the subject.",
-                  "ru": "До импрессионистов серьёзное искусство означало богов, королей и сражения. Ренуар написал обычных парижан, танцующих в воскресенье на Монмартре. Сюжетом стала сама современная жизнь."}},
-        {"type": "mcq", "img": "renoir_moulin", "crop": {"x": 40, "y": 60, "z": 2.5},
-         "q": {"en": "Look at the dancers' clothes. How is the sunlight through the trees painted?", "ru": "Посмотрите на одежду танцующих. Как написан свет сквозь листву?"},
-         "options": [{"en": "Pale patches scattered over the figures", "ru": "Светлые пятна, разбросанные по фигурам"},
-                     {"en": "Sharp shadows of every leaf", "ru": "Чёткие тени каждого листа"},
-                     {"en": "It is not shown at all", "ru": "Он никак не показан"}],
-         "answer": 0,
-         "explain": {"en": "Dappled light breaks the figures into flickering spots, just as the eye sees it.", "ru": "Пятна света дробят фигуры, как это и видит глаз."}},
-        {"type": "pick", "imgs": ["cabanel_venus", "caillebotte_rainy"],
-         "q": {"en": "Which painting shows modern life in 1870s Paris?", "ru": "Какая картина показывает современный Париж 1870-х?"},
-         "answer": 1,
-         "explain": {"en": "Caillebotte: new boulevards, umbrellas, ordinary passers-by.", "ru": "Кайботт: новые бульвары, зонты, обычные прохожие."}},
-        {"type": "mcq", "img": "degas_dance_class",
-         "q": {"en": "Degas often cut figures off at the edge, like a snapshot. Where did this framing come from?", "ru": "Дега часто обрезал фигуры краем холста, как на снимке. Откуда такая композиция?"},
-         "options": [{"en": "Photography and Japanese prints", "ru": "Фотография и японская гравюра"},
-                     {"en": "Renaissance frescoes", "ru": "Фрески Возрождения"},
-                     {"en": "Ancient Greek vases", "ru": "Древнегреческие вазы"}],
-         "answer": 0,
-         "explain": {"en": "Cameras and Japanese woodblock prints were the new visual fashion in 1870s Paris.", "ru": "Фотоаппараты и японские гравюры были новой модой Парижа 1870-х."}},
-        {"type": "pick", "imgs": ["david_socrates", "degas_absinthe", "ingres_odalisque"],
-         "q": {"en": "Tap the painting of modern life.", "ru": "Найдите картину о современной жизни."},
-         "answer": 1,
-         "explain": {"en": "Degas: two people in a Paris café, off-centre, unposed.", "ru": "Дега: двое в парижском кафе, сдвинуты от центра, не позируют."}},
-        {"type": "mcq",
-         "q": {"en": "Why were these everyday scenes shocking to critics?", "ru": "Почему эти будничные сцены шокировали критиков?"},
-         "options": [{"en": "Ordinary life seemed unworthy of serious art", "ru": "Обычная жизнь казалась недостойной искусства"},
-                     {"en": "The paintings were too large", "ru": "Картины были слишком большими"},
-                     {"en": "Cafés were illegal", "ru": "Кафе были запрещены"}],
-         "answer": 0,
-         "explain": {"en": "The academy ranked history and myth at the top, everyday scenes near the bottom.", "ru": "Академия ставила историю и мифы выше всего, бытовые сцены почти в самый низ."}},
-        {"type": "order", "imgs": ["david_socrates", "ingres_odalisque", "renoir_moulin"],
-         "q": {"en": "Put them in order, oldest first.", "ru": "Расставьте по порядку, начиная с самой ранней."},
-         "explain": {"en": "David 1787, Ingres 1814, Renoir 1876.", "ru": "Давид 1787, Энгр 1814, Ренуар 1876."}},
-        {"type": "multi", "img": "cassatt_armchair", "unseen": true,
-         "q": {"en": "Impressionist or not? Pick two clues.", "ru": "Импрессионизм или нет? Выберите две подсказки."},
-         "options": [{"en": "Everyday modern subject", "ru": "Будничный современный сюжет"},
-                     {"en": "Loose, visible brushwork", "ru": "Свободные заметные мазки"},
-                     {"en": "A scene from history", "ru": "Исторический сюжет"},
-                     {"en": "Polished, invisible brushwork", "ru": "Гладкие незаметные мазки"}],
-         "answers": [0, 1],
-         "explain": {"en": "Impressionist. Mary Cassatt, an American in Paris, was invited to join by Degas.", "ru": "Импрессионизм. Американку Мэри Кассат пригласил в группу сам Дега."}},
-        {"type": "mcq",
-         "q": {"en": "What did the Impressionists add to the subjects of art?", "ru": "Что импрессионисты добавили в сюжеты искусства?"},
-         "options": [{"en": "Everyday modern life", "ru": "Будничную современную жизнь"},
-                     {"en": "Religious scenes", "ru": "Религиозные сцены"},
-                     {"en": "Portraits of kings", "ru": "Портреты королей"}],
-         "answer": 0,
-         "explain": {"en": "Keep this: modern life is a worthy subject.", "ru": "Запомните: современная жизнь достойна картины."}}
-      ]
+     "type": "mcq",
+     "img": "monet_sunrise",
+     "crop": {
+      "x": 64,
+      "y": 58,
+      "z": 3
+     },
+     "q": {
+      "en": "This is the sun's reflection in the water. What is it made of?",
+      "ru": "Это отражение солнца в воде. Из чего оно состоит?"
+     },
+     "options": [
+      {
+       "en": "A few quick orange dashes",
+       "ru": "Несколько быстрых оранжевых мазков"
+      },
+      {
+       "en": "Hundreds of fine strokes",
+       "ru": "Сотни тонких штрихов"
+      },
+      {
+       "en": "A smooth blended surface",
+       "ru": "Гладкая растушёвка"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Monet used just a handful of strokes. The eye fills in the rest.",
+      "ru": "Моне хватило нескольких мазков. Остальное достраивает глаз."
+     }
     },
     {
-      "id": "l3",
-      "title": {"en": "Shadows are colored", "ru": "Цветные тени"},
-      "idea": {"en": "No black: shadows are blue and violet", "ru": "Без чёрного: тени синие и фиолетовые"},
-      "cards": [
-        {"type": "story", "img": "monet_magpie",
-         "text": {"en": "Academic painters darkened shadows with black and brown. The Impressionists looked again: on a sunny day, shadows on snow are blue and violet. Critics thought they had gone mad.",
-                  "ru": "Академисты затемняли тени чёрным и коричневым. Импрессионисты присмотрелись: в солнечный день тени на снегу синие и фиолетовые. Критики решили, что они сошли с ума."}},
-        {"type": "mcq", "img": "monet_magpie", "crop": {"x": 50, "y": 80, "z": 2.5},
-         "q": {"en": "What color are the shadows on the snow?", "ru": "Какого цвета тени на снегу?"},
-         "options": [{"en": "Blue and lilac", "ru": "Синие и сиреневые"},
-                     {"en": "Black", "ru": "Чёрные"},
-                     {"en": "Grey-brown", "ru": "Серо-коричневые"}],
-         "answer": 0,
-         "explain": {"en": "Snow in shadow reflects the blue sky, so Monet painted it blue.", "ru": "Снег в тени отражает голубое небо, и Моне написал его голубым."}},
-        {"type": "pick", "imgs": ["monet_haystacks", "rembrandt_nightwatch"],
-         "q": {"en": "Which painting builds its shadows from black and brown?", "ru": "В какой картине тени построены на чёрном и коричневом?"},
-         "answer": 1,
-         "explain": {"en": "Rembrandt, 1642: deep dark shadows. Monet's haystacks cast shadows of blue and violet.", "ru": "Рембрандт, 1642: глубокие тёмные тени. Стога Моне отбрасывают синие и фиолетовые тени."}},
-        {"type": "mcq",
-         "q": {"en": "Why did the Impressionists avoid black?", "ru": "Почему импрессионисты избегали чёрного?"},
-         "options": [{"en": "Shadows hold reflected color", "ru": "В тенях есть отражённый цвет"},
-                     {"en": "Black paint was banned", "ru": "Чёрная краска была запрещена"},
-                     {"en": "Black was too expensive", "ru": "Чёрная краска была слишком дорогой"}],
-         "answer": 0,
-         "explain": {"en": "They painted what the eye sees, and the eye sees color even in shade.", "ru": "Они писали то, что видит глаз, а глаз видит цвет даже в тени."}},
-        {"type": "mcq", "img": "pissarro_boulevard", "crop": {"x": 50, "y": 70, "z": 2.5},
-         "q": {"en": "Up close, the street is dabs of separate colors. Where do they mix?", "ru": "Вблизи улица состоит из отдельных цветных мазков. Где они смешиваются?"},
-         "options": [{"en": "In the viewer's eye", "ru": "В глазу зрителя"},
-                     {"en": "On the palette", "ru": "На палитре"},
-                     {"en": "They never mix", "ru": "Нигде"}],
-         "answer": 0,
-         "explain": {"en": "Broken color: unmixed dabs side by side look brighter than mixed paint.", "ru": "Раздельный мазок: несмешанные краски рядом выглядят ярче смешанных."}},
-        {"type": "pick", "imgs": ["rembrandt_nightwatch", "morisot_cradle", "david_socrates"],
-         "q": {"en": "Tap the Impressionist painting.", "ru": "Найдите импрессиониста."},
-         "answer": 1,
-         "explain": {"en": "Morisot: soft whites and blues, light everywhere, no heavy black.", "ru": "Моризо: мягкие белые и голубые, свет повсюду, нет тяжёлого чёрного."}},
-        {"type": "order", "imgs": ["rembrandt_nightwatch", "david_socrates", "monet_haystacks"],
-         "q": {"en": "Put them in order, oldest first.", "ru": "Расставьте по порядку, начиная с самой ранней."},
-         "explain": {"en": "Rembrandt 1642, David 1787, Monet 1890.", "ru": "Рембрандт 1642, Давид 1787, Моне 1890."}},
-        {"type": "multi", "img": "sisley_snow", "unseen": true,
-         "q": {"en": "Why is this Impressionist? Pick two clues.", "ru": "Почему это импрессионизм? Выберите две подсказки."},
-         "options": [{"en": "Blue-violet shadows on snow", "ru": "Сине-фиолетовые тени на снегу"},
-                     {"en": "Visible dabs of paint", "ru": "Заметные мазки"},
-                     {"en": "Dark brown shadows", "ru": "Тёмно-коричневые тени"},
-                     {"en": "Smooth glossy finish", "ru": "Гладкая глянцевая поверхность"}],
-         "answers": [0, 1],
-         "explain": {"en": "Sisley, 1878: snow in shade turned blue and lilac.", "ru": "Сислей, 1878: снег в тени стал голубым и сиреневым."}},
-        {"type": "mcq",
-         "q": {"en": "What color is a shadow, to an Impressionist?", "ru": "Какого цвета тень для импрессиониста?"},
-         "options": [{"en": "Colored by the light around it", "ru": "Окрашенная светом вокруг"},
-                     {"en": "Always black", "ru": "Всегда чёрная"},
-                     {"en": "Always grey", "ru": "Всегда серая"}],
-         "answer": 0,
-         "explain": {"en": "Keep this: shadows have color.", "ru": "Запомните: у теней есть цвет."}}
-      ]
+     "type": "pick",
+     "imgs": [
+      "monet_sunrise",
+      "cabanel_venus"
+     ],
+     "q": {
+      "en": "Which one would the Salon jury have praised?",
+      "ru": "Какую из них похвалило бы жюри Салона?"
+     },
+     "answer": 1,
+     "explain": {
+      "en": "The jury loved Cabanel's Birth of Venus (1863): a goddess from a myth, a smooth polished surface, not one visible brushstroke. It was a hit at the 1863 Salon and Napoleon III bought it. Monet's Impression, Sunrise (1872) is the opposite: quick, sketchy, everyday. The jury would have called it unfinished.",
+      "ru": "Жюри обожало «Рождение Венеры» Кабанеля (1863): богиня из мифа, гладкая полированная поверхность, ни одного заметного мазка. Картина стала хитом Салона 1863 года, её купил Наполеон III. «Впечатление. Восходящее солнце» Моне (1872) полная противоположность: быстро, эскизно, повседневно. Жюри назвало бы её незаконченной."
+     }
     },
     {
-      "id": "l4",
-      "title": {"en": "Beyond the impression", "ru": "Дальше впечатления"},
-      "idea": {"en": "Post-Impressionists add structure, theory and symbols", "ru": "Постимпрессионисты добавляют структуру, теорию и символы"},
-      "cards": [
-        {"type": "story", "img": "seurat_jatte",
-         "text": {"en": "By the 1880s some painters felt Impressionism was too loose, just a passing glance. They kept the bright color but added order, theory and meaning. Later they were called Post-Impressionists.",
-                  "ru": "К 1880-м некоторым художникам импрессионизм показался слишком лёгким, просто беглым взглядом. Они сохранили яркий цвет, но добавили порядок, теорию и смысл. Позже их назвали постимпрессионистами."}},
-        {"type": "mcq", "img": "seurat_jatte", "crop": {"x": 70, "y": 55, "z": 4},
-         "q": {"en": "Look closely. How did Seurat paint this?", "ru": "Присмотритесь. Как Сёра это написал?"},
-         "options": [{"en": "Thousands of tiny dots of pure color", "ru": "Тысячи крошечных точек чистого цвета"},
-                     {"en": "Long quick strokes", "ru": "Длинные быстрые мазки"},
-                     {"en": "Smooth blended layers", "ru": "Гладкие смешанные слои"}],
-         "answer": 0,
-         "explain": {"en": "Pointillism: a method based on color science. It took Seurat two years.", "ru": "Пуантилизм: метод, основанный на науке о цвете. Сёра работал над картиной два года."}},
-        {"type": "pick", "imgs": ["monet_sunrise", "seurat_jatte"],
-         "q": {"en": "Which one took two years of careful planning?", "ru": "Какая картина потребовала двух лет тщательной работы?"},
-         "answer": 1,
-         "explain": {"en": "Monet caught a moment in a morning; Seurat built his scene dot by dot, with dozens of studies.", "ru": "Моне поймал мгновение за утро; Сёра строил сцену точка за точкой, с десятками этюдов."}},
-        {"type": "mcq", "img": "cezanne_mont",
-         "q": {"en": "Cézanne wanted to make Impressionism \"solid and durable\". What does he build the landscape from?", "ru": "Сезанн хотел сделать импрессионизм «прочным и долговечным». Из чего он строит пейзаж?"},
-         "options": [{"en": "Blocks and planes of color", "ru": "Из блоков и плоскостей цвета"},
-                     {"en": "Tiny dots", "ru": "Из крошечных точек"},
-                     {"en": "Thin black outlines", "ru": "Из тонких чёрных контуров"}],
-         "answer": 0,
-         "explain": {"en": "Cézanne's patches of color work like bricks. Picasso later called him \"the father of us all\".", "ru": "Цветовые пятна Сезанна работают как кирпичи. Пикассо позже назвал его «отцом всех нас»."}},
-        {"type": "mcq", "img": "gauguin_vision",
-         "q": {"en": "Gauguin painted the field red. Why?", "ru": "Гоген написал поле красным. Почему?"},
-         "options": [{"en": "Color shows the vision, not reality", "ru": "Цвет передаёт видение, а не реальность"},
-                     {"en": "The grass really was red", "ru": "Трава правда была красной"},
-                     {"en": "He ran out of green", "ru": "У него кончилась зелёная краска"}],
-         "answer": 0,
-         "explain": {"en": "Breton women imagine Jacob wrestling an angel. Flat, unreal color marks it as a vision.", "ru": "Бретонки видят борьбу Иакова с ангелом. Плоский нереальный цвет показывает, что это видение."}},
-        {"type": "pick", "imgs": ["sisley_flood", "gauguin_vision", "monet_sunrise"],
-         "q": {"en": "Tap the Post-Impressionist painting.", "ru": "Найдите постимпрессиониста."},
-         "answer": 1,
-         "explain": {"en": "Gauguin: flat areas of unreal color and dark outlines. The others record real light.", "ru": "Гоген: плоские пятна нереального цвета и тёмные контуры. Остальные передают реальный свет."}},
-        {"type": "order", "imgs": ["monet_sunrise", "seurat_jatte", "gauguin_vision"],
-         "q": {"en": "Put them in order, oldest first.", "ru": "Расставьте по порядку, начиная с самой ранней."},
-         "explain": {"en": "Monet 1872, Seurat 1884, Gauguin 1888.", "ru": "Моне 1872, Сёра 1884, Гоген 1888."}},
-        {"type": "multi", "img": "cezanne_apples", "unseen": true,
-         "q": {"en": "Post-Impressionist. Pick the two clues that show it.", "ru": "Это постимпрессионизм. Выберите две подсказки."},
-         "options": [{"en": "Solid, block-like shapes", "ru": "Плотные, весомые формы"},
-                     {"en": "Tilted, rearranged perspective", "ru": "Наклонённая, переставленная перспектива"},
-                     {"en": "A fleeting effect of outdoor light", "ru": "Мимолётный эффект дневного света"},
-                     {"en": "Quick sketchy dabs", "ru": "Быстрые эскизные мазки"}],
-         "answers": [0, 1],
-         "explain": {"en": "Cézanne: the table edge does not line up and the bottle leans. Structure over a quick look.", "ru": "Сезанн: край стола не совпадает, бутылка наклонена. Структура важнее беглого взгляда."}},
-        {"type": "mcq",
-         "q": {"en": "What did the Post-Impressionists add?", "ru": "Что добавили постимпрессионисты?"},
-         "options": [{"en": "Structure, theory and symbols", "ru": "Структуру, теорию и символы"},
-                     {"en": "Black shadows", "ru": "Чёрные тени"},
-                     {"en": "Myths and gods", "ru": "Мифы и богов"}],
-         "answer": 0,
-         "explain": {"en": "Keep this: same bright color, plus order and meaning.", "ru": "Запомните: тот же яркий цвет плюс порядок и смысл."}}
-      ]
+     "type": "mcq",
+     "img": "monet_sunrise",
+     "q": {
+      "en": "Why did critics call Monet's painting \"unfinished\"?",
+      "ru": "Почему критики назвали картину Моне «незаконченной»?"
+     },
+     "options": [
+      {
+       "en": "Visible brushstrokes and no fine detail",
+       "ru": "Видны мазки и нет мелких деталей"
+      },
+      {
+       "en": "It was painted on cardboard",
+       "ru": "Она написана на картоне"
+      },
+      {
+       "en": "It had no signature",
+       "ru": "На ней нет подписи"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "To academic eyes, a painting was finished only when brushstrokes disappeared.",
+      "ru": "Для академистов картина считалась законченной, только когда мазков не видно."
+     }
     },
     {
-      "id": "l5",
-      "title": {"en": "Painting feelings", "ru": "Писать чувства"},
-      "idea": {"en": "Color and brushwork express emotion", "ru": "Цвет и мазок выражают чувства"},
-      "cards": [
-        {"type": "story", "img": "vangogh_starry",
-         "text": {"en": "Van Gogh painted for only about ten years and sold almost nothing. He used color and swirling strokes to show what he felt, not just what he saw. The Starry Night is the view from his window in the asylum at Saint-Rémy.",
-                  "ru": "Ван Гог писал всего около десяти лет и почти ничего не продал. Цветом и вихрями мазков он показывал то, что чувствовал, а не только то, что видел. «Звёздная ночь» — вид из окна лечебницы в Сен-Реми."}},
-        {"type": "mcq", "img": "vangogh_starry", "crop": {"x": 45, "y": 30, "z": 2.5},
-         "q": {"en": "How is the sky painted?", "ru": "Как написано небо?"},
-         "options": [{"en": "Thick swirling strokes", "ru": "Густыми закрученными мазками"},
-                     {"en": "Tiny even dots", "ru": "Крошечными ровными точками"},
-                     {"en": "A smooth gradient", "ru": "Гладким переходом цвета"}],
-         "answer": 0,
-         "explain": {"en": "The paint is so thick it stands up from the canvas. The sky moves like his feelings.", "ru": "Краска лежит так густо, что выступает над холстом. Небо движется, как его чувства."}},
-        {"type": "mcq", "img": "vangogh_bedroom",
-         "q": {"en": "Van Gogh wanted this room to suggest rest. What makes it unusual?", "ru": "Ван Гог хотел, чтобы комната дышала покоем. Что в ней необычного?"},
-         "options": [{"en": "Bright flat colors and tilted perspective", "ru": "Яркие плоские цвета и наклонённая перспектива"},
-                     {"en": "Photographic accuracy", "ru": "Фотографическая точность"},
-                     {"en": "Dark gloomy tones", "ru": "Тёмные мрачные тона"}],
-         "answer": 0,
-         "explain": {"en": "He wrote that color should do everything here. The floor tilts toward us like a stage.", "ru": "Он писал брату, что здесь всё должен делать цвет. Пол наклонён к нам, как сцена."}},
-        {"type": "mcq", "img": "vangogh_crows",
-         "q": {"en": "One of his last paintings. What creates the uneasy mood?", "ru": "Одна из последних его картин. Что создаёт тревогу?"},
-         "options": [{"en": "Stormy sky, black crows, paths to nowhere", "ru": "Грозовое небо, чёрные вороны, дороги в никуда"},
-                     {"en": "Calm pastel colors", "ru": "Спокойные пастельные цвета"},
-                     {"en": "A crowd of people", "ru": "Толпа людей"}],
-         "answer": 0,
-         "explain": {"en": "He wrote that he painted \"sadness, extreme loneliness\" in these fields.", "ru": "Он писал, что выразил в этих полях «печаль и крайнее одиночество»."}},
-        {"type": "pick", "imgs": ["monet_haystacks", "vangogh_crows"],
-         "q": {"en": "Which painting puts emotion above accurate observation?", "ru": "В какой картине чувство важнее точного наблюдения?"},
-         "answer": 1,
-         "explain": {"en": "Monet recorded the light he saw; Van Gogh painted what he felt about the field.", "ru": "Моне записывал увиденный свет; Ван Гог писал то, что чувствовал."}},
-        {"type": "pick", "imgs": ["cezanne_mont", "vangogh_sunflowers", "seurat_jatte"],
-         "q": {"en": "Tap the painting by Van Gogh.", "ru": "Найдите картину Ван Гога."},
-         "answer": 1,
-         "explain": {"en": "Thick paint, glowing yellows, energetic strokes: Sunflowers, 1888.", "ru": "Густая краска, сияющий жёлтый, энергичные мазки: «Подсолнухи», 1888."}},
-        {"type": "order", "imgs": ["sisley_flood", "vangogh_bedroom", "vangogh_crows"],
-         "q": {"en": "Put them in order, oldest first.", "ru": "Расставьте по порядку, начиная с самой ранней."},
-         "explain": {"en": "Sisley 1876, Van Gogh's bedroom 1888, Wheatfield with Crows 1890.", "ru": "Сислей 1876, «Спальня» 1888, «Поле с воронами» 1890."}},
-        {"type": "mcq", "img": "munch_scream", "unseen": true,
-         "q": {"en": "This 1893 painting is not by Van Gogh, but it learned from him. What did it take?", "ru": "Эта картина 1893 года не Ван Гога, но она многому у него научилась. Чему?"},
-         "options": [{"en": "Color and swirling lines that express feeling", "ru": "Цвету и вихрям линий, выражающим чувство"},
-                     {"en": "Dots of pure color", "ru": "Точкам чистого цвета"},
-                     {"en": "Light reflected on water", "ru": "Отражению света в воде"}],
-         "answer": 0,
-         "explain": {"en": "Munch, The Scream. Painting feelings led straight to Expressionism.", "ru": "Мунк, «Крик». Живопись чувств вела прямо к экспрессионизму."}},
-        {"type": "mcq",
-         "q": {"en": "What was Van Gogh really painting?", "ru": "Что на самом деле писал Ван Гог?"},
-         "options": [{"en": "His feelings", "ru": "Свои чувства"},
-                     {"en": "Exact light effects", "ru": "Точные эффекты света"},
-                     {"en": "Ancient myths", "ru": "Древние мифы"}],
-         "answer": 0,
-         "explain": {"en": "Keep this: color can carry emotion.", "ru": "Запомните: цвет может передавать чувство."}}
-      ]
+     "type": "mcq",
+     "q": {
+      "en": "Monet painted outdoors, fast. Why the hurry?",
+      "ru": "Моне писал на улице и быстро. Зачем спешить?"
+     },
+     "options": [
+      {
+       "en": "The light changes within minutes",
+       "ru": "Свет меняется за минуты"
+      },
+      {
+       "en": "Paint was expensive",
+       "ru": "Краски были дорогими"
+      },
+      {
+       "en": "Outdoor painting was illegal",
+       "ru": "Писать на улице было запрещено"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "New paint in metal tubes made outdoor work easy; the challenge was catching the light before it moved.",
+      "ru": "Краски в тюбиках позволили писать на улице, а главной задачей стало успеть за светом."
+     }
     },
     {
-      "id": "cp1",
-      "checkpoint": true,
-      "title": {"en": "Unit checkpoint", "ru": "Итоговая проверка"},
-      "idea": {"en": "5 paintings you have never seen", "ru": "5 картин, которых вы ещё не видели"},
-      "cards": [
-        {"type": "mcq", "img": "monet_parasol", "unseen": true,
-         "q": {"en": "Impressionist or Post-Impressionist?", "ru": "Импрессионизм или постимпрессионизм?"},
-         "options": [{"en": "Impressionist", "ru": "Импрессионизм"}, {"en": "Post-Impressionist", "ru": "Постимпрессионизм"}],
-         "answer": 0, "noShuffle": true,
-         "explain": {"en": "Monet, 1875: a windy moment outdoors, quick strokes, colored shadows.", "ru": "Моне, 1875: ветреное мгновение на улице, быстрые мазки, цветные тени."}},
-        {"type": "mcq", "img": "gauguin_tahitian", "unseen": true,
-         "q": {"en": "Impressionist or Post-Impressionist?", "ru": "Импрессионизм или постимпрессионизм?"},
-         "options": [{"en": "Impressionist", "ru": "Импрессионизм"}, {"en": "Post-Impressionist", "ru": "Постимпрессионизм"}],
-         "answer": 1, "noShuffle": true,
-         "explain": {"en": "Gauguin, 1891: flat areas of color, firm outlines, a calm decorative design.", "ru": "Гоген, 1891: плоские цветовые пятна, чёткие контуры, спокойная декоративность."}},
-        {"type": "mcq", "img": "renoir_boating", "unseen": true,
-         "q": {"en": "Impressionist or Post-Impressionist?", "ru": "Импрессионизм или постимпрессионизм?"},
-         "options": [{"en": "Impressionist", "ru": "Импрессионизм"}, {"en": "Post-Impressionist", "ru": "Постимпрессионизм"}],
-         "answer": 0, "noShuffle": true,
-         "explain": {"en": "Renoir, 1881: friends at lunch, dappled light, modern leisure.", "ru": "Ренуар, 1881: друзья за обедом, пятна света, современный досуг."}},
-        {"type": "mcq", "img": "cezanne_cardplayers", "unseen": true,
-         "q": {"en": "Impressionist or Post-Impressionist?", "ru": "Импрессионизм или постимпрессионизм?"},
-         "options": [{"en": "Impressionist", "ru": "Импрессионизм"}, {"en": "Post-Impressionist", "ru": "Постимпрессионизм"}],
-         "answer": 1, "noShuffle": true,
-         "explain": {"en": "Cézanne, 1890s: solid, still figures built from blocks of color.", "ru": "Сезанн, 1890-е: неподвижные весомые фигуры из блоков цвета."}},
-        {"type": "mcq", "img": "lautrec_moulin", "unseen": true,
-         "q": {"en": "Impressionist or Post-Impressionist?", "ru": "Импрессионизм или постимпрессионизм?"},
-         "options": [{"en": "Impressionist", "ru": "Импрессионизм"}, {"en": "Post-Impressionist", "ru": "Постимпрессионизм"}],
-         "answer": 1, "noShuffle": true,
-         "explain": {"en": "Toulouse-Lautrec, 1892: modern nightlife, but with harsh unreal color (the green face) and bold outlines.", "ru": "Тулуз-Лотрек, 1892: ночная жизнь, но с резким нереальным цветом (зелёное лицо) и смелыми контурами."}}
-      ]
+     "type": "mcq",
+     "imgs": [
+      "monet_rouen_morning",
+      "monet_rouen_sunset"
+     ],
+     "q": {
+      "en": "Same building, same painter. What is the real subject?",
+      "ru": "Одно здание, один художник. Что на самом деле изображено?"
+     },
+     "options": [
+      {
+       "en": "The light at that hour",
+       "ru": "Свет в этот час"
+      },
+      {
+       "en": "The cathedral's architecture",
+       "ru": "Архитектура собора"
+      },
+      {
+       "en": "The weather forecast",
+       "ru": "Погода"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Monet painted the facade more than 30 times. The stone stays; the light is the subject.",
+      "ru": "Моне написал фасад больше 30 раз. Камень тот же, меняется свет, он и есть сюжет."
+     }
+    },
+    {
+     "type": "pick",
+     "imgs": [
+      "ingres_odalisque",
+      "sisley_flood",
+      "david_socrates"
+     ],
+     "q": {
+      "en": "Tap the Impressionist painting.",
+      "ru": "Найдите импрессиониста."
+     },
+     "answer": 1,
+     "explain": {
+      "en": "Sisley: everyday scene, outdoor light, loose strokes. The other two are polished academic work.",
+      "ru": "Сислей: обычная сцена, дневной свет, свободные мазки. Две другие картины гладкие, академические."
+     }
+    },
+    {
+     "type": "multi",
+     "img": "morisot_summer",
+     "unseen": true,
+     "q": {
+      "en": "Impressionist or not? Pick two clues.",
+      "ru": "Импрессионизм или нет? Выберите две подсказки."
+     },
+     "options": [
+      {
+       "en": "Quick visible strokes",
+       "ru": "Быстрые заметные мазки"
+      },
+      {
+       "en": "Outdoor light on water",
+       "ru": "Дневной свет на воде"
+      },
+      {
+       "en": "Polished smooth surface",
+       "ru": "Гладкая полированная поверхность"
+      },
+      {
+       "en": "A scene from mythology",
+       "ru": "Сюжет из мифологии"
+      }
+     ],
+     "answers": [
+      0,
+      1
+     ],
+     "explain": {
+      "en": "Impressionist. Berthe Morisot showed in the 1874 exhibition.",
+      "ru": "Импрессионизм. Берта Моризо участвовала в выставке 1874 года."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": {
+      "en": "In one phrase, what were the Impressionists really painting?",
+      "ru": "Что на самом деле писали импрессионисты?"
+     },
+     "options": [
+      {
+       "en": "A moment of light",
+       "ru": "Мгновение света"
+      },
+      {
+       "en": "Famous people",
+       "ru": "Знаменитостей"
+      },
+      {
+       "en": "Ancient history",
+       "ru": "Древнюю историю"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Keep this: a moment of light.",
+      "ru": "Запомните: мгновение света."
+     }
     }
-  ]
+   ],
+   "intro": [
+    {
+     "type": "intro",
+     "emoji": "🏛️",
+     "title": {
+      "en": "Paris, 1800s: art had rules",
+      "ru": "Париж, XIX век: у искусства были правила"
+     },
+     "text": {
+      "en": "In 19th-century France, art was run by the Academy of Fine Arts, an official state institution. It decided what \"good\" painting was: a smooth surface, invisible brushstrokes, careful drawing, and noble subjects like gods, myths and great moments of history.",
+      "ru": "Во Франции XIX века искусством управляла Академия изящных искусств, официальное государственное учреждение. Она решала, что такое «хорошая» живопись: гладкая поверхность, незаметные мазки, аккуратный рисунок и возвышенные сюжеты: боги, мифы, великие события истории."
+     }
+    },
+    {
+     "type": "intro",
+     "emoji": "🖼️",
+     "title": {
+      "en": "The Salon and its jury",
+      "ru": "Салон и его жюри"
+     },
+     "text": {
+      "en": "Every year or two the Academy held a giant exhibition in Paris called the Salon: thousands of paintings, huge crowds, every newspaper writing about it. Getting in was almost the only way to become famous and sell. A jury of senior academic artists chose what got in. This is their kind of painting: Cabanel's Birth of Venus, a star of the 1863 Salon.",
+      "ru": "Раз в год или два Академия устраивала в Париже огромную выставку под названием Салон: тысячи картин, толпы зрителей, о ней писали все газеты. Попасть туда было почти единственным способом прославиться и продавать картины. Что повесить, решало жюри из маститых академических художников. Вот картина в их вкусе: «Рождение Венеры» Кабанеля, звезда Салона 1863 года."
+     },
+     "img": "cabanel_venus"
+    },
+    {
+     "type": "intro",
+     "emoji": "🙅",
+     "title": {
+      "en": "Rejected!",
+      "ru": "Отказано!"
+     },
+     "text": {
+      "en": "Young artists who painted in a new way kept getting rejected. In 1863 so many works were turned down that Emperor Napoleon III allowed a separate show, the Salon of the Rejected. Visitors came to laugh. But the young painters started to think: maybe we don't need the jury at all.",
+      "ru": "Молодых художников, писавших по-новому, жюри раз за разом отвергало. В 1863 году отказов было столько, что император Наполеон III разрешил отдельную выставку, Салон отверженных. Публика ходила туда посмеяться. А молодые художники задумались: может, жюри нам вообще не нужно?"
+     }
+    },
+    {
+     "type": "intro",
+     "emoji": "🌅",
+     "title": {
+      "en": "1874: their own show",
+      "ru": "1874: своя выставка"
+     },
+     "text": {
+      "en": "In April 1874 Monet, Renoir, Degas, Pissarro, Morisot, Sisley and others rented a photographer's former studio in Paris and held their own exhibition, with no jury. A critic saw Monet's Impression, Sunrise and mocked them all as \"Impressionists\", as if they only made sketches. They liked the name and kept it.",
+      "ru": "В апреле 1874 года Моне, Ренуар, Дега, Писсарро, Моризо, Сислей и другие сняли бывшую мастерскую фотографа в Париже и устроили свою выставку, без всякого жюри. Критик увидел картину Моне «Впечатление. Восходящее солнце» и в насмешку назвал всех «импрессионистами» (от французского impression, «впечатление»), будто они делают одни наброски. Название им понравилось, и они его оставили."
+     }
+    },
+    {
+     "type": "intro",
+     "emoji": "💡",
+     "title": {
+      "en": "So what is Impressionism?",
+      "ru": "Так что такое импрессионизм?"
+     },
+     "text": {
+      "en": "Impressionism (roughly 1867 to 1886) means painting the quick impression of a moment: light, air, movement. The painters worked fast, often outdoors, with visible brushstrokes and bright colors. The real subject is less the thing itself than the light falling on it. They held eight group shows, the last in 1886.",
+      "ru": "Импрессионизм (примерно 1867–1886) это живопись мгновенного впечатления: свет, воздух, движение. Художники писали быстро, часто прямо на улице, видимыми мазками и яркими красками. Главное не сам предмет, а свет, который на него падает. Всего было восемь их общих выставок, последняя в 1886 году."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l2",
+   "title": {
+    "en": "Modern life",
+    "ru": "Современная жизнь"
+   },
+   "idea": {
+    "en": "Cafés, streets and ballet become art",
+    "ru": "Кафе, улицы и балет становятся искусством"
+   },
+   "cards": [
+    {
+     "type": "story",
+     "img": "renoir_moulin",
+     "text": {
+      "en": "Before the Impressionists, serious art meant gods, kings and battles. Renoir painted ordinary Parisians dancing on a Sunday afternoon in Montmartre. Modern life itself became the subject.",
+      "ru": "До импрессионистов серьёзное искусство означало богов, королей и сражения. Ренуар написал обычных парижан, танцующих в воскресенье на Монмартре. Сюжетом стала сама современная жизнь."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "renoir_moulin",
+     "crop": {
+      "x": 40,
+      "y": 60,
+      "z": 2.5
+     },
+     "q": {
+      "en": "Look at the dancers' clothes. How is the sunlight through the trees painted?",
+      "ru": "Посмотрите на одежду танцующих. Как написан свет сквозь листву?"
+     },
+     "options": [
+      {
+       "en": "Pale patches scattered over the figures",
+       "ru": "Светлые пятна, разбросанные по фигурам"
+      },
+      {
+       "en": "Sharp shadows of every leaf",
+       "ru": "Чёткие тени каждого листа"
+      },
+      {
+       "en": "It is not shown at all",
+       "ru": "Он никак не показан"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Dappled light breaks the figures into flickering spots, just as the eye sees it.",
+      "ru": "Пятна света дробят фигуры, как это и видит глаз."
+     }
+    },
+    {
+     "type": "pick",
+     "imgs": [
+      "cabanel_venus",
+      "caillebotte_rainy"
+     ],
+     "q": {
+      "en": "Which painting shows modern life in 1870s Paris?",
+      "ru": "Какая картина показывает современный Париж 1870-х?"
+     },
+     "answer": 1,
+     "explain": {
+      "en": "Caillebotte: new boulevards, umbrellas, ordinary passers-by.",
+      "ru": "Кайботт: новые бульвары, зонты, обычные прохожие."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "degas_dance_class",
+     "q": {
+      "en": "Degas often cut figures off at the edge, like a snapshot. Where did this framing come from?",
+      "ru": "Дега часто обрезал фигуры краем холста, как на снимке. Откуда такая композиция?"
+     },
+     "options": [
+      {
+       "en": "Photography and Japanese prints",
+       "ru": "Фотография и японская гравюра"
+      },
+      {
+       "en": "Renaissance frescoes",
+       "ru": "Фрески Возрождения"
+      },
+      {
+       "en": "Ancient Greek vases",
+       "ru": "Древнегреческие вазы"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Cameras and Japanese woodblock prints were the new visual fashion in 1870s Paris.",
+      "ru": "Фотоаппараты и японские гравюры были новой модой Парижа 1870-х."
+     }
+    },
+    {
+     "type": "pick",
+     "imgs": [
+      "david_socrates",
+      "degas_absinthe",
+      "ingres_odalisque"
+     ],
+     "q": {
+      "en": "Tap the painting of modern life.",
+      "ru": "Найдите картину о современной жизни."
+     },
+     "answer": 1,
+     "explain": {
+      "en": "Degas: two people in a Paris café, off-centre, unposed.",
+      "ru": "Дега: двое в парижском кафе, сдвинуты от центра, не позируют."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": {
+      "en": "Why were these everyday scenes shocking to critics?",
+      "ru": "Почему эти будничные сцены шокировали критиков?"
+     },
+     "options": [
+      {
+       "en": "Ordinary life seemed unworthy of serious art",
+       "ru": "Обычная жизнь казалась недостойной искусства"
+      },
+      {
+       "en": "The paintings were too large",
+       "ru": "Картины были слишком большими"
+      },
+      {
+       "en": "Cafés were illegal",
+       "ru": "Кафе были запрещены"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "The academy ranked history and myth at the top, everyday scenes near the bottom.",
+      "ru": "Академия ставила историю и мифы выше всего, бытовые сцены почти в самый низ."
+     }
+    },
+    {
+     "type": "order",
+     "imgs": [
+      "david_socrates",
+      "ingres_odalisque",
+      "renoir_moulin"
+     ],
+     "q": {
+      "en": "Put them in order, oldest first.",
+      "ru": "Расставьте по порядку, начиная с самой ранней."
+     },
+     "explain": {
+      "en": "David 1787, Ingres 1814, Renoir 1876.",
+      "ru": "Давид 1787, Энгр 1814, Ренуар 1876."
+     }
+    },
+    {
+     "type": "multi",
+     "img": "cassatt_armchair",
+     "unseen": true,
+     "q": {
+      "en": "Impressionist or not? Pick two clues.",
+      "ru": "Импрессионизм или нет? Выберите две подсказки."
+     },
+     "options": [
+      {
+       "en": "Everyday modern subject",
+       "ru": "Будничный современный сюжет"
+      },
+      {
+       "en": "Loose, visible brushwork",
+       "ru": "Свободные заметные мазки"
+      },
+      {
+       "en": "A scene from history",
+       "ru": "Исторический сюжет"
+      },
+      {
+       "en": "Polished, invisible brushwork",
+       "ru": "Гладкие незаметные мазки"
+      }
+     ],
+     "answers": [
+      0,
+      1
+     ],
+     "explain": {
+      "en": "Impressionist. Mary Cassatt, an American in Paris, was invited to join by Degas.",
+      "ru": "Импрессионизм. Американку Мэри Кассат пригласил в группу сам Дега."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": {
+      "en": "What did the Impressionists add to the subjects of art?",
+      "ru": "Что импрессионисты добавили в сюжеты искусства?"
+     },
+     "options": [
+      {
+       "en": "Everyday modern life",
+       "ru": "Будничную современную жизнь"
+      },
+      {
+       "en": "Religious scenes",
+       "ru": "Религиозные сцены"
+      },
+      {
+       "en": "Portraits of kings",
+       "ru": "Портреты королей"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Keep this: modern life is a worthy subject.",
+      "ru": "Запомните: современная жизнь достойна картины."
+     }
+    }
+   ],
+   "intro": [
+    {
+     "type": "intro",
+     "emoji": "🪜",
+     "title": {
+      "en": "The ladder of subjects",
+      "ru": "Лестница сюжетов"
+     },
+     "text": {
+      "en": "The Academy ranked subjects like a ladder, the hierarchy of genres. Top: history painting (myths, the Bible, famous battles). Then portraits. Lower: scenes of everyday life. Bottom: landscape and still life (fruit, flowers, objects). The big prizes went only to the top.",
+      "ru": "Академия выстраивала сюжеты лестницей, это называлось иерархия жанров. Наверху историческая живопись: мифы, Библия, великие битвы. Ниже портрет. Ещё ниже сцены повседневной жизни. В самом низу пейзаж и натюрморт (фрукты, цветы, предметы). Главные награды давали только за верхние ступени."
+     }
+    },
+    {
+     "type": "intro",
+     "emoji": "🏙️",
+     "title": {
+      "en": "A brand-new Paris",
+      "ru": "Совершенно новый Париж"
+     },
+     "text": {
+      "en": "In the 1850s and 60s Emperor Napoleon III and his planner Baron Haussmann tore down much of old, cramped Paris and built wide boulevards, cafés, parks and train stations. A new middle class strolled, danced and went boating on Sundays. The Impressionists painted exactly that: modern life, right now.",
+      "ru": "В 1850–60-х император Наполеон III и префект барон Осман снесли большую часть старого тесного Парижа и построили широкие бульвары, кафе, парки и вокзалы. Новый средний класс гулял, танцевал и катался на лодках по воскресеньям. Именно это и писали импрессионисты: современную жизнь, здесь и сейчас."
+     },
+     "img": "caillebotte_rainy"
+    },
+    {
+     "type": "intro",
+     "emoji": "📷",
+     "title": {
+      "en": "Photos and Japanese prints",
+      "ru": "Фотография и японские гравюры"
+     },
+     "text": {
+      "en": "Two new things changed how painters framed a picture. Photography (invented in 1839) gave snapshots with people cut off at the edge. Japanese woodblock prints, which poured into Paris after Japan opened to trade in the 1850s, had bold angles, flat colors and off-center layouts. The craze was called Japonisme.",
+      "ru": "Две новинки изменили то, как художники строили кадр. Фотография (изобретена в 1839 году) давала снимки, где люди обрезаны краем. Японские гравюры, хлынувшие в Париж, когда Япония открылась для торговли в 1850-х, удивляли смелыми ракурсами, плоским цветом и композицией не по центру. Эту моду назвали японизмом."
+     }
+    },
+    {
+     "type": "intro",
+     "emoji": "👥",
+     "title": {
+      "en": "Meet the gang",
+      "ru": "Знакомьтесь: компания"
+     },
+     "text": {
+      "en": "Monet: light and water. Renoir: happy crowds and faces. Degas: dancers and cafés (he hated the word \"Impressionist\"). Pissarro: the oldest, everyone's mentor. Sisley: quiet landscapes. Caillebotte: rich, painted Paris streets and bought his friends' work. Morisot and Cassatt: the two women of the group, painting home life.",
+      "ru": "Моне: свет и вода. Ренуар: весёлые толпы и лица. Дега: балерины и кафе (слово «импрессионист» он терпеть не мог). Писсарро: самый старший, наставник для всех. Сислей: тихие пейзажи. Кайботт: богач, писал парижские улицы и покупал картины друзей. Моризо и Кассат: две женщины группы, писавшие домашнюю жизнь."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l3",
+   "title": {
+    "en": "Shadows are colored",
+    "ru": "Цветные тени"
+   },
+   "idea": {
+    "en": "No black: shadows are blue and violet",
+    "ru": "Без чёрного: тени синие и фиолетовые"
+   },
+   "cards": [
+    {
+     "type": "story",
+     "img": "monet_magpie",
+     "text": {
+      "en": "Academic painters darkened shadows with black and brown. The Impressionists looked again: on a sunny day, shadows on snow are blue and violet. Critics thought they had gone mad.",
+      "ru": "Академисты затемняли тени чёрным и коричневым. Импрессионисты присмотрелись: в солнечный день тени на снегу синие и фиолетовые. Критики решили, что они сошли с ума."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "monet_magpie",
+     "crop": {
+      "x": 50,
+      "y": 80,
+      "z": 2.5
+     },
+     "q": {
+      "en": "What color are the shadows on the snow?",
+      "ru": "Какого цвета тени на снегу?"
+     },
+     "options": [
+      {
+       "en": "Blue and lilac",
+       "ru": "Синие и сиреневые"
+      },
+      {
+       "en": "Black",
+       "ru": "Чёрные"
+      },
+      {
+       "en": "Grey-brown",
+       "ru": "Серо-коричневые"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Snow in shadow reflects the blue sky, so Monet painted it blue.",
+      "ru": "Снег в тени отражает голубое небо, и Моне написал его голубым."
+     }
+    },
+    {
+     "type": "pick",
+     "imgs": [
+      "monet_haystacks",
+      "rembrandt_nightwatch"
+     ],
+     "q": {
+      "en": "Which painting builds its shadows from black and brown?",
+      "ru": "В какой картине тени построены на чёрном и коричневом?"
+     },
+     "answer": 1,
+     "explain": {
+      "en": "Rembrandt, 1642: deep dark shadows. Monet's haystacks cast shadows of blue and violet.",
+      "ru": "Рембрандт, 1642: глубокие тёмные тени. Стога Моне отбрасывают синие и фиолетовые тени."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": {
+      "en": "Why did the Impressionists avoid black?",
+      "ru": "Почему импрессионисты избегали чёрного?"
+     },
+     "options": [
+      {
+       "en": "Shadows hold reflected color",
+       "ru": "В тенях есть отражённый цвет"
+      },
+      {
+       "en": "Black paint was banned",
+       "ru": "Чёрная краска была запрещена"
+      },
+      {
+       "en": "Black was too expensive",
+       "ru": "Чёрная краска была слишком дорогой"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "They painted what the eye sees, and the eye sees color even in shade.",
+      "ru": "Они писали то, что видит глаз, а глаз видит цвет даже в тени."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "pissarro_boulevard",
+     "crop": {
+      "x": 50,
+      "y": 70,
+      "z": 2.5
+     },
+     "q": {
+      "en": "Up close, the street is dabs of separate colors. Where do they mix?",
+      "ru": "Вблизи улица состоит из отдельных цветных мазков. Где они смешиваются?"
+     },
+     "options": [
+      {
+       "en": "In the viewer's eye",
+       "ru": "В глазу зрителя"
+      },
+      {
+       "en": "On the palette",
+       "ru": "На палитре"
+      },
+      {
+       "en": "They never mix",
+       "ru": "Нигде"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Broken color: unmixed dabs side by side look brighter than mixed paint.",
+      "ru": "Раздельный мазок: несмешанные краски рядом выглядят ярче смешанных."
+     }
+    },
+    {
+     "type": "pick",
+     "imgs": [
+      "rembrandt_nightwatch",
+      "morisot_cradle",
+      "david_socrates"
+     ],
+     "q": {
+      "en": "Tap the Impressionist painting.",
+      "ru": "Найдите импрессиониста."
+     },
+     "answer": 1,
+     "explain": {
+      "en": "Morisot: soft whites and blues, light everywhere, no heavy black.",
+      "ru": "Моризо: мягкие белые и голубые, свет повсюду, нет тяжёлого чёрного."
+     }
+    },
+    {
+     "type": "order",
+     "imgs": [
+      "rembrandt_nightwatch",
+      "david_socrates",
+      "monet_haystacks"
+     ],
+     "q": {
+      "en": "Put them in order, oldest first.",
+      "ru": "Расставьте по порядку, начиная с самой ранней."
+     },
+     "explain": {
+      "en": "Rembrandt 1642, David 1787, Monet 1890.",
+      "ru": "Рембрандт 1642, Давид 1787, Моне 1890."
+     }
+    },
+    {
+     "type": "multi",
+     "img": "sisley_snow",
+     "unseen": true,
+     "q": {
+      "en": "Why is this Impressionist? Pick two clues.",
+      "ru": "Почему это импрессионизм? Выберите две подсказки."
+     },
+     "options": [
+      {
+       "en": "Blue-violet shadows on snow",
+       "ru": "Сине-фиолетовые тени на снегу"
+      },
+      {
+       "en": "Visible dabs of paint",
+       "ru": "Заметные мазки"
+      },
+      {
+       "en": "Dark brown shadows",
+       "ru": "Тёмно-коричневые тени"
+      },
+      {
+       "en": "Smooth glossy finish",
+       "ru": "Гладкая глянцевая поверхность"
+      }
+     ],
+     "answers": [
+      0,
+      1
+     ],
+     "explain": {
+      "en": "Sisley, 1878: snow in shade turned blue and lilac.",
+      "ru": "Сислей, 1878: снег в тени стал голубым и сиреневым."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": {
+      "en": "What color is a shadow, to an Impressionist?",
+      "ru": "Какого цвета тень для импрессиониста?"
+     },
+     "options": [
+      {
+       "en": "Colored by the light around it",
+       "ru": "Окрашенная светом вокруг"
+      },
+      {
+       "en": "Always black",
+       "ru": "Всегда чёрная"
+      },
+      {
+       "en": "Always grey",
+       "ru": "Всегда серая"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Keep this: shadows have color.",
+      "ru": "Запомните: у теней есть цвет."
+     }
+    }
+   ],
+   "intro": [
+    {
+     "type": "intro",
+     "emoji": "🕯️",
+     "title": {
+      "en": "How the Old Masters did shadows",
+      "ru": "Как тени писали старые мастера"
+     },
+     "text": {
+      "en": "For centuries painters built shapes out of light and dark. Shadows were mixed from brown, black and earthy tones, so figures seem to step out of darkness. This is called chiaroscuro, Italian for \"light-dark\". Its great master was Rembrandt, a Dutch painter of the 1600s.",
+      "ru": "Веками художники лепили форму светом и тенью. Тени смешивали из коричневых, чёрных и землистых красок, и фигуры словно выступают из темноты. Это называется светотень, по-итальянски кьяроскуро. Её великий мастер голландец Рембрандт, XVII век."
+     },
+     "img": "rembrandt_nightwatch"
+    },
+    {
+     "type": "intro",
+     "emoji": "☀️",
+     "title": {
+      "en": "What the eye really sees",
+      "ru": "Что на самом деле видит глаз"
+     },
+     "text": {
+      "en": "Go outside on a sunny winter day and look at a shadow on snow: it's bluish, because it reflects the sky. Shadows under trees look green or violet. The Impressionists painted outdoors, en plein air (French for \"in the open air\"), and noticed this. So their shadows are colored.",
+      "ru": "Выйдите на улицу солнечным зимним днём и посмотрите на тень на снегу: она синеватая, потому что отражает небо. Тени под деревьями зеленоватые или фиолетовые. Импрессионисты писали на открытом воздухе, на пленэре (от французского en plein air), и заметили это. Поэтому их тени цветные."
+     }
+    },
+    {
+     "type": "intro",
+     "emoji": "🌈",
+     "title": {
+      "en": "Let the eye mix the colors",
+      "ru": "Пусть цвета смешивает глаз"
+     },
+     "text": {
+      "en": "Mixing paints on the palette makes them duller. So the Impressionists often laid small dabs of pure color side by side and let your eye blend them from a distance. This broken color makes a picture shimmer. Pairs like blue and orange or red and green (complementary colors) make each other look brighter.",
+      "ru": "Если смешивать краски на палитре, цвет тускнеет. Поэтому импрессионисты часто клали рядом мазки чистого цвета, а смешивал их уже глаз зрителя на расстоянии. Такой раздельный мазок заставляет картину мерцать. А пары вроде синего и оранжевого или красного и зелёного (дополнительные цвета) усиливают друг друга."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l4",
+   "title": {
+    "en": "Beyond the impression",
+    "ru": "Дальше впечатления"
+   },
+   "idea": {
+    "en": "Post-Impressionists add structure, theory and symbols",
+    "ru": "Постимпрессионисты добавляют структуру, теорию и символы"
+   },
+   "cards": [
+    {
+     "type": "story",
+     "img": "seurat_jatte",
+     "text": {
+      "en": "By the 1880s some painters felt Impressionism was too loose, just a passing glance. They kept the bright color but added order, theory and meaning. Later they were called Post-Impressionists.",
+      "ru": "К 1880-м некоторым художникам импрессионизм показался слишком лёгким, просто беглым взглядом. Они сохранили яркий цвет, но добавили порядок, теорию и смысл. Позже их назвали постимпрессионистами."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "seurat_jatte",
+     "crop": {
+      "x": 70,
+      "y": 55,
+      "z": 4
+     },
+     "q": {
+      "en": "Look closely. How did Seurat paint this?",
+      "ru": "Присмотритесь. Как Сёра это написал?"
+     },
+     "options": [
+      {
+       "en": "Thousands of tiny dots of pure color",
+       "ru": "Тысячи крошечных точек чистого цвета"
+      },
+      {
+       "en": "Long quick strokes",
+       "ru": "Длинные быстрые мазки"
+      },
+      {
+       "en": "Smooth blended layers",
+       "ru": "Гладкие смешанные слои"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Pointillism: a method based on color science. It took Seurat two years.",
+      "ru": "Пуантилизм: метод, основанный на науке о цвете. Сёра работал над картиной два года."
+     }
+    },
+    {
+     "type": "pick",
+     "imgs": [
+      "monet_sunrise",
+      "seurat_jatte"
+     ],
+     "q": {
+      "en": "Which one took two years of careful planning?",
+      "ru": "Какая картина потребовала двух лет тщательной работы?"
+     },
+     "answer": 1,
+     "explain": {
+      "en": "Monet caught a moment in a morning; Seurat built his scene dot by dot, with dozens of studies.",
+      "ru": "Моне поймал мгновение за утро; Сёра строил сцену точка за точкой, с десятками этюдов."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "cezanne_mont",
+     "q": {
+      "en": "Cézanne wanted to make Impressionism \"solid and durable\". What does he build the landscape from?",
+      "ru": "Сезанн хотел сделать импрессионизм «прочным и долговечным». Из чего он строит пейзаж?"
+     },
+     "options": [
+      {
+       "en": "Blocks and planes of color",
+       "ru": "Из блоков и плоскостей цвета"
+      },
+      {
+       "en": "Tiny dots",
+       "ru": "Из крошечных точек"
+      },
+      {
+       "en": "Thin black outlines",
+       "ru": "Из тонких чёрных контуров"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Cézanne's patches of color work like bricks. Picasso later called him \"the father of us all\".",
+      "ru": "Цветовые пятна Сезанна работают как кирпичи. Пикассо позже назвал его «отцом всех нас»."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "gauguin_vision",
+     "q": {
+      "en": "Gauguin painted the field red. Why?",
+      "ru": "Гоген написал поле красным. Почему?"
+     },
+     "options": [
+      {
+       "en": "Color shows the vision, not reality",
+       "ru": "Цвет передаёт видение, а не реальность"
+      },
+      {
+       "en": "The grass really was red",
+       "ru": "Трава правда была красной"
+      },
+      {
+       "en": "He ran out of green",
+       "ru": "У него кончилась зелёная краска"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Breton women imagine Jacob wrestling an angel. Flat, unreal color marks it as a vision.",
+      "ru": "Бретонки видят борьбу Иакова с ангелом. Плоский нереальный цвет показывает, что это видение."
+     }
+    },
+    {
+     "type": "pick",
+     "imgs": [
+      "sisley_flood",
+      "gauguin_vision",
+      "monet_sunrise"
+     ],
+     "q": {
+      "en": "Tap the Post-Impressionist painting.",
+      "ru": "Найдите постимпрессиониста."
+     },
+     "answer": 1,
+     "explain": {
+      "en": "Gauguin: flat areas of unreal color and dark outlines. The others record real light.",
+      "ru": "Гоген: плоские пятна нереального цвета и тёмные контуры. Остальные передают реальный свет."
+     }
+    },
+    {
+     "type": "order",
+     "imgs": [
+      "monet_sunrise",
+      "seurat_jatte",
+      "gauguin_vision"
+     ],
+     "q": {
+      "en": "Put them in order, oldest first.",
+      "ru": "Расставьте по порядку, начиная с самой ранней."
+     },
+     "explain": {
+      "en": "Monet 1872, Seurat 1884, Gauguin 1888.",
+      "ru": "Моне 1872, Сёра 1884, Гоген 1888."
+     }
+    },
+    {
+     "type": "multi",
+     "img": "cezanne_apples",
+     "unseen": true,
+     "q": {
+      "en": "Post-Impressionist. Pick the two clues that show it.",
+      "ru": "Это постимпрессионизм. Выберите две подсказки."
+     },
+     "options": [
+      {
+       "en": "Solid, block-like shapes",
+       "ru": "Плотные, весомые формы"
+      },
+      {
+       "en": "Tilted, rearranged perspective",
+       "ru": "Наклонённая, переставленная перспектива"
+      },
+      {
+       "en": "A fleeting effect of outdoor light",
+       "ru": "Мимолётный эффект дневного света"
+      },
+      {
+       "en": "Quick sketchy dabs",
+       "ru": "Быстрые эскизные мазки"
+      }
+     ],
+     "answers": [
+      0,
+      1
+     ],
+     "explain": {
+      "en": "Cézanne: the table edge does not line up and the bottle leans. Structure over a quick look.",
+      "ru": "Сезанн: край стола не совпадает, бутылка наклонена. Структура важнее беглого взгляда."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": {
+      "en": "What did the Post-Impressionists add?",
+      "ru": "Что добавили постимпрессионисты?"
+     },
+     "options": [
+      {
+       "en": "Structure, theory and symbols",
+       "ru": "Структуру, теорию и символы"
+      },
+      {
+       "en": "Black shadows",
+       "ru": "Чёрные тени"
+      },
+      {
+       "en": "Myths and gods",
+       "ru": "Мифы и богов"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Keep this: same bright color, plus order and meaning.",
+      "ru": "Запомните: тот же яркий цвет плюс порядок и смысл."
+     }
+    }
+   ],
+   "intro": [
+    {
+     "type": "intro",
+     "emoji": "📅",
+     "title": {
+      "en": "1886: the group breaks up",
+      "ru": "1886: группа распадается"
+     },
+     "text": {
+      "en": "The eighth and last Impressionist show was in 1886, and the group drifted apart. Meanwhile younger painters loved the bright colors but felt Impressionism was too loose, just a passing glance. They wanted more: structure, science, symbols, emotion.",
+      "ru": "Восьмая и последняя выставка импрессионистов прошла в 1886 году, и группа распалась. А молодые художники любили яркий цвет, но считали импрессионизм слишком зыбким, просто беглым взглядом. Им хотелось большего: порядка, науки, символов, чувства."
+     }
+    },
+    {
+     "type": "intro",
+     "emoji": "🏷️",
+     "title": {
+      "en": "A label invented later",
+      "ru": "Ярлык придумали потом"
+     },
+     "text": {
+      "en": "Post-Impressionism simply means \"after Impressionism\". The painters never used the word: the English critic Roger Fry invented it in 1910 for a London exhibition. It isn't one style but a few very different artists, working roughly from 1886 to 1905, each going their own way.",
+      "ru": "Постимпрессионизм значит просто «после импрессионизма». Сами художники этого слова не знали: его придумал английский критик Роджер Фрай в 1910 году для выставки в Лондоне. Это не один стиль, а несколько очень разных художников, работавших примерно с 1886 по 1905 год, каждый своим путём."
+     }
+    },
+    {
+     "type": "intro",
+     "emoji": "👥",
+     "title": {
+      "en": "The big four",
+      "ru": "Большая четвёрка"
+     },
+     "text": {
+      "en": "Seurat: science, pictures made of tiny dots. Cézanne: structure, nature built from simple shapes like cylinders, spheres and cones. Gauguin: flat bold colors and symbols; he moved to Tahiti. Van Gogh: emotion, thick swirling paint. Plus Toulouse-Lautrec, who painted Paris nightlife and posters.",
+      "ru": "Сёра: наука, картины из крошечных точек. Сезанн: структура, природа из простых форм, цилиндров, шаров и конусов. Гоген: плоский яркий цвет и символы; уехал на Таити. Ван Гог: чувство, густые закрученные мазки. И ещё Тулуз-Лотрек, писавший ночной Париж и афиши."
+     }
+    },
+    {
+     "type": "intro",
+     "emoji": "🔍",
+     "title": {
+      "en": "How to tell them apart",
+      "ru": "Как их различать"
+     },
+     "text": {
+      "en": "Impressionism: what the eye sees in a moment. Soft edges, loose strokes, natural light. Post-Impressionism: what the mind builds or the heart feels. Firmer shapes, dark outlines, colors that aren't realistic, a planned design. Same bright palette, different goal.",
+      "ru": "Импрессионизм: то, что глаз видит в одно мгновение. Мягкие края, свободные мазки, естественный свет. Постимпрессионизм: то, что строит ум или чувствует сердце. Чёткие формы, тёмные контуры, нереалистичный цвет, продуманная композиция. Палитра та же яркая, цель другая."
+     }
+    }
+   ]
+  },
+  {
+   "id": "l5",
+   "title": {
+    "en": "Painting feelings",
+    "ru": "Писать чувства"
+   },
+   "idea": {
+    "en": "Color and brushwork express emotion",
+    "ru": "Цвет и мазок выражают чувства"
+   },
+   "cards": [
+    {
+     "type": "story",
+     "img": "vangogh_starry",
+     "text": {
+      "en": "Van Gogh painted for only about ten years and sold almost nothing. He used color and swirling strokes to show what he felt, not just what he saw. The Starry Night is the view from his window in the asylum at Saint-Rémy.",
+      "ru": "Ван Гог писал всего около десяти лет и почти ничего не продал. Цветом и вихрями мазков он показывал то, что чувствовал, а не только то, что видел. «Звёздная ночь» — вид из окна лечебницы в Сен-Реми."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "vangogh_starry",
+     "crop": {
+      "x": 45,
+      "y": 30,
+      "z": 2.5
+     },
+     "q": {
+      "en": "How is the sky painted?",
+      "ru": "Как написано небо?"
+     },
+     "options": [
+      {
+       "en": "Thick swirling strokes",
+       "ru": "Густыми закрученными мазками"
+      },
+      {
+       "en": "Tiny even dots",
+       "ru": "Крошечными ровными точками"
+      },
+      {
+       "en": "A smooth gradient",
+       "ru": "Гладким переходом цвета"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "The paint is so thick it stands up from the canvas. The sky moves like his feelings.",
+      "ru": "Краска лежит так густо, что выступает над холстом. Небо движется, как его чувства."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "vangogh_bedroom",
+     "q": {
+      "en": "Van Gogh wanted this room to suggest rest. What makes it unusual?",
+      "ru": "Ван Гог хотел, чтобы комната дышала покоем. Что в ней необычного?"
+     },
+     "options": [
+      {
+       "en": "Bright flat colors and tilted perspective",
+       "ru": "Яркие плоские цвета и наклонённая перспектива"
+      },
+      {
+       "en": "Photographic accuracy",
+       "ru": "Фотографическая точность"
+      },
+      {
+       "en": "Dark gloomy tones",
+       "ru": "Тёмные мрачные тона"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "He wrote that color should do everything here. The floor tilts toward us like a stage.",
+      "ru": "Он писал брату, что здесь всё должен делать цвет. Пол наклонён к нам, как сцена."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "vangogh_crows",
+     "q": {
+      "en": "One of his last paintings. What creates the uneasy mood?",
+      "ru": "Одна из последних его картин. Что создаёт тревогу?"
+     },
+     "options": [
+      {
+       "en": "Stormy sky, black crows, paths to nowhere",
+       "ru": "Грозовое небо, чёрные вороны, дороги в никуда"
+      },
+      {
+       "en": "Calm pastel colors",
+       "ru": "Спокойные пастельные цвета"
+      },
+      {
+       "en": "A crowd of people",
+       "ru": "Толпа людей"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "He wrote that he painted \"sadness, extreme loneliness\" in these fields.",
+      "ru": "Он писал, что выразил в этих полях «печаль и крайнее одиночество»."
+     }
+    },
+    {
+     "type": "pick",
+     "imgs": [
+      "monet_haystacks",
+      "vangogh_crows"
+     ],
+     "q": {
+      "en": "Which painting puts emotion above accurate observation?",
+      "ru": "В какой картине чувство важнее точного наблюдения?"
+     },
+     "answer": 1,
+     "explain": {
+      "en": "Monet recorded the light he saw; Van Gogh painted what he felt about the field.",
+      "ru": "Моне записывал увиденный свет; Ван Гог писал то, что чувствовал."
+     }
+    },
+    {
+     "type": "pick",
+     "imgs": [
+      "cezanne_mont",
+      "vangogh_sunflowers",
+      "seurat_jatte"
+     ],
+     "q": {
+      "en": "Tap the painting by Van Gogh.",
+      "ru": "Найдите картину Ван Гога."
+     },
+     "answer": 1,
+     "explain": {
+      "en": "Thick paint, glowing yellows, energetic strokes: Sunflowers, 1888.",
+      "ru": "Густая краска, сияющий жёлтый, энергичные мазки: «Подсолнухи», 1888."
+     }
+    },
+    {
+     "type": "order",
+     "imgs": [
+      "sisley_flood",
+      "vangogh_bedroom",
+      "vangogh_crows"
+     ],
+     "q": {
+      "en": "Put them in order, oldest first.",
+      "ru": "Расставьте по порядку, начиная с самой ранней."
+     },
+     "explain": {
+      "en": "Sisley 1876, Van Gogh's bedroom 1888, Wheatfield with Crows 1890.",
+      "ru": "Сислей 1876, «Спальня» 1888, «Поле с воронами» 1890."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "munch_scream",
+     "unseen": true,
+     "q": {
+      "en": "This 1893 painting is not by Van Gogh, but it learned from him. What did it take?",
+      "ru": "Эта картина 1893 года не Ван Гога, но она многому у него научилась. Чему?"
+     },
+     "options": [
+      {
+       "en": "Color and swirling lines that express feeling",
+       "ru": "Цвету и вихрям линий, выражающим чувство"
+      },
+      {
+       "en": "Dots of pure color",
+       "ru": "Точкам чистого цвета"
+      },
+      {
+       "en": "Light reflected on water",
+       "ru": "Отражению света в воде"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Munch, The Scream. Painting feelings led straight to Expressionism.",
+      "ru": "Мунк, «Крик». Живопись чувств вела прямо к экспрессионизму."
+     }
+    },
+    {
+     "type": "mcq",
+     "q": {
+      "en": "What was Van Gogh really painting?",
+      "ru": "Что на самом деле писал Ван Гог?"
+     },
+     "options": [
+      {
+       "en": "His feelings",
+       "ru": "Свои чувства"
+      },
+      {
+       "en": "Exact light effects",
+       "ru": "Точные эффекты света"
+      },
+      {
+       "en": "Ancient myths",
+       "ru": "Древние мифы"
+      }
+     ],
+     "answer": 0,
+     "explain": {
+      "en": "Keep this: color can carry emotion.",
+      "ru": "Запомните: цвет может передавать чувство."
+     }
+    }
+   ],
+   "intro": [
+    {
+     "type": "intro",
+     "emoji": "🇳🇱",
+     "title": {
+      "en": "Who was Van Gogh?",
+      "ru": "Кто такой Ван Гог?"
+     },
+     "text": {
+      "en": "Vincent van Gogh (1853 to 1890) was Dutch. He tried being an art dealer, a teacher and a preacher, and only started painting at 27. His younger brother Theo, an art dealer in Paris, sent him money for years. They wrote each other hundreds of letters, so we know what Vincent thought about almost every painting.",
+      "ru": "Винсент Ван Гог (1853–1890) был голландцем. Он пробовал быть продавцом картин, учителем, проповедником и начал рисовать только в 27 лет. Младший брат Тео, торговец картинами в Париже, годами присылал ему деньги. Они написали друг другу сотни писем, поэтому мы знаем, что Винсент думал почти о каждой своей картине."
+     },
+     "img": "vangogh_sunflowers"
+    },
+    {
+     "type": "intro",
+     "emoji": "☀️",
+     "title": {
+      "en": "Paris, then the sunny South",
+      "ru": "Париж, а потом солнечный юг"
+     },
+     "text": {
+      "en": "In Paris (1886 to 1888) he met the Impressionists, and his dark, gloomy palette turned bright. Then he moved to Arles in the south of France for the sun: sunflowers, the Yellow House, his bedroom. Gauguin came to stay in 1888. After two months they quarreled, and Van Gogh, in a mental crisis, cut off part of his own ear.",
+      "ru": "В Париже (1886–1888) он познакомился с импрессионистами, и его тёмная, мрачная палитра стала яркой. Потом он уехал в Арль на юге Франции, за солнцем: подсолнухи, Жёлтый дом, его спальня. В 1888 году к нему приехал Гоген. Через два месяца они поссорились, и Ван Гог в душевном кризисе отрезал себе часть уха."
+     },
+     "img": "vangogh_bedroom"
+    },
+    {
+     "type": "intro",
+     "emoji": "🌌",
+     "title": {
+      "en": "The last years",
+      "ru": "Последние годы"
+     },
+     "text": {
+      "en": "In 1889 he checked himself into an asylum in Saint-Rémy, where he painted The Starry Night. He died in July 1890, aged 37, having sold almost nothing. Today his paintings are among the most loved and most expensive in the world.",
+      "ru": "В 1889 году он сам лёг в лечебницу в Сен-Реми, где написал «Звёздную ночь». Он умер в июле 1890 года, в 37 лет, почти ничего не продав. Сегодня его картины одни из самых любимых и самых дорогих в мире."
+     }
+    },
+    {
+     "type": "intro",
+     "emoji": "😱",
+     "title": {
+      "en": "What came next",
+      "ru": "Что было дальше"
+     },
+     "text": {
+      "en": "Van Gogh showed that color and line can express feelings directly. The Norwegian Edvard Munch picked this up in the 1890s, and in the early 1900s German painters went further. That movement is called Expressionism: painting the inner world, not the outer one.",
+      "ru": "Ван Гог показал, что цвет и линия могут прямо передавать чувства. Норвежец Эдвард Мунк подхватил это уже в 1890-х, а в начале XX века немецкие художники пошли ещё дальше. Это направление называется экспрессионизм: живопись внутреннего мира, а не внешнего."
+     }
+    }
+   ]
+  },
+  {
+   "id": "cp1",
+   "checkpoint": true,
+   "title": {
+    "en": "Unit checkpoint",
+    "ru": "Итоговая проверка"
+   },
+   "idea": {
+    "en": "5 paintings you have never seen",
+    "ru": "5 картин, которых вы ещё не видели"
+   },
+   "cards": [
+    {
+     "type": "mcq",
+     "img": "monet_parasol",
+     "unseen": true,
+     "q": {
+      "en": "Impressionist or Post-Impressionist?",
+      "ru": "Импрессионизм или постимпрессионизм?"
+     },
+     "options": [
+      {
+       "en": "Impressionist",
+       "ru": "Импрессионизм"
+      },
+      {
+       "en": "Post-Impressionist",
+       "ru": "Постимпрессионизм"
+      }
+     ],
+     "answer": 0,
+     "noShuffle": true,
+     "explain": {
+      "en": "Monet, 1875: a windy moment outdoors, quick strokes, colored shadows.",
+      "ru": "Моне, 1875: ветреное мгновение на улице, быстрые мазки, цветные тени."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "gauguin_tahitian",
+     "unseen": true,
+     "q": {
+      "en": "Impressionist or Post-Impressionist?",
+      "ru": "Импрессионизм или постимпрессионизм?"
+     },
+     "options": [
+      {
+       "en": "Impressionist",
+       "ru": "Импрессионизм"
+      },
+      {
+       "en": "Post-Impressionist",
+       "ru": "Постимпрессионизм"
+      }
+     ],
+     "answer": 1,
+     "noShuffle": true,
+     "explain": {
+      "en": "Gauguin, 1891: flat areas of color, firm outlines, a calm decorative design.",
+      "ru": "Гоген, 1891: плоские цветовые пятна, чёткие контуры, спокойная декоративность."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "renoir_boating",
+     "unseen": true,
+     "q": {
+      "en": "Impressionist or Post-Impressionist?",
+      "ru": "Импрессионизм или постимпрессионизм?"
+     },
+     "options": [
+      {
+       "en": "Impressionist",
+       "ru": "Импрессионизм"
+      },
+      {
+       "en": "Post-Impressionist",
+       "ru": "Постимпрессионизм"
+      }
+     ],
+     "answer": 0,
+     "noShuffle": true,
+     "explain": {
+      "en": "Renoir, 1881: friends at lunch, dappled light, modern leisure.",
+      "ru": "Ренуар, 1881: друзья за обедом, пятна света, современный досуг."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "cezanne_cardplayers",
+     "unseen": true,
+     "q": {
+      "en": "Impressionist or Post-Impressionist?",
+      "ru": "Импрессионизм или постимпрессионизм?"
+     },
+     "options": [
+      {
+       "en": "Impressionist",
+       "ru": "Импрессионизм"
+      },
+      {
+       "en": "Post-Impressionist",
+       "ru": "Постимпрессионизм"
+      }
+     ],
+     "answer": 1,
+     "noShuffle": true,
+     "explain": {
+      "en": "Cézanne, 1890s: solid, still figures built from blocks of color.",
+      "ru": "Сезанн, 1890-е: неподвижные весомые фигуры из блоков цвета."
+     }
+    },
+    {
+     "type": "mcq",
+     "img": "lautrec_moulin",
+     "unseen": true,
+     "q": {
+      "en": "Impressionist or Post-Impressionist?",
+      "ru": "Импрессионизм или постимпрессионизм?"
+     },
+     "options": [
+      {
+       "en": "Impressionist",
+       "ru": "Импрессионизм"
+      },
+      {
+       "en": "Post-Impressionist",
+       "ru": "Постимпрессионизм"
+      }
+     ],
+     "answer": 1,
+     "noShuffle": true,
+     "explain": {
+      "en": "Toulouse-Lautrec, 1892: modern nightlife, but with harsh unreal color (the green face) and bold outlines.",
+      "ru": "Тулуз-Лотрек, 1892: ночная жизнь, но с резким нереальным цветом (зелёное лицо) и смелыми контурами."
+     }
+    }
+   ],
+   "intro": [
+    {
+     "type": "intro",
+     "emoji": "📝",
+     "title": {
+      "en": "Cheat sheet before the test",
+      "ru": "Шпаргалка перед проверкой"
+     },
+     "text": {
+      "en": "Impressionist clues: a fleeting moment, outdoor light, loose visible strokes, colored shadows, everyday modern life, soft edges. Post-Impressionist clues: firm shapes and outlines, unreal or symbolic colors, dots or blocks of color, a planned, decorative or emotional design. Get 4 of 5 right to pass.",
+      "ru": "Признаки импрессионизма: мимолётный момент, уличный свет, свободные видимые мазки, цветные тени, современная повседневная жизнь, мягкие края. Признаки постимпрессионизма: чёткие формы и контуры, нереальный или символический цвет, точки или блоки цвета, продуманная, декоративная или эмоциональная композиция. Чтобы пройти, нужно 4 верных из 5."
+     }
+    }
+   ]
+  }
+ ]
 }

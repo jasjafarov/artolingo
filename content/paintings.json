@@ -1,401 +1,434 @@
 {
-  "monet_sunrise": {
+ "monet_sunrise": {
   "artist": {
-  "en": "Claude Monet",
-  "ru": "Клод Моне"
-},
+   "en": "Claude Monet",
+   "ru": "Клод Моне"
+  },
   "title": {
-  "en": "Impression, Sunrise",
-  "ru": "Впечатление. Восходящее солнце"
-},
+   "en": "Impression, Sunrise",
+   "ru": "Впечатление. Восходящее солнце"
+  },
   "year": 1872,
-  "query": "Monet Impression Sunrise 1872 Marmottan"
-},
-  "monet_rouen_morning": {
+  "query": "Monet Impression Sunrise 1872 Marmottan",
+  "movement": "imp"
+ },
+ "monet_rouen_morning": {
   "artist": {
-  "en": "Claude Monet",
-  "ru": "Клод Моне"
-},
+   "en": "Claude Monet",
+   "ru": "Клод Моне"
+  },
   "title": {
-  "en": "Rouen Cathedral, Morning",
-  "ru": "Руанский собор, утро"
-},
+   "en": "Rouen Cathedral, Morning",
+   "ru": "Руанский собор, утро"
+  },
   "year": 1894,
-  "query": "Monet Rouen Cathedral portal morning sun harmony in blue"
-},
-  "monet_rouen_sunset": {
+  "query": "Monet Rouen Cathedral portal morning sun harmony in blue",
+  "movement": "imp"
+ },
+ "monet_rouen_sunset": {
   "artist": {
-  "en": "Claude Monet",
-  "ru": "Клод Моне"
-},
+   "en": "Claude Monet",
+   "ru": "Клод Моне"
+  },
   "title": {
-  "en": "Rouen Cathedral, Sunset",
-  "ru": "Руанский собор, закат"
-},
+   "en": "Rouen Cathedral, Sunset",
+   "ru": "Руанский собор, закат"
+  },
   "year": 1894,
-  "query": "Monet Rouen Cathedral facade sunset"
-},
-  "cabanel_venus": {
+  "query": "Monet Rouen Cathedral facade sunset",
+  "movement": "imp"
+ },
+ "cabanel_venus": {
   "artist": {
-  "en": "Alexandre Cabanel",
-  "ru": "Александр Кабанель"
-},
+   "en": "Alexandre Cabanel",
+   "ru": "Александр Кабанель"
+  },
   "title": {
-  "en": "The Birth of Venus",
-  "ru": "Рождение Венеры"
-},
+   "en": "The Birth of Venus",
+   "ru": "Рождение Венеры"
+  },
   "year": 1863,
-  "query": "Alexandre Cabanel The Birth of Venus 1863 Orsay"
-},
-  "ingres_odalisque": {
+  "query": "Alexandre Cabanel The Birth of Venus 1863 Orsay",
+  "movement": "acad"
+ },
+ "ingres_odalisque": {
   "artist": {
-  "en": "Jean-Auguste-Dominique Ingres",
-  "ru": "Жан Огюст Доминик Энгр"
-},
+   "en": "Jean-Auguste-Dominique Ingres",
+   "ru": "Жан Огюст Доминик Энгр"
+  },
   "title": {
-  "en": "Grande Odalisque",
-  "ru": "Большая одалиска"
-},
+   "en": "Grande Odalisque",
+   "ru": "Большая одалиска"
+  },
   "year": 1814,
   "query": "Ingres Grande Odalisque 1814 Louvre painting",
-  "file": "Jean Auguste Dominique Ingres, La Grande Odalisque, 1814.jpg"
-},
-  "sisley_flood": {
+  "file": "Jean Auguste Dominique Ingres, La Grande Odalisque, 1814.jpg",
+  "movement": "neo"
+ },
+ "sisley_flood": {
   "artist": {
-  "en": "Alfred Sisley",
-  "ru": "Альфред Сислей"
-},
+   "en": "Alfred Sisley",
+   "ru": "Альфред Сислей"
+  },
   "title": {
-  "en": "Flood at Port-Marly",
-  "ru": "Наводнение в Пор-Марли"
-},
+   "en": "Flood at Port-Marly",
+   "ru": "Наводнение в Пор-Марли"
+  },
   "year": 1876,
-  "query": "Sisley Flood at Port-Marly 1876 Orsay"
-},
-  "david_socrates": {
+  "query": "Sisley Flood at Port-Marly 1876 Orsay",
+  "movement": "imp"
+ },
+ "david_socrates": {
   "artist": {
-  "en": "Jacques-Louis David",
-  "ru": "Жак-Луи Давид"
-},
+   "en": "Jacques-Louis David",
+   "ru": "Жак-Луи Давид"
+  },
   "title": {
-  "en": "The Death of Socrates",
-  "ru": "Смерть Сократа"
-},
+   "en": "The Death of Socrates",
+   "ru": "Смерть Сократа"
+  },
   "year": 1787,
-  "query": "Jacques-Louis David The Death of Socrates 1787"
-},
-  "morisot_summer": {
+  "query": "Jacques-Louis David The Death of Socrates 1787",
+  "movement": "neo"
+ },
+ "morisot_summer": {
   "artist": {
-  "en": "Berthe Morisot",
-  "ru": "Берта Моризо"
-},
+   "en": "Berthe Morisot",
+   "ru": "Берта Моризо"
+  },
   "title": {
-  "en": "Summer's Day",
-  "ru": "Летний день"
-},
+   "en": "Summer's Day",
+   "ru": "Летний день"
+  },
   "year": 1879,
-  "query": "Berthe Morisot Summer's Day National Gallery boat lake"
-},
-  "renoir_moulin": {
+  "query": "Berthe Morisot Summer's Day National Gallery boat lake",
+  "movement": "imp"
+ },
+ "renoir_moulin": {
   "artist": {
-  "en": "Pierre-Auguste Renoir",
-  "ru": "Пьер-Огюст Ренуар"
-},
+   "en": "Pierre-Auguste Renoir",
+   "ru": "Пьер-Огюст Ренуар"
+  },
   "title": {
-  "en": "Bal du moulin de la Galette",
-  "ru": "Бал в Мулен де ла Галетт"
-},
+   "en": "Bal du moulin de la Galette",
+   "ru": "Бал в Мулен де ла Галетт"
+  },
   "year": 1876,
-  "query": "Renoir Bal du moulin de la Galette 1876 Orsay"
-},
-  "degas_dance_class": {
+  "query": "Renoir Bal du moulin de la Galette 1876 Orsay",
+  "movement": "imp"
+ },
+ "degas_dance_class": {
   "artist": {
-  "en": "Edgar Degas",
-  "ru": "Эдгар Дега"
-},
+   "en": "Edgar Degas",
+   "ru": "Эдгар Дега"
+  },
   "title": {
-  "en": "The Dance Class",
-  "ru": "Урок танцев"
-},
+   "en": "The Dance Class",
+   "ru": "Урок танцев"
+  },
   "year": 1874,
-  "query": "Edgar Degas The Dance Class 1874 Metropolitan"
-},
-  "caillebotte_rainy": {
+  "query": "Edgar Degas The Dance Class 1874 Metropolitan",
+  "movement": "imp"
+ },
+ "caillebotte_rainy": {
   "artist": {
-  "en": "Gustave Caillebotte",
-  "ru": "Гюстав Кайботт"
-},
+   "en": "Gustave Caillebotte",
+   "ru": "Гюстав Кайботт"
+  },
   "title": {
-  "en": "Paris Street; Rainy Day",
-  "ru": "Парижская улица в дождливую погоду"
-},
+   "en": "Paris Street; Rainy Day",
+   "ru": "Парижская улица в дождливую погоду"
+  },
   "year": 1877,
-  "query": "Caillebotte Paris Street Rainy Day 1877"
-},
-  "degas_absinthe": {
+  "query": "Caillebotte Paris Street Rainy Day 1877",
+  "movement": "imp"
+ },
+ "degas_absinthe": {
   "artist": {
-  "en": "Edgar Degas",
-  "ru": "Эдгар Дега"
-},
+   "en": "Edgar Degas",
+   "ru": "Эдгар Дега"
+  },
   "title": {
-  "en": "In a Café (L'Absinthe)",
-  "ru": "В кафе (Абсент)"
-},
+   "en": "In a Café (L'Absinthe)",
+   "ru": "В кафе (Абсент)"
+  },
   "year": 1876,
-  "query": "Edgar Degas L'Absinthe In a Cafe Orsay"
-},
-  "cassatt_armchair": {
+  "query": "Edgar Degas L'Absinthe In a Cafe Orsay",
+  "movement": "imp"
+ },
+ "cassatt_armchair": {
   "artist": {
-  "en": "Mary Cassatt",
-  "ru": "Мэри Кассат"
-},
+   "en": "Mary Cassatt",
+   "ru": "Мэри Кассат"
+  },
   "title": {
-  "en": "Little Girl in a Blue Armchair",
-  "ru": "Девочка в голубом кресле"
-},
+   "en": "Little Girl in a Blue Armchair",
+   "ru": "Девочка в голубом кресле"
+  },
   "year": 1878,
-  "query": "Mary Cassatt Little Girl in a Blue Armchair 1878"
-},
-  "monet_haystacks": {
+  "query": "Mary Cassatt Little Girl in a Blue Armchair 1878",
+  "movement": "imp"
+ },
+ "monet_haystacks": {
   "artist": {
-  "en": "Claude Monet",
-  "ru": "Клод Моне"
-},
+   "en": "Claude Monet",
+   "ru": "Клод Моне"
+  },
   "title": {
-  "en": "Stacks of Wheat (End of Summer)",
-  "ru": "Стога (конец лета)"
-},
+   "en": "Stacks of Wheat (End of Summer)",
+   "ru": "Стога (конец лета)"
+  },
   "year": 1890,
-  "query": "Monet Stacks of Wheat End of Summer Art Institute Chicago"
-},
-  "monet_magpie": {
+  "query": "Monet Stacks of Wheat End of Summer Art Institute Chicago",
+  "movement": "imp"
+ },
+ "monet_magpie": {
   "artist": {
-  "en": "Claude Monet",
-  "ru": "Клод Моне"
-},
+   "en": "Claude Monet",
+   "ru": "Клод Моне"
+  },
   "title": {
-  "en": "The Magpie",
-  "ru": "Сорока"
-},
+   "en": "The Magpie",
+   "ru": "Сорока"
+  },
   "year": 1869,
-  "query": "Claude Monet The Magpie snow 1869 Orsay"
-},
-  "rembrandt_nightwatch": {
+  "query": "Claude Monet The Magpie snow 1869 Orsay",
+  "movement": "imp"
+ },
+ "rembrandt_nightwatch": {
   "artist": {
-  "en": "Rembrandt",
-  "ru": "Рембрандт"
-},
+   "en": "Rembrandt",
+   "ru": "Рембрандт"
+  },
   "title": {
-  "en": "The Night Watch",
-  "ru": "Ночной дозор"
-},
+   "en": "The Night Watch",
+   "ru": "Ночной дозор"
+  },
   "year": 1642,
-  "query": "Rembrandt The Night Watch Rijksmuseum"
-},
-  "pissarro_boulevard": {
+  "query": "Rembrandt The Night Watch Rijksmuseum",
+  "movement": "baroque"
+ },
+ "pissarro_boulevard": {
   "artist": {
-  "en": "Camille Pissarro",
-  "ru": "Камиль Писсарро"
-},
+   "en": "Camille Pissarro",
+   "ru": "Камиль Писсарро"
+  },
   "title": {
-  "en": "Boulevard Montmartre, Spring",
-  "ru": "Бульвар Монмартр, весна"
-},
+   "en": "Boulevard Montmartre, Spring",
+   "ru": "Бульвар Монмартр, весна"
+  },
   "year": 1897,
-  "query": "Camille Pissarro Boulevard Montmartre Spring 1897"
-},
-  "morisot_cradle": {
+  "query": "Camille Pissarro Boulevard Montmartre Spring 1897",
+  "movement": "imp"
+ },
+ "morisot_cradle": {
   "artist": {
-  "en": "Berthe Morisot",
-  "ru": "Берта Моризо"
-},
+   "en": "Berthe Morisot",
+   "ru": "Берта Моризо"
+  },
   "title": {
-  "en": "The Cradle",
-  "ru": "Колыбель"
-},
+   "en": "The Cradle",
+   "ru": "Колыбель"
+  },
   "year": 1872,
-  "query": "Berthe Morisot The Cradle 1872 Orsay"
-},
-  "sisley_snow": {
+  "query": "Berthe Morisot The Cradle 1872 Orsay",
+  "movement": "imp"
+ },
+ "sisley_snow": {
   "artist": {
-  "en": "Alfred Sisley",
-  "ru": "Альфред Сислей"
-},
+   "en": "Alfred Sisley",
+   "ru": "Альфред Сислей"
+  },
   "title": {
-  "en": "Snow at Louveciennes",
-  "ru": "Снег в Лувесьенне"
-},
+   "en": "Snow at Louveciennes",
+   "ru": "Снег в Лувесьенне"
+  },
   "year": 1878,
-  "query": "Alfred Sisley Snow at Louveciennes 1878 Orsay"
-},
-  "seurat_jatte": {
+  "query": "Alfred Sisley Snow at Louveciennes 1878 Orsay",
+  "movement": "imp"
+ },
+ "seurat_jatte": {
   "artist": {
-  "en": "Georges Seurat",
-  "ru": "Жорж Сёра"
-},
+   "en": "Georges Seurat",
+   "ru": "Жорж Сёра"
+  },
   "title": {
-  "en": "A Sunday on La Grande Jatte",
-  "ru": "Воскресный день на острове Гранд-Жатт"
-},
+   "en": "A Sunday on La Grande Jatte",
+   "ru": "Воскресный день на острове Гранд-Жатт"
+  },
   "year": 1884,
-  "query": "Seurat A Sunday on La Grande Jatte 1884"
-},
-  "cezanne_mont": {
+  "query": "Seurat A Sunday on La Grande Jatte 1884",
+  "movement": "post"
+ },
+ "cezanne_mont": {
   "artist": {
-  "en": "Paul Cézanne",
-  "ru": "Поль Сезанн"
-},
+   "en": "Paul Cézanne",
+   "ru": "Поль Сезанн"
+  },
   "title": {
-  "en": "Mont Sainte-Victoire",
-  "ru": "Гора Сент-Виктуар"
-},
+   "en": "Mont Sainte-Victoire",
+   "ru": "Гора Сент-Виктуар"
+  },
   "year": 1887,
-  "query": "Cezanne Mont Sainte-Victoire with Large Pine Courtauld"
-},
-  "gauguin_vision": {
+  "query": "Cezanne Mont Sainte-Victoire with Large Pine Courtauld",
+  "movement": "post"
+ },
+ "gauguin_vision": {
   "artist": {
-  "en": "Paul Gauguin",
-  "ru": "Поль Гоген"
-},
+   "en": "Paul Gauguin",
+   "ru": "Поль Гоген"
+  },
   "title": {
-  "en": "Vision after the Sermon",
-  "ru": "Видение после проповеди"
-},
+   "en": "Vision after the Sermon",
+   "ru": "Видение после проповеди"
+  },
   "year": 1888,
-  "query": "Gauguin Vision after the Sermon Jacob wrestling angel"
-},
-  "cezanne_apples": {
+  "query": "Gauguin Vision after the Sermon Jacob wrestling angel",
+  "movement": "post"
+ },
+ "cezanne_apples": {
   "artist": {
-  "en": "Paul Cézanne",
-  "ru": "Поль Сезанн"
-},
+   "en": "Paul Cézanne",
+   "ru": "Поль Сезанн"
+  },
   "title": {
-  "en": "The Basket of Apples",
-  "ru": "Корзина яблок"
-},
+   "en": "The Basket of Apples",
+   "ru": "Корзина яблок"
+  },
   "year": 1893,
-  "query": "Cezanne The Basket of Apples Art Institute Chicago"
-},
-  "vangogh_starry": {
+  "query": "Cezanne The Basket of Apples Art Institute Chicago",
+  "movement": "post"
+ },
+ "vangogh_starry": {
   "artist": {
-  "en": "Vincent van Gogh",
-  "ru": "Винсент ван Гог"
-},
+   "en": "Vincent van Gogh",
+   "ru": "Винсент ван Гог"
+  },
   "title": {
-  "en": "The Starry Night",
-  "ru": "Звёздная ночь"
-},
+   "en": "The Starry Night",
+   "ru": "Звёздная ночь"
+  },
   "year": 1889,
   "query": "Van Gogh Starry Night 1889 MoMA cypress village",
-  "file": "Van Gogh - Starry Night - Google Art Project.jpg"
-},
-  "vangogh_bedroom": {
+  "file": "Van Gogh - Starry Night - Google Art Project.jpg",
+  "movement": "post"
+ },
+ "vangogh_bedroom": {
   "artist": {
-  "en": "Vincent van Gogh",
-  "ru": "Винсент ван Гог"
-},
+   "en": "Vincent van Gogh",
+   "ru": "Винсент ван Гог"
+  },
   "title": {
-  "en": "Bedroom in Arles",
-  "ru": "Спальня в Арле"
-},
+   "en": "Bedroom in Arles",
+   "ru": "Спальня в Арле"
+  },
   "year": 1888,
-  "query": "Van Gogh De slaapkamer bedroom Arles 1888 Van Gogh Museum"
-},
-  "vangogh_crows": {
+  "query": "Van Gogh De slaapkamer bedroom Arles 1888 Van Gogh Museum",
+  "movement": "post"
+ },
+ "vangogh_crows": {
   "artist": {
-  "en": "Vincent van Gogh",
-  "ru": "Винсент ван Гог"
-},
+   "en": "Vincent van Gogh",
+   "ru": "Винсент ван Гог"
+  },
   "title": {
-  "en": "Wheatfield with Crows",
-  "ru": "Пшеничное поле с воронами"
-},
+   "en": "Wheatfield with Crows",
+   "ru": "Пшеничное поле с воронами"
+  },
   "year": 1890,
-  "query": "Van Gogh Wheatfield with Crows 1890"
-},
-  "vangogh_sunflowers": {
+  "query": "Van Gogh Wheatfield with Crows 1890",
+  "movement": "post"
+ },
+ "vangogh_sunflowers": {
   "artist": {
-  "en": "Vincent van Gogh",
-  "ru": "Винсент ван Гог"
-},
+   "en": "Vincent van Gogh",
+   "ru": "Винсент ван Гог"
+  },
   "title": {
-  "en": "Sunflowers",
-  "ru": "Подсолнухи"
-},
+   "en": "Sunflowers",
+   "ru": "Подсолнухи"
+  },
   "year": 1888,
-  "query": "Van Gogh Sunflowers 1888 National Gallery London"
-},
-  "munch_scream": {
+  "query": "Van Gogh Sunflowers 1888 National Gallery London",
+  "movement": "post"
+ },
+ "munch_scream": {
   "artist": {
-  "en": "Edvard Munch",
-  "ru": "Эдвард Мунк"
-},
+   "en": "Edvard Munch",
+   "ru": "Эдвард Мунк"
+  },
   "title": {
-  "en": "The Scream",
-  "ru": "Крик"
-},
+   "en": "The Scream",
+   "ru": "Крик"
+  },
   "year": 1893,
-  "query": "Edvard Munch The Scream 1893 National Gallery Norway"
-},
-  "monet_parasol": {
+  "query": "Edvard Munch The Scream 1893 National Gallery Norway",
+  "movement": "expr"
+ },
+ "monet_parasol": {
   "artist": {
-  "en": "Claude Monet",
-  "ru": "Клод Моне"
-},
+   "en": "Claude Monet",
+   "ru": "Клод Моне"
+  },
   "title": {
-  "en": "Woman with a Parasol",
-  "ru": "Дама с зонтиком"
-},
+   "en": "Woman with a Parasol",
+   "ru": "Дама с зонтиком"
+  },
   "year": 1875,
-  "query": "Monet Woman with a Parasol Madame Monet and Her Son"
-},
-  "gauguin_tahitian": {
+  "query": "Monet Woman with a Parasol Madame Monet and Her Son",
+  "movement": "imp"
+ },
+ "gauguin_tahitian": {
   "artist": {
-  "en": "Paul Gauguin",
-  "ru": "Поль Гоген"
-},
+   "en": "Paul Gauguin",
+   "ru": "Поль Гоген"
+  },
   "title": {
-  "en": "Tahitian Women on the Beach",
-  "ru": "Таитянки на пляже"
-},
+   "en": "Tahitian Women on the Beach",
+   "ru": "Таитянки на пляже"
+  },
   "year": 1891,
-  "query": "Gauguin Tahitian Women on the Beach 1891 Orsay"
-},
-  "renoir_boating": {
+  "query": "Gauguin Tahitian Women on the Beach 1891 Orsay",
+  "movement": "post"
+ },
+ "renoir_boating": {
   "artist": {
-  "en": "Pierre-Auguste Renoir",
-  "ru": "Пьер-Огюст Ренуар"
-},
+   "en": "Pierre-Auguste Renoir",
+   "ru": "Пьер-Огюст Ренуар"
+  },
   "title": {
-  "en": "Luncheon of the Boating Party",
-  "ru": "Завтрак гребцов"
-},
+   "en": "Luncheon of the Boating Party",
+   "ru": "Завтрак гребцов"
+  },
   "year": 1881,
-  "query": "Renoir Luncheon of the Boating Party Phillips"
-},
-  "cezanne_cardplayers": {
+  "query": "Renoir Luncheon of the Boating Party Phillips",
+  "movement": "imp"
+ },
+ "cezanne_cardplayers": {
   "artist": {
-  "en": "Paul Cézanne",
-  "ru": "Поль Сезанн"
-},
+   "en": "Paul Cézanne",
+   "ru": "Поль Сезанн"
+  },
   "title": {
-  "en": "The Card Players",
-  "ru": "Игроки в карты"
-},
+   "en": "The Card Players",
+   "ru": "Игроки в карты"
+  },
   "year": 1894,
-  "query": "Cezanne The Card Players Orsay two players"
-},
-  "lautrec_moulin": {
+  "query": "Cezanne The Card Players Orsay two players",
+  "movement": "post"
+ },
+ "lautrec_moulin": {
   "artist": {
-  "en": "Henri de Toulouse-Lautrec",
-  "ru": "Анри де Тулуз-Лотрек"
-},
+   "en": "Henri de Toulouse-Lautrec",
+   "ru": "Анри де Тулуз-Лотрек"
+  },
   "title": {
-  "en": "At the Moulin Rouge",
-  "ru": "В «Мулен Руж»"
-},
+   "en": "At the Moulin Rouge",
+   "ru": "В «Мулен Руж»"
+  },
   "year": 1892,
   "query": "Toulouse-Lautrec Au Moulin Rouge painting 1892 Art Institute Chicago",
-  "file": "Henri de Toulouse-Lautrec - At the Moulin Rouge - Google Art Project.jpg"
-}
+  "file": "Henri de Toulouse-Lautrec - At the Moulin Rouge - Google Art Project.jpg",
+  "movement": "post"
+ }
 }
