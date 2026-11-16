@@ -537,7 +537,7 @@
   // ---------- AI helper ----------
   // Runs in the browser with the owner's own key (Google Gemini free tier, or Anthropic), stored only in their Telegram
   // cloud storage and this device. No key lives in the code or on any server.
-  const AI_KEY = "artolingo_ai_key", AI_MODEL = "artolingo_ai_model";
+  const AI_KEY = "artolingo_ai_key";
   let viewerId = null, aiKey = null, aiChat = [], aiBusy = false;
   function loadAiKey() {
     try { aiKey = localStorage.getItem(AI_KEY); } catch (e) {}
@@ -546,7 +546,7 @@
   }
   function saveAiKey(k) {
     aiKey = k || null;
-    try { k ? localStorage.setItem(AI_KEY, k) : localStorage.removeItem(AI_KEY); localStorage.removeItem(AI_MODEL); } catch (e) {}
+    try { k ? localStorage.setItem(AI_KEY, k) : localStorage.removeItem(AI_KEY); } catch (e) {}
     if (cloudOK()) { try { k ? tg.CloudStorage.setItem(AI_KEY, k, () => {}) : tg.CloudStorage.removeItem(AI_KEY, () => {}); } catch (e) {} }
   }
   function aiContext() {
@@ -579,20 +579,36 @@ Plain text only, no markdown headings or tables.
 What the user sees right now:
 ${aiContext()}`;
   }
-  async function aiPickGemini() {
-    try { const m = localStorage.getItem(AI_MODEL); if (m) return m; } catch (e) {}
-    let pick = "gemini-2.5-flash";
-    try {
-      const r = await fetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200", { headers: { "x-goog-api-key": aiKey } });
-      const j = await r.json();
-      const ok = (j.models || []).map(m => m.name.replace("models/", ""))
-        .filter((n, i) => /^gemini-\d/.test(n) && /flash/.test(n) && !/lite|image|tts|live|audio|exp|embed|thinking|8b/.test(n) && (j.models[i].supportedGenerationMethods || []).includes("generateContent"));
-      const ver = n => parseFloat((n.match(/gemini-(\d+(?:\.\d+)?)/) || [0, 0])[1]);
-      ok.sort((a, b) => (ver(b) - ver(a)) || (/preview/.test(a) - /preview/.test(b)) || (a.length - b.length));
-      if (ok.length) pick = ok[0];
-    } catch (e) {}
-    try { localStorage.setItem(AI_MODEL, pick); } catch (e) {}
-    return pick;
+  // Gemini: try stable models in order; move on if one is overloaded, missing or too slow.
+  const GEMINI_MODELS = ["gemini-3.5-flash", "gemini-3-flash-preview", "gemini-3.5-flash-lite", "gemini-flash-lite-latest", "gemini-flash-latest"];
+  async function aiGemini() {
+    let good = null; try { good = localStorage.getItem("artolingo_ai_model_ok"); } catch (e) {}
+    const order = good && GEMINI_MODELS.includes(good) ? [good, ...GEMINI_MODELS.filter(m => m !== good)] : GEMINI_MODELS;
+    let last = "";
+    for (const model of order) {
+      const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 20000);
+      try {
+        const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { method: "POST", signal: ctl.signal,
+          headers: { "content-type": "application/json", "x-goog-api-key": aiKey },
+          body: JSON.stringify({ systemInstruction: { parts: [{ text: aiSystem() }] },
+            contents: aiChat.map(m => ({ role: m.role === "assistant" ? "model" : "user", parts: [{ text: m.text }] })),
+            generationConfig: { maxOutputTokens: 2048, temperature: 0.6 } }) });
+        const j = await r.json().catch(() => ({}));
+        clearTimeout(timer);
+        if (r.status === 400 || r.status === 401 || r.status === 403) throw Object.assign(new Error((j.error && j.error.message) || r.status), { fatal: true });
+        if (!r.ok) { last = (j.error && j.error.message) || String(r.status); continue; }
+        const parts = (((j.candidates || [])[0] || {}).content || {}).parts || [];
+        const text = parts.filter(p => p.text && !p.thought).map(p => p.text).join("").trim();
+        if (!text) { last = "empty answer"; continue; }
+        try { localStorage.setItem("artolingo_ai_model_ok", model); } catch (e) {}
+        return text;
+      } catch (e) {
+        clearTimeout(timer);
+        if (e.fatal) throw e;
+        last = e.name === "AbortError" ? "timeout" : e.message;
+      }
+    }
+    throw new Error(state.lang === "ru" ? `Помощник сейчас перегружен, попробуйте через минуту. (${last})` : `The helper is busy right now, try again in a minute. (${last})`);
   }
   async function aiAsk() {
     if (aiKey.startsWith("sk-ant")) {
@@ -607,18 +623,7 @@ ${aiContext()}`;
       }
       throw new Error("model not found");
     }
-    const model = await aiPickGemini();
-    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { method: "POST",
-      headers: { "content-type": "application/json", "x-goog-api-key": aiKey },
-      body: JSON.stringify({ systemInstruction: { parts: [{ text: aiSystem() }] },
-        contents: aiChat.map(m => ({ role: m.role === "assistant" ? "model" : "user", parts: [{ text: m.text }] })),
-        generationConfig: { maxOutputTokens: 2048, temperature: 0.6 } }) });
-    const j = await r.json();
-    if (!r.ok) { if (r.status === 404) { try { localStorage.removeItem(AI_MODEL); } catch (e) {} } throw new Error((j.error && j.error.message) || r.status); }
-    const parts = (((j.candidates || [])[0] || {}).content || {}).parts || [];
-    const text = parts.filter(p => p.text && !p.thought).map(p => p.text).join("").trim();
-    if (!text) throw new Error("empty answer");
-    return text;
+    return aiGemini();
   }
   function openHelper() {
     const box = document.getElementById("ai");
@@ -686,7 +691,7 @@ ${aiContext()}`;
   // ---------- boot ----------
   // Telegram keeps the old page cached for a while after an update. On open, ask the server for the
   // current version (never cached); if it's newer than this code, reload once with a fresh URL.
-  const APP_VERSION = "9";
+  const APP_VERSION = "10";
   function checkForUpdate() {
     fetch("version.txt?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.text() : "").then(v => {
       v = v.trim();
@@ -700,7 +705,7 @@ ${aiContext()}`;
       if (!ALLOWED_USERS.includes(uid)) { app.innerHTML = `<div class="loading">🔒 Artolingo is private.<br><small>id: ${esc(uid || "none")}</small></div>`; return; }
     }
     if (tg) { try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {} }
-    const v = "?v=9";
+    const v = "?v=10";
     const [p, c, s, g] = await Promise.all([
       fetch("content/paintings.json" + v).then(r => r.json()),
       fetch("content/lessons.json" + v).then(r => r.json()),
