@@ -684,13 +684,23 @@ ${aiContext()}`;
   }
 
   // ---------- boot ----------
+  // Telegram keeps the old page cached for a while after an update. On open, ask the server for the
+  // current version (never cached); if it's newer than this code, reload once with a fresh URL.
+  const APP_VERSION = "9";
+  function checkForUpdate() {
+    fetch("version.txt?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.text() : "").then(v => {
+      v = v.trim();
+      if (v && v !== APP_VERSION && !location.search.includes("r=" + v)) location.replace(location.pathname + "?r=" + v + location.hash);
+    }).catch(() => {});
+  }
   async function boot() {
+    checkForUpdate();
     if (ALLOWED_USERS.length) {
       const uid = tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.id;
       if (!ALLOWED_USERS.includes(uid)) { app.innerHTML = `<div class="loading">🔒 Artolingo is private.<br><small>id: ${esc(uid || "none")}</small></div>`; return; }
     }
     if (tg) { try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {} }
-    const v = "?v=8";
+    const v = "?v=9";
     const [p, c, s, g] = await Promise.all([
       fetch("content/paintings.json" + v).then(r => r.json()),
       fetch("content/lessons.json" + v).then(r => r.json()),
