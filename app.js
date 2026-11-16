@@ -221,7 +221,9 @@
     home.appendChild(h(`<div class="footer-note">${esc(t().footer)}</div>`));
     const me = tg && tg.initDataUnsafe && tg.initDataUnsafe.user;
     home.appendChild(h(`<div class="footer-note" style="opacity:.5">Telegram id: ${esc(me ? me.id : "—")}</div>`));
+    home.appendChild(h(`<div class="footer-note fs-info" style="opacity:.5"></div>`));
     app.appendChild(home);
+    renderFsInfo();
   }
   function renderGlossary() {
     app.innerHTML = "";
@@ -534,6 +536,12 @@
     S = null;
   }
 
+  let fsInfo = "";
+  function renderFsInfo() {
+    const el = document.querySelector(".fs-info"); if (!el) return;
+    el.textContent = `app v${APP_VERSION} · Telegram ${tg ? tg.version + " " + tg.platform : "—"} · fullscreen: ${tg && tg.isFullscreen ? "yes" : (fsInfo || "no")}`;
+  }
+
   // ---------- AI helper ----------
   // Runs in the browser with the owner's own key (Google Gemini free tier, or Anthropic), stored only in their Telegram
   // cloud storage and this device. No key lives in the code or on any server.
@@ -691,7 +699,7 @@ ${aiContext()}`;
   // ---------- boot ----------
   // Telegram keeps the old page cached for a while after an update. On open, ask the server for the
   // current version (never cached); if it's newer than this code, reload once with a fresh URL.
-  const APP_VERSION = "11";
+  const APP_VERSION = "12";
   function checkForUpdate() {
     fetch("version.txt?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.text() : "").then(v => {
       v = v.trim();
@@ -708,10 +716,11 @@ ${aiContext()}`;
       try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {}
       // Full screen on phones (Bot API 8.0+), and stop a downward scroll from closing the app.
       try { if (tg.isVersionAtLeast("7.7") && tg.disableVerticalSwipes) tg.disableVerticalSwipes(); } catch (e) {}
-      try {
-        const mobile = ["ios", "android", "android_x"].includes(tg.platform);
-        if (mobile && tg.isVersionAtLeast("8.0") && tg.requestFullscreen && !tg.isFullscreen) tg.requestFullscreen();
-      } catch (e) {}
+      const mobile = ["ios", "android", "android_x"].includes(tg.platform);
+      const goFull = () => { try { if (mobile && tg.isVersionAtLeast("8.0") && tg.requestFullscreen && !tg.isFullscreen) tg.requestFullscreen(); } catch (e) { fsInfo = "error"; } };
+      try { tg.onEvent("fullscreenFailed", e => { fsInfo = "failed: " + ((e && e.error) || "?"); renderFsInfo(); }); tg.onEvent("fullscreenChanged", renderFsInfo); } catch (e) {}
+      goFull(); setTimeout(goFull, 600);
+      document.addEventListener("click", goFull, { once: true, capture: true }); // some clients only allow it after a tap
       const setTop = () => {
         const a = tg.safeAreaInset || {}, c = tg.contentSafeAreaInset || {};
         document.documentElement.style.setProperty("--top", `${(a.top || 0) + (c.top || 0)}px`);
@@ -720,7 +729,7 @@ ${aiContext()}`;
       setTop();
       try { ["safeAreaChanged", "contentSafeAreaChanged", "fullscreenChanged", "viewportChanged"].forEach(ev => tg.onEvent(ev, setTop)); } catch (e) {}
     }
-    const v = "?v=11";
+    const v = "?v=12";
     const [p, c, s, g] = await Promise.all([
       fetch("content/paintings.json" + v).then(r => r.json()),
       fetch("content/lessons.json" + v).then(r => r.json()),
