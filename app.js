@@ -188,6 +188,7 @@
   // ---------- home ----------
   function lessonUnlocked(i) { return i === 0 || !!state.done[course.lessons[i - 1].id]; }
   function renderHome() {
+    document.body.classList.remove("in-lesson");
     if (tg) { tg.BackButton.hide(); }
     document.documentElement.lang = state.lang;
     app.innerHTML = "";
@@ -267,6 +268,7 @@
   }
 
   function renderCard() {
+    document.body.classList.add("in-lesson");
     const item = S.items[S.i], c = item.card;
     app.innerHTML = "";
     const wrap = h(`<div class="lesson"><div class="lesson-top"><button class="close" aria-label="close">✕</button>
@@ -313,7 +315,7 @@
 
     if (c.type === "mcq" || c.type === "multi") {
       if (c.img) card.appendChild(picture(c.img, c.crop, !c.unseen && !c.crop));
-      if (c.imgs) { const pair = h(`<div class="pair"></div>`); c.imgs.forEach(id => pair.appendChild(picture(id, null, true))); card.appendChild(pair); }
+      if (c.imgs) { const pair = h(`<div class="pair stack"></div>`); c.imgs.forEach(id => pair.appendChild(picture(id, null, true))); card.appendChild(pair); }
       const multi = c.type === "multi";
       const need = multi ? c.answers.length : 1;
       if (multi) card.appendChild(h(`<div class="hint">${esc(t().pickTwo(need))}</div>`));
@@ -348,7 +350,9 @@
       const grid = h(`<div class="grid-pick n${shown.length}"></div>`);
       let picked = [];
       const tiles = shown.map(id => {
-        const b = h(`<button class="pick"><img src="${imgSrc(id)}" alt=""><span class="num hidden"></span><span class="lbl hidden">${esc(caption(id))}</span></button>`);
+        const letter = "ABCD"[shown.indexOf(id)];
+        const b = h(`<div class="pick" role="button" tabindex="0"><img src="${imgSrc(id)}" alt="" draggable="false"><span class="letter">${letter}</span><span class="num hidden"></span><button class="pick-zoom" aria-label="zoom">⤢</button><span class="lbl hidden">${esc(caption(id))}</span></div>`);
+        b.querySelector(".pick-zoom").onclick = e => { e.stopPropagation(); viewerId = id; openViewer(id, S.answered); };
         b.onclick = () => {
           if (S.answered) return;
           if (isOrder) { picked.includes(id) ? (picked = picked.filter(x => x !== id)) : picked.push(id); }
@@ -435,7 +439,7 @@
   }
   function setupViewer() {
     const v = document.getElementById("viewer"), stage = v.querySelector(".viewer-stage");
-    const close = () => { v.classList.add("hidden"); };
+    const close = () => { v.classList.add("hidden"); document.body.classList.remove("viewing"); };
     v.querySelector(".viewer-close").onclick = close;
     stage.addEventListener("pointerdown", e => {
       stage.setPointerCapture(e.pointerId);
@@ -491,6 +495,7 @@
     v.querySelector(".viewer-cap").textContent = withCap ? caption(id) : "";
     v.querySelector(".viewer-hint").textContent = t().zoomHint;
     v.classList.remove("hidden");
+    document.body.classList.add("viewing");
   }
 
   function next() {
@@ -500,6 +505,7 @@
   }
 
   function finish() {
+    document.body.classList.remove("in-lesson");
     if (tg) tg.BackButton.offClick(quitSession);
     const lesson = S.lesson, cp = lesson && lesson.checkpoint;
     const perfect = S.mistakes === 0;
@@ -684,7 +690,7 @@ ${aiContext()}`;
       if (!ALLOWED_USERS.includes(uid)) { app.innerHTML = `<div class="loading">🔒 Artolingo is private.<br><small>id: ${esc(uid || "none")}</small></div>`; return; }
     }
     if (tg) { try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {} }
-    const v = "?v=6";
+    const v = "?v=7";
     const [p, c, s, g] = await Promise.all([
       fetch("content/paintings.json" + v).then(r => r.json()),
       fetch("content/lessons.json" + v).then(r => r.json()),

@@ -162,3 +162,21 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .ai-setup h3 { margin: 0; }
 .ai-setup p { margin: 0; color: var(--text); }
 .ai-err { color: var(--bad); font-size: 14px; }
+
+/* big picture choices: one painting per row, whole painting visible */
+.grid-pick, .grid-pick.n2, .grid-pick.n3 { grid-template-columns: 1fr; gap: 14px; }
+.pick { display: block; width: 100%; background: #111; cursor: pointer; }
+.pick img, .grid-pick.n3 .pick img { width: 100%; height: auto; max-height: 52vh; object-fit: contain; background: #111; }
+.pick .letter { position: absolute; left: 8px; top: 8px; min-width: 30px; height: 30px; padding: 0 6px; border-radius: 999px; background: rgba(0,0,0,.6); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.pick.sel .letter, .pick.good .letter, .pick.bad .letter { display: none; }
+.pick .num { width: 30px; height: 30px; left: 8px; top: 8px; }
+.pick-zoom { position: absolute; right: 8px; top: 8px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(0,0,0,.6); color: #fff; font-size: 20px; }
+.pick .lbl { font-size: 14px; padding: 6px 10px; }
+.pick.sel { border-width: 4px; }
+.pair.stack { grid-template-columns: 1fr; }
+.pair.stack .pic img { height: auto; max-height: 45vh; object-fit: contain; }
+.card { padding-bottom: 24px; }
+/* in lessons the helper sits in the top bar, away from the answer buttons */
+body.in-lesson .ai-fab { top: calc(8px + env(safe-area-inset-top)); bottom: auto; right: 12px; width: 40px; height: 40px; font-size: 18px; }
+body.in-lesson .lesson-top { padding-right: 64px; }
+body.viewing .ai-fab, body.in-lesson.viewing .ai-fab { top: auto; bottom: calc(64px + env(safe-area-inset-bottom)); width: 44px; height: 44px; }
