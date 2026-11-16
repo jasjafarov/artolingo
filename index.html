@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
   <title>Artolingo</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
   <div id="app"><div class="loading">Artolingo</div></div>
-  <div id="viewer" class="viewer hidden"><img alt=""><div class="viewer-cap"></div></div>
+  <div id="viewer" class="viewer hidden"><div class="viewer-stage"><img class="viewer-img" alt="" draggable="false"></div><button class="viewer-close" aria-label="close">✕</button><div class="viewer-cap"></div><div class="viewer-hint"></div></div>
   <div id="sheet" class="sheet hidden"><div class="sheet-box"><div class="sheet-title"></div><div class="sheet-text"></div><button class="main-btn sheet-close">OK</button></div></div>
-  <script src="app.js?v=4"></script>
+  <button id="ai-fab" class="ai-fab hidden" aria-label="AI helper">✨</button>
+  <div id="ai" class="ai hidden"></div>
+  <script src="app.js?v=6"></script>
 </body>
 </html>
