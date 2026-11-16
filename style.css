@@ -1,4 +1,5 @@
 :root {
+  --top: 0px; --bot: 0px;
   --bg: #fbf8f3;
   --card: #ffffff;
   --text: #22201c;
@@ -25,7 +26,7 @@ html, body { margin: 0; background: var(--bg); color: var(--text);
 button { font: inherit; color: inherit; cursor: pointer; }
 .hidden { display: none !important; }
 .loading { padding: 40vh 0; text-align: center; color: var(--muted); }
-#app { max-width: 560px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+#app { max-width: 560px; margin: 0 auto; min-height: 100vh; padding-top: var(--top); display: flex; flex-direction: column; }
 
 /* top bar */
 .top { display: flex; align-items: center; gap: 14px; padding: 14px 16px 6px; }
@@ -92,7 +93,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .hint { color: var(--muted); font-size: 14px; margin: -6px 0 12px; }
 
 /* bottom */
-.bottom { position: sticky; bottom: 0; padding: 14px 16px calc(16px + env(safe-area-inset-bottom)); background: var(--bg); border-top: 1px solid transparent; }
+.bottom { position: sticky; bottom: 0; padding: 14px 16px calc(16px + max(var(--bot), env(safe-area-inset-bottom))); background: var(--bg); border-top: 1px solid transparent; }
 .bottom.good { background: var(--good-bg); }
 .bottom.bad { background: var(--bad-bg); }
 .fb-title { font-weight: 800; font-size: 18px; margin-bottom: 4px; }
@@ -115,10 +116,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .result .box span { color: var(--muted); font-size: 13px; }
 
 /* viewer */
-.viewer { position: fixed; inset: 0; background: #000; z-index: 10; display: flex; flex-direction: column; padding: env(safe-area-inset-top) 0 calc(10px + env(safe-area-inset-bottom)); }
+.viewer { position: fixed; inset: 0; background: #000; z-index: 10; display: flex; flex-direction: column; padding: max(var(--top), env(safe-area-inset-top)) 0 calc(10px + max(var(--bot), env(safe-area-inset-bottom))); }
 .viewer-stage { flex: 1; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; touch-action: none; }
 .viewer-img { max-width: 100%; max-height: 100%; object-fit: contain; transform-origin: center center; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; will-change: transform; }
-.viewer-close { position: absolute; top: calc(10px + env(safe-area-inset-top)); right: 12px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(255,255,255,.18); color: #fff; font-size: 20px; z-index: 2; }
+.viewer-close { position: absolute; top: calc(10px + max(var(--top), env(safe-area-inset-top))); right: 12px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(255,255,255,.18); color: #fff; font-size: 20px; z-index: 2; }
 .viewer-cap { color: #ddd; font-size: 14px; margin-top: 8px; text-align: center; padding: 0 16px; }
 .viewer-hint { color: #888; font-size: 12px; text-align: center; margin-top: 2px; }
 
@@ -142,7 +143,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .ai-fab { position: fixed; right: 14px; bottom: calc(96px + env(safe-area-inset-bottom)); z-index: 11; width: 52px; height: 52px; border-radius: 50%;
   border: 0; background: var(--accent); color: #fff; font-size: 24px; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
 .ai { position: fixed; inset: 0; z-index: 30; background: rgba(0,0,0,.45); display: flex; align-items: flex-end; justify-content: center; }
-.ai-panel { background: var(--bg); width: 100%; max-width: 560px; height: 85vh; border-radius: 18px 18px 0 0; display: flex; flex-direction: column; overflow: hidden; }
+.ai-panel { background: var(--bg); width: 100%; max-width: 560px; height: calc(92vh - var(--top)); border-radius: 18px 18px 0 0; display: flex; flex-direction: column; overflow: hidden; }
 .ai-head { display: flex; align-items: center; gap: 8px; padding: 14px 16px; border-bottom: 1px solid var(--line); }
 .ai-head .spacer { flex: 1; }
 .ai-link { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 3px 10px; font-size: 13px; }
@@ -177,6 +178,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .pair.stack .pic img { height: auto; max-height: 45vh; object-fit: contain; }
 .card { padding-bottom: 24px; }
 /* in lessons the helper sits in the top bar, away from the answer buttons */
-body.in-lesson .ai-fab { top: calc(8px + env(safe-area-inset-top)); bottom: auto; right: 12px; width: 40px; height: 40px; font-size: 18px; }
+body.in-lesson .ai-fab { top: calc(8px + max(var(--top), env(safe-area-inset-top))); bottom: auto; right: 12px; width: 40px; height: 40px; font-size: 18px; }
 body.in-lesson .lesson-top { padding-right: 64px; }
 body.viewing .ai-fab, body.in-lesson.viewing .ai-fab { top: auto; bottom: calc(64px + env(safe-area-inset-bottom)); width: 44px; height: 44px; }

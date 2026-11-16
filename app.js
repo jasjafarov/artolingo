@@ -691,7 +691,7 @@ ${aiContext()}`;
   // ---------- boot ----------
   // Telegram keeps the old page cached for a while after an update. On open, ask the server for the
   // current version (never cached); if it's newer than this code, reload once with a fresh URL.
-  const APP_VERSION = "10";
+  const APP_VERSION = "11";
   function checkForUpdate() {
     fetch("version.txt?t=" + Date.now(), { cache: "no-store" }).then(r => r.ok ? r.text() : "").then(v => {
       v = v.trim();
@@ -704,8 +704,23 @@ ${aiContext()}`;
       const uid = tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.id;
       if (!ALLOWED_USERS.includes(uid)) { app.innerHTML = `<div class="loading">🔒 Artolingo is private.<br><small>id: ${esc(uid || "none")}</small></div>`; return; }
     }
-    if (tg) { try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {} }
-    const v = "?v=10";
+    if (tg) {
+      try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {}
+      // Full screen on phones (Bot API 8.0+), and stop a downward scroll from closing the app.
+      try { if (tg.isVersionAtLeast("7.7") && tg.disableVerticalSwipes) tg.disableVerticalSwipes(); } catch (e) {}
+      try {
+        const mobile = ["ios", "android", "android_x"].includes(tg.platform);
+        if (mobile && tg.isVersionAtLeast("8.0") && tg.requestFullscreen && !tg.isFullscreen) tg.requestFullscreen();
+      } catch (e) {}
+      const setTop = () => {
+        const a = tg.safeAreaInset || {}, c = tg.contentSafeAreaInset || {};
+        document.documentElement.style.setProperty("--top", `${(a.top || 0) + (c.top || 0)}px`);
+        document.documentElement.style.setProperty("--bot", `${(a.bottom || 0) + (c.bottom || 0)}px`);
+      };
+      setTop();
+      try { ["safeAreaChanged", "contentSafeAreaChanged", "fullscreenChanged", "viewportChanged"].forEach(ev => tg.onEvent(ev, setTop)); } catch (e) {}
+    }
+    const v = "?v=11";
     const [p, c, s, g] = await Promise.all([
       fetch("content/paintings.json" + v).then(r => r.json()),
       fetch("content/lessons.json" + v).then(r => r.json()),
