@@ -1,0 +1,623 @@
+{
+ "movements": {
+  "imp": {
+   "en": "Impressionism",
+   "ru": "Импрессионизм"
+  },
+  "post": {
+   "en": "Post-Impressionism",
+   "ru": "Постимпрессионизм"
+  },
+  "acad": {
+   "en": "Academic art",
+   "ru": "Академизм"
+  },
+  "neo": {
+   "en": "Neoclassicism",
+   "ru": "Неоклассицизм"
+  },
+  "baroque": {
+   "en": "Baroque, Dutch Golden Age",
+   "ru": "Барокко, золотой век Голландии"
+  },
+  "expr": {
+   "en": "Symbolism, early Expressionism",
+   "ru": "Символизм, ранний экспрессионизм"
+  }
+ },
+ "terms": [
+  {
+   "id": "academy",
+   "term": {
+    "en": "Academy",
+    "ru": "Академия"
+   },
+   "match": {
+    "en": [
+     "Academy",
+     "academic"
+    ],
+    "ru": [
+     "академи",
+     "академическ"
+    ]
+   },
+   "def": {
+    "en": "The Academy of Fine Arts in Paris: the official, state-backed authority on art. It trained painters and set the rules of \"good\" painting: smooth finish, careful drawing, noble subjects. \"Academic\" art means art made by those rules.",
+    "ru": "Академия изящных искусств в Париже: главный официальный авторитет в искусстве при государстве. Она учила художников и задавала правила «хорошей» живописи: гладкая поверхность, точный рисунок, возвышенные сюжеты. «Академическое» искусство (академизм) это искусство по этим правилам."
+   }
+  },
+  {
+   "id": "salon",
+   "term": {
+    "en": "Salon",
+    "ru": "Салон"
+   },
+   "match": {
+    "en": [
+     "Salon"
+    ],
+    "ru": [
+     "салон"
+    ]
+   },
+   "def": {
+    "en": "The official art exhibition in Paris, held every year or two. Thousands of paintings, huge crowds. Getting in was the main road to fame and sales. Not to be confused with a beauty salon!",
+    "ru": "Официальная художественная выставка в Париже, раз в год или два. Тысячи картин, огромные толпы. Попасть туда было главной дорогой к славе и продажам. Не путать с салоном красоты!"
+   }
+  },
+  {
+   "id": "jury",
+   "term": {
+    "en": "Salon jury",
+    "ru": "Жюри Салона"
+   },
+   "match": {
+    "en": [
+     "jury"
+    ],
+    "ru": [
+     "жюри"
+    ]
+   },
+   "def": {
+    "en": "The panel of senior academic artists who decided which paintings were allowed into the Salon and who won medals. They favored polished, \"finished\" paintings of myths and history.",
+    "ru": "Комиссия из маститых академических художников, которая решала, какие картины пустить на Салон и кому дать медали. Они любили гладкие, «законченные» картины на мифологические и исторические сюжеты."
+   }
+  },
+  {
+   "id": "refuses",
+   "term": {
+    "en": "Salon of the Rejected",
+    "ru": "Салон отверженных"
+   },
+   "match": {
+    "en": [
+     "Salon of the Rejected",
+     "Salon des Refusés"
+    ],
+    "ru": [
+     "салон отверженных"
+    ]
+   },
+   "def": {
+    "en": "A show of paintings the Salon jury turned down, allowed by Napoleon III in 1863. People came to mock, but it showed that new art could exist outside the official system.",
+    "ru": "Выставка картин, отвергнутых жюри Салона, которую разрешил Наполеон III в 1863 году. Публика приходила посмеяться, но стало ясно: новое искусство может жить и вне официальной системы."
+   }
+  },
+  {
+   "id": "imp",
+   "term": {
+    "en": "Impressionism",
+    "ru": "Импрессионизм"
+   },
+   "match": {
+    "en": [
+     "Impressionis"
+    ],
+    "ru": [
+     "импрессионис"
+    ]
+   },
+   "def": {
+    "en": "A movement in France, roughly 1867 to 1886 (eight group shows from 1874). Quick, bright paintings of a moment: light, air, modern life, visible brushstrokes, often painted outdoors. Monet, Renoir, Degas, Pissarro, Morisot, Sisley, Cassatt.",
+    "ru": "Направление во Франции, примерно 1867–1886 (восемь общих выставок с 1874 года). Быстрые, светлые картины одного мгновения: свет, воздух, современная жизнь, видимые мазки, часто на открытом воздухе. Моне, Ренуар, Дега, Писсарро, Моризо, Сислей, Кассат."
+   }
+  },
+  {
+   "id": "post",
+   "term": {
+    "en": "Post-Impressionism",
+    "ru": "Постимпрессионизм"
+   },
+   "match": {
+    "en": [
+     "Post-Impressionis"
+    ],
+    "ru": [
+     "постимпрессионис"
+    ]
+   },
+   "def": {
+    "en": "\"After Impressionism\", roughly 1886 to 1905. Painters who kept the bright colors but added structure, science, symbols or emotion: Seurat, Cézanne, Gauguin, Van Gogh, Toulouse-Lautrec. The name was invented by critic Roger Fry in 1910.",
+    "ru": "«После импрессионизма», примерно 1886–1905. Художники, сохранившие яркий цвет, но добавившие структуру, науку, символы или чувства: Сёра, Сезанн, Гоген, Ван Гог, Тулуз-Лотрек. Название придумал критик Роджер Фрай в 1910 году."
+   }
+  },
+  {
+   "id": "neo",
+   "term": {
+    "en": "Neoclassicism",
+    "ru": "Неоклассицизм"
+   },
+   "match": {
+    "en": [
+     "Neoclassic"
+    ],
+    "ru": [
+     "неоклассицизм"
+    ]
+   },
+   "def": {
+    "en": "A style from about 1760 to 1830 that copied ancient Greece and Rome: crisp drawing, heroic poses, moral stories. David and Ingres. It was the Academy's model of perfect painting.",
+    "ru": "Стиль примерно 1760–1830, подражавший Древней Греции и Риму: чёткий рисунок, героические позы, назидательные сюжеты. Давид и Энгр. Для Академии это был образец идеальной живописи."
+   }
+  },
+  {
+   "id": "baroque",
+   "term": {
+    "en": "Baroque",
+    "ru": "Барокко"
+   },
+   "match": {
+    "en": [
+     "Baroque"
+    ],
+    "ru": [
+     "барокко"
+    ]
+   },
+   "def": {
+    "en": "European art of the 1600s: drama, deep shadows, strong contrasts of light and dark. Rembrandt is a Dutch master of this era, the Dutch Golden Age.",
+    "ru": "Европейское искусство XVII века: драма, глубокие тени, сильные контрасты света и тьмы. Рембрандт мастер этой эпохи, золотого века Голландии."
+   }
+  },
+  {
+   "id": "oldmasters",
+   "term": {
+    "en": "Old Masters",
+    "ru": "Старые мастера"
+   },
+   "match": {
+    "en": [
+     "Old Masters"
+    ],
+    "ru": [
+     "старые мастера",
+     "старых мастеров"
+    ]
+   },
+   "def": {
+    "en": "The great European painters from about 1300 to 1800, like Leonardo, Rembrandt, Vermeer. The models the Academy wanted everyone to follow.",
+    "ru": "Великие европейские художники примерно 1300–1800 годов: Леонардо, Рембрандт, Вермеер. Образцы, которым Академия велела следовать."
+   }
+  },
+  {
+   "id": "plein",
+   "term": {
+    "en": "Plein air",
+    "ru": "Пленэр"
+   },
+   "match": {
+    "en": [
+     "plein air",
+     "outdoors"
+    ],
+    "ru": [
+     "пленэр",
+     "на открытом воздухе",
+     "на улице"
+    ]
+   },
+   "def": {
+    "en": "French for \"in the open air\": painting outside, in front of the real scene, instead of in a studio. Paint in tubes (invented 1841) made it practical.",
+    "ru": "От французского «на открытом воздухе»: писать на улице, прямо перед натурой, а не в мастерской. Это стало удобно, когда появились краски в тюбиках (1841)."
+   }
+  },
+  {
+   "id": "stroke",
+   "term": {
+    "en": "Brushstroke",
+    "ru": "Мазок"
+   },
+   "match": {
+    "en": [
+     "brushstroke",
+     "brushwork",
+     "strokes",
+     "stroke",
+     "dabs"
+    ],
+    "ru": [
+     "мазк",
+     "мазок"
+    ]
+   },
+   "def": {
+    "en": "A single touch of the brush. Academic painters blended them away until the surface was smooth. Impressionists left them visible, so you can see how the picture was made.",
+    "ru": "Одно касание кисти. Академисты растушёвывали мазки до гладкой поверхности. Импрессионисты оставляли их видимыми, и видно, как сделана картина."
+   }
+  },
+  {
+   "id": "myth",
+   "term": {
+    "en": "Myth",
+    "ru": "Миф"
+   },
+   "match": {
+    "en": [
+     "myth"
+    ],
+    "ru": [
+     "миф"
+    ]
+   },
+   "def": {
+    "en": "Ancient Greek and Roman legends about gods, goddesses and heroes, like Venus, goddess of love. The Academy's favorite subject.",
+    "ru": "Древнегреческие и римские легенды о богах, богинях и героях, например о Венере, богине любви. Любимый сюжет Академии."
+   }
+  },
+  {
+   "id": "genres",
+   "term": {
+    "en": "Hierarchy of genres",
+    "ru": "Иерархия жанров"
+   },
+   "match": {
+    "en": [
+     "hierarchy of genres",
+     "ranked"
+    ],
+    "ru": [
+     "иерархия жанров",
+     "иерархи"
+    ]
+   },
+   "def": {
+    "en": "The Academy's ranking of subjects: history painting at the top, then portrait, everyday scenes, landscape, and still life at the bottom.",
+    "ru": "Рейтинг сюжетов в Академии: историческая живопись наверху, затем портрет, бытовые сцены, пейзаж и натюрморт в самом низу."
+   }
+  },
+  {
+   "id": "history",
+   "term": {
+    "en": "History painting",
+    "ru": "Историческая живопись"
+   },
+   "match": {
+    "en": [
+     "history painting"
+    ],
+    "ru": [
+     "историческая живопись",
+     "исторической живопис"
+    ]
+   },
+   "def": {
+    "en": "Big paintings of scenes from history, the Bible or myths, meant to teach and impress. The highest rank at the Academy.",
+    "ru": "Большие картины на сюжеты из истории, Библии или мифов, чтобы поучать и впечатлять. Высший жанр в Академии."
+   }
+  },
+  {
+   "id": "still",
+   "term": {
+    "en": "Still life",
+    "ru": "Натюрморт"
+   },
+   "match": {
+    "en": [
+     "still life"
+    ],
+    "ru": [
+     "натюрморт"
+    ]
+   },
+   "def": {
+    "en": "A painting of objects that don't move: fruit, flowers, bottles, dishes. Cézanne's apples are a famous example.",
+    "ru": "Картина с неподвижными предметами: фрукты, цветы, бутылки, посуда. Яблоки Сезанна знаменитый пример."
+   }
+  },
+  {
+   "id": "landscape",
+   "term": {
+    "en": "Landscape",
+    "ru": "Пейзаж"
+   },
+   "match": {
+    "en": [
+     "landscape"
+    ],
+    "ru": [
+     "пейзаж"
+    ]
+   },
+   "def": {
+    "en": "A painting of nature or a view: fields, rivers, sea, sky. Low-ranked by the Academy, a favorite of the Impressionists.",
+    "ru": "Картина с природой или видом: поля, реки, море, небо. Академия ставила его низко, импрессионисты его обожали."
+   }
+  },
+  {
+   "id": "modern",
+   "term": {
+    "en": "Modern life",
+    "ru": "Современная жизнь"
+   },
+   "match": {
+    "en": [
+     "modern life"
+    ],
+    "ru": [
+     "современная жизнь",
+     "современной жизн"
+    ]
+   },
+   "def": {
+    "en": "Scenes of the painters' own time: city streets, cafés, dance halls, trains, leisure. A new and shocking subject for serious art in the 1870s.",
+    "ru": "Сцены своего времени: улицы, кафе, танцы, поезда, отдых. В 1870-х это был новый и шокирующий сюжет для серьёзного искусства."
+   }
+  },
+  {
+   "id": "napoleon",
+   "term": {
+    "en": "Napoleon III",
+    "ru": "Наполеон III"
+   },
+   "match": {
+    "en": [
+     "Napoleon III"
+    ],
+    "ru": [
+     "наполеон"
+    ]
+   },
+   "def": {
+    "en": "Emperor of France from 1852 to 1870, nephew of the famous Napoleon. He rebuilt Paris, bought Cabanel's Venus and allowed the Salon of the Rejected.",
+    "ru": "Император Франции с 1852 по 1870 год, племянник знаменитого Наполеона. Перестроил Париж, купил «Венеру» Кабанеля и разрешил Салон отверженных."
+   }
+  },
+  {
+   "id": "haussmann",
+   "term": {
+    "en": "Haussmann",
+    "ru": "Осман"
+   },
+   "match": {
+    "en": [
+     "Haussmann"
+    ],
+    "ru": [
+     "осман"
+    ]
+   },
+   "def": {
+    "en": "Baron Haussmann, the official who rebuilt Paris for Napoleon III in the 1850s and 60s: wide boulevards, parks, the elegant stone buildings Paris is known for today.",
+    "ru": "Барон Осман, чиновник, перестроивший Париж для Наполеона III в 1850–60-х: широкие бульвары, парки, те самые элегантные каменные дома, которыми Париж известен сегодня."
+   }
+  },
+  {
+   "id": "montmartre",
+   "term": {
+    "en": "Montmartre",
+    "ru": "Монмартр"
+   },
+   "match": {
+    "en": [
+     "Montmartre"
+    ],
+    "ru": [
+     "монмартр"
+    ]
+   },
+   "def": {
+    "en": "A hill in the north of Paris, then a cheap village-like area with windmills, cafés and dance halls. Home to many artists.",
+    "ru": "Холм на севере Парижа, тогда дешёвый район, похожий на деревню, с мельницами, кафе и танцзалами. Здесь жили многие художники."
+   }
+  },
+  {
+   "id": "japonisme",
+   "term": {
+    "en": "Japonisme",
+    "ru": "Японизм"
+   },
+   "match": {
+    "en": [
+     "Japonisme",
+     "Japanese woodblock",
+     "woodblock"
+    ],
+    "ru": [
+     "японизм",
+     "японск"
+    ]
+   },
+   "def": {
+    "en": "The Paris craze for Japanese art from the 1860s, especially woodblock prints: flat colors, bold outlines, unusual angles, figures cut off at the edge. It inspired Degas, Monet, Van Gogh and many others.",
+    "ru": "Мода на японское искусство в Париже с 1860-х, особенно на гравюры: плоский цвет, смелые контуры, необычные ракурсы, фигуры, обрезанные краем. Это вдохновляло Дега, Моне, Ван Гога и многих других."
+   }
+  },
+  {
+   "id": "chiaro",
+   "term": {
+    "en": "Chiaroscuro",
+    "ru": "Светотень (кьяроскуро)"
+   },
+   "match": {
+    "en": [
+     "chiaroscuro"
+    ],
+    "ru": [
+     "кьяроскуро",
+     "светотен"
+    ]
+   },
+   "def": {
+    "en": "Italian for \"light-dark\": strong contrast between light and deep shadow to make shapes look solid. Rembrandt's specialty.",
+    "ru": "По-итальянски «свет-тьма»: сильный контраст света и глубокой тени, чтобы формы казались объёмными. Конёк Рембрандта."
+   }
+  },
+  {
+   "id": "broken",
+   "term": {
+    "en": "Broken color",
+    "ru": "Раздельный мазок"
+   },
+   "match": {
+    "en": [
+     "broken color"
+    ],
+    "ru": [
+     "раздельный мазок",
+     "раздельн"
+    ]
+   },
+   "def": {
+    "en": "Putting small strokes of pure, unmixed color next to each other so the eye mixes them from a distance. The colors stay brighter than if mixed on the palette.",
+    "ru": "Мазки чистого, несмешанного цвета кладут рядом, и глаз смешивает их на расстоянии. Цвета остаются ярче, чем при смешивании на палитре."
+   }
+  },
+  {
+   "id": "compl",
+   "term": {
+    "en": "Complementary colors",
+    "ru": "Дополнительные цвета"
+   },
+   "match": {
+    "en": [
+     "complementary"
+    ],
+    "ru": [
+     "дополнительн"
+    ]
+   },
+   "def": {
+    "en": "Pairs of colors opposite each other on the color wheel: blue and orange, red and green, yellow and violet. Side by side they make each other look stronger.",
+    "ru": "Пары цветов напротив друг друга на цветовом круге: синий и оранжевый, красный и зелёный, жёлтый и фиолетовый. Рядом они усиливают друг друга."
+   }
+  },
+  {
+   "id": "palette",
+   "term": {
+    "en": "Palette",
+    "ru": "Палитра"
+   },
+   "match": {
+    "en": [
+     "palette"
+    ],
+    "ru": [
+     "палитр"
+    ]
+   },
+   "def": {
+    "en": "The board where a painter mixes paint. Also the set of colors a painter uses: a \"bright palette\" means mostly light, vivid colors.",
+    "ru": "Дощечка, на которой художник смешивает краски. А ещё набор цветов, которыми он пользуется: «яркая палитра» значит в основном светлые, сочные цвета."
+   }
+  },
+  {
+   "id": "pointillism",
+   "term": {
+    "en": "Pointillism",
+    "ru": "Пуантилизм"
+   },
+   "match": {
+    "en": [
+     "pointillis",
+     "dot"
+    ],
+    "ru": [
+     "пуантилиз",
+     "точк"
+    ]
+   },
+   "def": {
+    "en": "Painting with tiny dots of pure color that blend in the eye, based on the color science of the time. Invented by Georges Seurat in the 1880s.",
+    "ru": "Живопись крошечными точками чистого цвета, которые смешиваются в глазу; основана на науке о цвете того времени. Придумал Жорж Сёра в 1880-х."
+   }
+  },
+  {
+   "id": "outline",
+   "term": {
+    "en": "Outline",
+    "ru": "Контур"
+   },
+   "match": {
+    "en": [
+     "outline"
+    ],
+    "ru": [
+     "контур"
+    ]
+   },
+   "def": {
+    "en": "A drawn line around a shape. Impressionists avoided them (nature has no lines); Gauguin, Van Gogh and Lautrec used dark outlines, like Japanese prints.",
+    "ru": "Линия вокруг формы. Импрессионисты их избегали (в природе линий нет); Гоген, Ван Гог и Лотрек обводили формы тёмным контуром, как в японских гравюрах."
+   }
+  },
+  {
+   "id": "expr",
+   "term": {
+    "en": "Expressionism",
+    "ru": "Экспрессионизм"
+   },
+   "match": {
+    "en": [
+     "Expressionis"
+    ],
+    "ru": [
+     "экспрессионис"
+    ]
+   },
+   "def": {
+    "en": "Art of the early 1900s that distorts color and shape to show feelings, often anxiety or intensity. Grew out of Van Gogh and Munch.",
+    "ru": "Искусство начала XX века, которое искажает цвет и форму, чтобы передать чувства, часто тревогу и напряжение. Выросло из Ван Гога и Мунка."
+   }
+  },
+  {
+   "id": "canvas",
+   "term": {
+    "en": "Canvas",
+    "ru": "Холст"
+   },
+   "match": {
+    "en": [
+     "canvas"
+    ],
+    "ru": [
+     "холст"
+    ]
+   },
+   "def": {
+    "en": "Strong cloth stretched on a wooden frame, the usual surface for oil paintings.",
+    "ru": "Прочная ткань, натянутая на деревянную раму, обычная основа для картин маслом."
+   }
+  },
+  {
+   "id": "asylum",
+   "term": {
+    "en": "Asylum",
+    "ru": "Лечебница"
+   },
+   "match": {
+    "en": [
+     "asylum"
+    ],
+    "ru": [
+     "лечебниц"
+    ]
+   },
+   "def": {
+    "en": "An old word for a psychiatric hospital. Van Gogh stayed in one at Saint-Rémy in 1889 to 1890 and kept painting there.",
+    "ru": "Психиатрическая больница. Ван Гог провёл в такой в Сен-Реми 1889–1890 годы и продолжал там писать."
+   }
+  }
+ ]
+}

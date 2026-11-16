@@ -23,7 +23,9 @@
       cpPass: "Checkpoint passed! You can tell the two movements apart.", cpFail: "Almost. Try again after a review.",
       zoom: "zoomed in", order: "Which came first", locked: "Finish the previous lesson first",
       footer: "Missed cards come back after 1, 3, 7 and 21 days.", reviewDone: "Review done!",
-      quit: "Quit this lesson? Progress in it will be lost."
+      quit: "Quit this lesson? Progress in it will be lost.",
+      intro: "Background", skip: "Skip intro ›", glossary: "Glossary", glossarySub: "Art words explained simply",
+      tapWords: "Tip: tap underlined words to see what they mean.", lessonsN: n => `${n} lessons + checkpoint`, close: "Close"
     },
     ru: {
       review: "Повторение", reviewDue: n => `Карточек к повторению: ${n}`, reviewNone: "Сегодня повторять нечего",
@@ -35,11 +37,13 @@
       cpPass: "Проверка пройдена! Вы различаете два направления.", cpFail: "Почти. Повторите и попробуйте снова.",
       zoom: "крупный план", order: "Что раньше", locked: "Сначала пройдите предыдущий урок",
       footer: "Ошибки возвращаются через 1, 3, 7 и 21 день.", reviewDone: "Повторение закончено!",
-      quit: "Выйти из урока? Прогресс в нём не сохранится."
+      quit: "Выйти из урока? Прогресс в нём не сохранится.",
+      intro: "Предыстория", skip: "Пропустить ›", glossary: "Словарик", glossarySub: "Слова из мира искусства простыми словами",
+      tapWords: "Совет: нажмите на подчёркнутое слово, чтобы узнать, что оно значит.", lessonsN: n => `${n} уроков + проверка`, close: "Закрыть"
     }
   };
 
-  let paintings = {}, course = null, state = null;
+  let paintings = {}, course = null, state = null, glossary = { terms: [], movements: {} }, termRe = {};
   const app = document.getElementById("app");
 
   // ---------- helpers ----------
@@ -52,6 +56,45 @@
   const caption = id => { const p = paintings[id]; return p ? `${L(p.artist)}, ${L(p.title)} (${p.year})` : id; };
   const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
   const haptic = kind => { try { tg && tg.HapticFeedback.notificationOccurred(kind); } catch (e) {} };
+  const movementOf = id => { const p = paintings[id]; return p && glossary.movements[p.movement] ? L(glossary.movements[p.movement]) : ""; };
+  const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  function buildTermRe() {
+    ["en", "ru"].forEach(lang => {
+      const pairs = [];
+      glossary.terms.forEach(g => (g.match[lang] || []).forEach(m => pairs.push([m.toLowerCase(), g.id])));
+      pairs.sort((a, b) => b[0].length - a[0].length);
+      termRe[lang] = { re: new RegExp(`(^|[^\\p{L}])(${pairs.map(p => reEsc(p[0])).join("|")})(\\p{L}*)`, "giu"), map: new Map(pairs) };
+    });
+  }
+  // Escapes text and underlines glossary words (first time each term appears) so they can be tapped.
+  function rich(str) {
+    const tr = termRe[state.lang]; str = String(str || "");
+    if (!tr || !tr.map.size) return esc(str);
+    const seen = new Set(); let out = "", last = 0, m;
+    tr.re.lastIndex = 0;
+    while ((m = tr.re.exec(str))) {
+      const id = tr.map.get(m[2].toLowerCase()), start = m.index + m[1].length;
+      if (!id || seen.has(id)) continue;
+      seen.add(id);
+      out += esc(str.slice(last, start)) + `<span class="term" data-g="${id}">${esc(m[2] + m[3])}</span>`;
+      last = start + m[2].length + m[3].length;
+    }
+    return out + esc(str.slice(last));
+  }
+  function showTerm(id) {
+    const g = glossary.terms.find(x => x.id === id); if (!g) return;
+    const sheet = document.getElementById("sheet");
+    sheet.querySelector(".sheet-title").textContent = L(g.term);
+    sheet.querySelector(".sheet-text").textContent = L(g.def);
+    sheet.querySelector(".sheet-close").textContent = t().close;
+    sheet.classList.remove("hidden");
+  }
+  document.addEventListener("click", e => {
+    const el = e.target.closest && e.target.closest(".term");
+    if (el) { e.stopPropagation(); showTerm(el.dataset.g); return; }
+    const sheet = document.getElementById("sheet");
+    if (sheet && !sheet.classList.contains("hidden") && (e.target === sheet || e.target.closest(".sheet-close"))) sheet.classList.add("hidden");
+  }, true);
   const h = (html) => { const d = document.createElement("div"); d.innerHTML = html.trim(); return d.firstChild; };
 
   // ---------- storage (Telegram cloud + local) ----------
@@ -139,13 +182,16 @@
     app.appendChild(topBar());
     const home = h(`<div class="home">
       <div class="unit-title">${esc(L(course.unit.title))}</div>
-      <div class="unit-sub">${course.lessons.length - 1} × 9 + ${esc(L(course.lessons[course.lessons.length - 1].title)).toLowerCase()}</div></div>`);
+      <div class="unit-sub">${esc(t().lessonsN(course.lessons.length - 1))}</div></div>`);
     const doneToday = state.lastDay === today();
     home.appendChild(h(`<div class="goal">${doneToday ? "✅" : "🎯"} <span>${esc(doneToday ? t().goalDone : t().goalTodo)}</span></div>`));
     const due = dueReviews();
     const rb = h(`<button class="review-btn ${due.length ? "" : "empty"}">🔁 <span><b>${esc(t().review)}</b><br>${esc(due.length ? t().reviewDue(due.length) : t().reviewNone)}</span></button>`);
     if (due.length) rb.onclick = () => startSession(null);
     home.appendChild(rb);
+    const gb = h(`<button class="review-btn glossary-btn">📖 <span><b>${esc(t().glossary)}</b><br>${esc(t().glossarySub)}</span></button>`);
+    gb.onclick = renderGlossary;
+    home.appendChild(gb);
     let nextMarked = false;
     course.lessons.forEach((lesson, i) => {
       const open = lessonUnlocked(i), done = state.done[lesson.id];
@@ -164,6 +210,20 @@
     home.appendChild(h(`<div class="footer-note" style="opacity:.5">Telegram id: ${esc(me ? me.id : "—")}</div>`));
     app.appendChild(home);
   }
+  function renderGlossary() {
+    app.innerHTML = "";
+    const back = () => { if (tg) tg.BackButton.offClick(back); renderHome(); };
+    if (tg) { tg.BackButton.show(); tg.BackButton.onClick(back); }
+    const page = h(`<div class="home"><div class="lesson-top" style="padding:0 0 8px"><button class="close" aria-label="back">←</button>
+      <div class="unit-title" style="margin:0">📖 ${esc(t().glossary)}</div></div><div class="unit-sub">${esc(t().glossarySub)}</div></div>`);
+    page.querySelector(".close").onclick = back;
+    const coll = new Intl.Collator(state.lang);
+    glossary.terms.slice().sort((a, b) => coll.compare(L(a.term), L(b.term))).forEach(g => {
+      page.appendChild(h(`<div class="gloss"><b>${esc(L(g.term))}</b><p>${esc(L(g.def))}</p></div>`));
+    });
+    app.appendChild(page);
+    window.scrollTo(0, 0);
+  }
   function toast(msg) { if (tg && tg.showAlert) { try { tg.showAlert(msg); return; } catch (e) {} } console.log(msg); }
 
   // ---------- session ----------
@@ -173,12 +233,14 @@
     let items;
     if (lesson) {
       items = lesson.cards.map((c, i) => ({ key: `${lesson.id}:${i}`, card: c, review: false }));
+      const intro = (lesson.intro || []).map((c, i) => ({ key: `${lesson.id}:intro${i}`, card: c, review: false, intro: true, n: i + 1, of: lesson.intro.length }));
       if (!lesson.checkpoint && course.lessons.indexOf(lesson) > 0) {
         const own = new Set(items.map(x => x.key));
         const rev = dueReviews().filter(k => !own.has(k)).slice(0, MAX_REVIEW_IN_LESSON)
           .map(k => ({ key: k, card: cardByKey(k), review: true }));
         items.splice(1, 0, ...rev);
       }
+      items = intro.concat(items);
     } else {
       items = dueReviews().slice(0, MAX_REVIEW_SESSION).map(k => ({ key: k, card: cardByKey(k), review: true }));
     }
@@ -204,19 +266,35 @@
     wrap.appendChild(card); wrap.appendChild(bottom); app.appendChild(wrap);
     window.scrollTo(0, 0);
 
-    const tag = item.review ? t().reviewTag : S.lesson && S.lesson.checkpoint ? t().checkpoint
+    const tag = item.intro ? `${t().intro} · ${item.n}/${item.of}` : item.review ? t().reviewTag : S.lesson && S.lesson.checkpoint ? t().checkpoint
       : c.type === "story" ? t().story : c.unseen ? t().unseen : c.type === "order" ? t().order : c.crop ? t().lookCloser : "";
     if (tag) card.appendChild(h(`<div class="tag">${esc(tag)}</div>`));
 
-    if (c.type === "story") {
-      card.appendChild(picture(c.img, null, true));
-      card.appendChild(h(`<p class="story-text">${esc(L(c.text))}</p>`));
+    if (c.type === "intro") {
+      card.appendChild(h(`<div class="intro-emoji">${esc(c.emoji || "🎨")}</div>`));
+      card.appendChild(h(`<h2 class="intro-title">${esc(L(c.title))}</h2>`));
+      if (c.img) card.appendChild(picture(c.img, null, true));
+      card.appendChild(h(`<p class="story-text">${rich(L(c.text))}</p>`));
+      if (item.n === 1 && S.lesson && S.lesson.id === course.lessons[0].id) card.appendChild(h(`<div class="hint">💡 ${esc(t().tapWords)}</div>`));
+      if (S.lesson && state.done[S.lesson.id]) {
+        const sk = h(`<button class="skip">${esc(t().skip)}</button>`);
+        sk.onclick = () => { while (S.i < S.items.length - 1 && S.items[S.i].intro) S.i++; renderCard(); };
+        card.appendChild(sk);
+      }
       btn.textContent = t().cont;
       btn.onclick = next;
       return;
     }
 
-    card.appendChild(h(`<p class="q">${esc(L(c.q))}</p>`));
+    if (c.type === "story") {
+      card.appendChild(picture(c.img, null, true));
+      card.appendChild(h(`<p class="story-text">${rich(L(c.text))}</p>`));
+      btn.textContent = t().cont;
+      btn.onclick = next;
+      return;
+    }
+
+    card.appendChild(h(`<p class="q">${rich(L(c.q))}</p>`));
     let check; // returns true/false
     let reveal; // marks correct/wrong in UI
     let correctText = "";
@@ -297,7 +375,9 @@
       fb.classList.remove("hidden");
       bottom.classList.add(right ? "good" : "bad");
       fb.querySelector(".fb-title").textContent = right ? t().correct : t().wrong;
-      fb.querySelector(".fb-text").innerHTML = (right ? "" : `<b>${esc(t().answerWas)}</b> ${esc(correctText)}<br>`) + esc(L(c.explain));
+      const ids = c.img ? [c.img] : (c.imgs || []);
+      const facts = ids.filter(id => paintings[id]).map(id => `<div class="fact">🖼 <b>${esc(L(paintings[id].artist))}</b>, ${esc(L(paintings[id].title))}, ${paintings[id].year}${movementOf(id) ? ` · <i>${rich(movementOf(id))}</i>` : ""}</div>`).join("");
+      fb.querySelector(".fb-text").innerHTML = (right ? "" : `<b>${esc(t().answerWas)}</b> ${esc(correctText)}<br>`) + rich(L(c.explain)) + (facts ? `<div class="facts">${facts}</div>` : "");
       haptic(right ? "success" : "error");
       if (!item.retried) { S.scored++; if (right) S.right++; else S.mistakes++; recordAnswer(item.key, right, item.review); }
       if (!right && !item.retried && !(S.lesson && S.lesson.checkpoint)) S.items.push(Object.assign({}, item, { retried: true })); // try again at the end, Duolingo-style
@@ -372,12 +452,15 @@
       if (!ALLOWED_USERS.includes(uid)) { app.innerHTML = `<div class="loading">🔒 Artolingo is private.<br><small>id: ${esc(uid || "none")}</small></div>`; return; }
     }
     if (tg) { try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {} }
-    const [p, c, s] = await Promise.all([
-      fetch("content/paintings.json").then(r => r.json()),
-      fetch("content/lessons.json").then(r => r.json()),
-      loadState()
+    const v = "?v=4";
+    const [p, c, s, g] = await Promise.all([
+      fetch("content/paintings.json" + v).then(r => r.json()),
+      fetch("content/lessons.json" + v).then(r => r.json()),
+      loadState(),
+      fetch("content/glossary.json" + v).then(r => r.json()).catch(() => null)
     ]);
-    paintings = p; course = c; state = s;
+    paintings = p; course = c; state = s; if (g) glossary = g;
+    buildTermRe();
     if (tg && tg.colorScheme === "dark") document.documentElement.style.colorScheme = "dark";
     renderHome();
   }
