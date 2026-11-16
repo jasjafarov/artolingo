@@ -25,7 +25,13 @@
       footer: "Missed cards come back after 1, 3, 7 and 21 days.", reviewDone: "Review done!",
       quit: "Quit this lesson? Progress in it will be lost.",
       intro: "Background", skip: "Skip intro ›", glossary: "Glossary", glossarySub: "Art words explained simply",
-      tapWords: "Tip: tap underlined words to see what they mean.", lessonsN: n => `${n} lessons + checkpoint`, close: "Close"
+      tapWords: "Tip: tap underlined words to see what they mean.", lessonsN: n => `${n} lessons + checkpoint`, close: "Close",
+      zoomHint: "Pinch or double-tap to zoom", tapZoom: "tap to zoom",
+      ai: "Art helper", aiHello: "Hi! Ask me anything about this painting, the lesson, or art in general. I'll explain it simply.",
+      aiPlaceholder: "Ask a question…", aiSend: "Send", aiThinking: "Thinking…", aiNew: "New chat", aiKeyMenu: "AI key",
+      aiSetupTitle: "Turn on the helper (once)", aiSetupText: "The helper needs a free key from Google. 1) Tap the button below and press \"Create API key\". 2) Copy the key. 3) Come back and paste it here. Free, no card needed. The key is saved only in your Telegram.",
+      aiGetKey: "Get a free key from Google", aiPaste: "Paste key here (starts with AIza…)", aiSave: "Save and start", aiBadKey: "That doesn't look like a key. It should start with AIza (Google) or sk-ant (Anthropic).",
+      aiRemove: "Remove key", aiError: "Something went wrong:", aiSuggest: ["Explain this simply", "Who painted this and when?", "What should I look at here?", "What does this word mean?"]
     },
     ru: {
       review: "Повторение", reviewDue: n => `Карточек к повторению: ${n}`, reviewNone: "Сегодня повторять нечего",
@@ -39,7 +45,13 @@
       footer: "Ошибки возвращаются через 1, 3, 7 и 21 день.", reviewDone: "Повторение закончено!",
       quit: "Выйти из урока? Прогресс в нём не сохранится.",
       intro: "Предыстория", skip: "Пропустить ›", glossary: "Словарик", glossarySub: "Слова из мира искусства простыми словами",
-      tapWords: "Совет: нажмите на подчёркнутое слово, чтобы узнать, что оно значит.", lessonsN: n => `${n} уроков + проверка`, close: "Закрыть"
+      tapWords: "Совет: нажмите на подчёркнутое слово, чтобы узнать, что оно значит.", lessonsN: n => `${n} уроков + проверка`, close: "Закрыть",
+      zoomHint: "Разведите пальцы или нажмите дважды, чтобы приблизить", tapZoom: "нажмите, чтобы увеличить",
+      ai: "Помощник", aiHello: "Привет! Спросите меня что угодно об этой картине, уроке или искусстве вообще. Объясню просто.",
+      aiPlaceholder: "Задайте вопрос…", aiSend: "Отправить", aiThinking: "Думаю…", aiNew: "Новый чат", aiKeyMenu: "Ключ ИИ",
+      aiSetupTitle: "Включить помощника (один раз)", aiSetupText: "Помощнику нужен бесплатный ключ от Google. 1) Нажмите кнопку ниже и затем «Create API key». 2) Скопируйте ключ. 3) Вернитесь и вставьте его сюда. Бесплатно, карта не нужна. Ключ хранится только в вашем Telegram.",
+      aiGetKey: "Получить бесплатный ключ Google", aiPaste: "Вставьте ключ (начинается с AIza…)", aiSave: "Сохранить и начать", aiBadKey: "Это не похоже на ключ. Он должен начинаться с AIza (Google) или sk-ant (Anthropic).",
+      aiRemove: "Удалить ключ", aiError: "Что-то пошло не так:", aiSuggest: ["Объясни просто", "Кто это написал и когда?", "На что здесь смотреть?", "Что значит это слово?"]
     }
   };
 
@@ -395,19 +407,90 @@
       img.style.transform = `scale(${crop.z})`;
       box.appendChild(h(`<span class="zoom">🔍 ${esc(t().zoom)}</span>`));
     }
-    img.onclick = () => openViewer(id, crop ? false : showCaption);
+    if (!crop) box.appendChild(h(`<span class="zoom">⤢ ${esc(t().tapZoom)}</span>`));
+    img.onclick = () => { viewerId = id; openViewer(id, crop ? false : showCaption); };
     const frag = document.createDocumentFragment();
     frag.appendChild(box);
     if (showCaption) frag.appendChild(h(`<div class="caption">${esc(caption(id))}</div>`));
     const holder = document.createElement("div"); holder.appendChild(frag);
     return holder;
   }
+  // Full-screen viewer: pinch or double-tap to zoom, drag to move, tap ✕ (or tap outside when not zoomed) to close.
+  const Z = { s: 1, x: 0, y: 0, pts: new Map(), start: null, lastTap: 0, moved: false };
+  function zApply(anim) {
+    const img = document.querySelector("#viewer .viewer-img");
+    img.style.transition = anim ? "transform .2s" : "none";
+    img.style.transform = `translate(${Z.x}px, ${Z.y}px) scale(${Z.s})`;
+  }
+  function zClamp() {
+    const img = document.querySelector("#viewer .viewer-img"), stage = img.parentNode;
+    Z.s = Math.min(8, Math.max(1, Z.s));
+    const mx = Math.max(0, (img.offsetWidth * Z.s - stage.clientWidth) / 2), my = Math.max(0, (img.offsetHeight * Z.s - stage.clientHeight) / 2);
+    Z.x = Math.min(mx, Math.max(-mx, Z.x)); Z.y = Math.min(my, Math.max(-my, Z.y));
+  }
+  function zZoomAt(cx, cy, ns) {
+    const stage = document.querySelector("#viewer .viewer-stage").getBoundingClientRect();
+    const px = cx - stage.left - stage.width / 2, py = cy - stage.top - stage.height / 2;
+    Z.x = px - (px - Z.x) * ns / Z.s; Z.y = py - (py - Z.y) * ns / Z.s; Z.s = ns;
+  }
+  function setupViewer() {
+    const v = document.getElementById("viewer"), stage = v.querySelector(".viewer-stage");
+    const close = () => { v.classList.add("hidden"); };
+    v.querySelector(".viewer-close").onclick = close;
+    stage.addEventListener("pointerdown", e => {
+      stage.setPointerCapture(e.pointerId);
+      Z.pts.set(e.pointerId, { x: e.clientX, y: e.clientY }); Z.moved = false;
+      const p = [...Z.pts.values()];
+      Z.start = p.length === 2
+        ? { d: Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y), s: Z.s, x: Z.x, y: Z.y, cx: (p[0].x + p[1].x) / 2, cy: (p[0].y + p[1].y) / 2 }
+        : { px: e.clientX, py: e.clientY, x: Z.x, y: Z.y };
+    });
+    stage.addEventListener("pointermove", e => {
+      if (!Z.pts.has(e.pointerId)) return;
+      Z.pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      const p = [...Z.pts.values()], st = Z.start;
+      if (p.length === 2 && st.d) {
+        const d = Math.hypot(p[0].x - p[1].x, p[0].y - p[1].y);
+        Z.s = st.s; Z.x = st.x; Z.y = st.y;
+        zZoomAt(st.cx, st.cy, Math.min(8, Math.max(1, st.s * d / st.d)));
+        Z.x += (p[0].x + p[1].x) / 2 - st.cx; Z.y += (p[0].y + p[1].y) / 2 - st.cy;
+        Z.moved = true;
+      } else if (p.length === 1 && st.px !== undefined) {
+        const dx = e.clientX - st.px, dy = e.clientY - st.py;
+        if (Math.abs(dx) + Math.abs(dy) > 6) Z.moved = true;
+        if (Z.s > 1) { Z.x = st.x + dx; Z.y = st.y + dy; }
+      }
+      zClamp(); zApply(false);
+    });
+    const end = e => {
+      if (!Z.pts.has(e.pointerId)) return;
+      Z.pts.delete(e.pointerId);
+      const p = [...Z.pts.values()];
+      if (p.length === 1) Z.start = { px: p[0].x, py: p[0].y, x: Z.x, y: Z.y }; // keep panning with the finger left
+      if (p.length || Z.moved || e.type === "pointercancel") return;
+      const now = Date.now();
+      if (now - Z.lastTap < 300) { // double tap: zoom in to 2.5x there, or back out
+        Z.lastTap = 0;
+        if (Z.s > 1.05) { Z.s = 1; Z.x = 0; Z.y = 0; } else zZoomAt(e.clientX, e.clientY, 2.5);
+        zClamp(); zApply(true);
+      } else {
+        Z.lastTap = now;
+        const onImg = e.target.classList.contains("viewer-img");
+        if (!onImg && Z.s <= 1.05) setTimeout(() => { if (Z.lastTap === now) close(); }, 300);
+      }
+    };
+    stage.addEventListener("pointerup", end);
+    stage.addEventListener("pointercancel", end);
+    stage.addEventListener("wheel", e => { e.preventDefault(); zZoomAt(e.clientX, e.clientY, Math.min(8, Math.max(1, Z.s * (e.deltaY < 0 ? 1.2 : 1 / 1.2)))); zClamp(); zApply(false); }, { passive: false });
+  }
   function openViewer(id, withCap) {
     const v = document.getElementById("viewer");
-    v.querySelector("img").src = imgSrc(id);
+    Z.s = 1; Z.x = 0; Z.y = 0; Z.pts.clear();
+    v.querySelector(".viewer-img").src = imgSrc(id);
+    zApply(false);
     v.querySelector(".viewer-cap").textContent = withCap ? caption(id) : "";
+    v.querySelector(".viewer-hint").textContent = t().zoomHint;
     v.classList.remove("hidden");
-    v.onclick = () => v.classList.add("hidden");
   }
 
   function next() {
@@ -445,6 +528,155 @@
     S = null;
   }
 
+  // ---------- AI helper ----------
+  // Runs in the browser with the owner's own key (Google Gemini free tier, or Anthropic), stored only in their Telegram
+  // cloud storage and this device. No key lives in the code or on any server.
+  const AI_KEY = "artolingo_ai_key", AI_MODEL = "artolingo_ai_model";
+  let viewerId = null, aiKey = null, aiChat = [], aiBusy = false;
+  function loadAiKey() {
+    try { aiKey = localStorage.getItem(AI_KEY); } catch (e) {}
+    if (aiKey || !cloudOK()) return;
+    try { tg.CloudStorage.getItem(AI_KEY, (err, v) => { if (v) { aiKey = v; try { localStorage.setItem(AI_KEY, v); } catch (e) {} } }); } catch (e) {}
+  }
+  function saveAiKey(k) {
+    aiKey = k || null;
+    try { k ? localStorage.setItem(AI_KEY, k) : localStorage.removeItem(AI_KEY); localStorage.removeItem(AI_MODEL); } catch (e) {}
+    if (cloudOK()) { try { k ? tg.CloudStorage.setItem(AI_KEY, k, () => {}) : tg.CloudStorage.removeItem(AI_KEY, () => {}); } catch (e) {} }
+  }
+  function aiContext() {
+    const en = obj => (obj ? obj.en : ""), lines = [];
+    const art = id => paintings[id] ? `${en(paintings[id].artist)}, "${en(paintings[id].title)}" (${paintings[id].year}), ${movementOf(id) && en(glossary.movements[paintings[id].movement])}` : id;
+    const viewerOpen = !document.getElementById("viewer").classList.contains("hidden");
+    if (viewerOpen && viewerId) lines.push(`The user is looking at this painting full screen: ${art(viewerId)}.`);
+    if (S && S.items[S.i]) {
+      const c = S.items[S.i].card;
+      if (S.lesson) lines.push(`Current lesson: "${en(S.lesson.title)}" (${en(S.lesson.idea)}), part of the unit "${en(course.unit.title)}".`);
+      if (c.type === "intro") lines.push(`On screen: a background story card titled "${en(c.title)}": ${en(c.text)}`);
+      else if (c.type === "story") lines.push(`On screen: a story card: ${en(c.text)}`);
+      else {
+        lines.push(`On screen: a quiz question: "${en(c.q)}"` + (c.options ? ` Options: ${c.options.map(o => `"${en(o)}"`).join(", ")}.` : ""));
+        lines.push(S.answered ? `The user has already answered. Explanation shown: ${en(c.explain)}`
+          : "The user has NOT answered yet: give hints and background, but do not reveal which option is correct unless they insist.");
+      }
+      const ids = c.img ? [c.img] : (c.imgs || []);
+      if (ids.length && !(c.unseen && !S.answered)) lines.push(`Paintings on screen: ${ids.map(art).join("; ")}.`);
+      else if (ids.length) lines.push("A painting is shown but its title is hidden until the user answers (it is a test): do not name it.");
+    } else lines.push(`The user is on the home screen of the course "${en(course.unit.title)}".`);
+    return lines.join("\n");
+  }
+  function aiSystem() {
+    return `You are the friendly art helper inside Artolingo, a Duolingo-style app that teaches art literacy, currently paintings (Impressionism and Post-Impressionism).
+The user is a complete beginner. Answer in ${state.lang === "ru" ? "Russian" : "English"} (switch only if they write in another language).
+Be plain, warm and short: usually 2 to 5 sentences, no jargon (if you use an art term, explain it in a few words). Name artists, titles and years when relevant. Use concrete things to look at in the painting. If you are not sure of a fact, say so.
+Plain text only, no markdown headings or tables.
+
+What the user sees right now:
+${aiContext()}`;
+  }
+  async function aiPickGemini() {
+    try { const m = localStorage.getItem(AI_MODEL); if (m) return m; } catch (e) {}
+    let pick = "gemini-2.5-flash";
+    try {
+      const r = await fetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200", { headers: { "x-goog-api-key": aiKey } });
+      const j = await r.json();
+      const ok = (j.models || []).map(m => m.name.replace("models/", ""))
+        .filter((n, i) => /^gemini-\d/.test(n) && /flash/.test(n) && !/lite|image|tts|live|audio|exp|embed|thinking|8b/.test(n) && (j.models[i].supportedGenerationMethods || []).includes("generateContent"));
+      const ver = n => parseFloat((n.match(/gemini-(\d+(?:\.\d+)?)/) || [0, 0])[1]);
+      ok.sort((a, b) => (ver(b) - ver(a)) || (/preview/.test(a) - /preview/.test(b)) || (a.length - b.length));
+      if (ok.length) pick = ok[0];
+    } catch (e) {}
+    try { localStorage.setItem(AI_MODEL, pick); } catch (e) {}
+    return pick;
+  }
+  async function aiAsk() {
+    if (aiKey.startsWith("sk-ant")) {
+      for (const model of ["claude-haiku-5-5", "claude-haiku-4-5"]) {
+        const r = await fetch("https://api.anthropic.com/v1/messages", { method: "POST", headers: {
+          "content-type": "application/json", "x-api-key": aiKey, "anthropic-version": "2023-06-01", "anthropic-dangerous-direct-browser-access": "true" },
+          body: JSON.stringify({ model, max_tokens: 800, system: aiSystem(), messages: aiChat.map(m => ({ role: m.role, content: m.text })) }) });
+        const j = await r.json();
+        if (r.status === 404) continue;
+        if (!r.ok) throw new Error((j.error && j.error.message) || r.status);
+        return j.content.filter(b => b.type === "text").map(b => b.text).join("\n");
+      }
+      throw new Error("model not found");
+    }
+    const model = await aiPickGemini();
+    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { method: "POST",
+      headers: { "content-type": "application/json", "x-goog-api-key": aiKey },
+      body: JSON.stringify({ systemInstruction: { parts: [{ text: aiSystem() }] },
+        contents: aiChat.map(m => ({ role: m.role === "assistant" ? "model" : "user", parts: [{ text: m.text }] })),
+        generationConfig: { maxOutputTokens: 2048, temperature: 0.6 } }) });
+    const j = await r.json();
+    if (!r.ok) { if (r.status === 404) { try { localStorage.removeItem(AI_MODEL); } catch (e) {} } throw new Error((j.error && j.error.message) || r.status); }
+    const parts = (((j.candidates || [])[0] || {}).content || {}).parts || [];
+    const text = parts.filter(p => p.text && !p.thought).map(p => p.text).join("").trim();
+    if (!text) throw new Error("empty answer");
+    return text;
+  }
+  function openHelper() {
+    const box = document.getElementById("ai");
+    box.classList.remove("hidden");
+    renderHelper();
+  }
+  function renderHelper() {
+    const box = document.getElementById("ai");
+    box.innerHTML = "";
+    const panel = h(`<div class="ai-panel"><div class="ai-head"><b>✨ ${esc(t().ai)}</b><span class="spacer"></span>
+      ${aiKey ? `<button class="ai-link ai-new">${esc(t().aiNew)}</button><button class="ai-link ai-keybtn">🔑</button>` : ""}
+      <button class="ai-x" aria-label="close">✕</button></div><div class="ai-body"></div></div>`);
+    box.appendChild(panel);
+    panel.querySelector(".ai-x").onclick = () => box.classList.add("hidden");
+    const body = panel.querySelector(".ai-body");
+    if (!aiKey) {
+      body.appendChild(h(`<div class="ai-setup"><h3>${esc(t().aiSetupTitle)}</h3><p>${esc(t().aiSetupText)}</p>
+        <button class="main-btn ai-get">🔑 ${esc(t().aiGetKey)}</button>
+        <input class="ai-keyin" placeholder="${esc(t().aiPaste)}" autocomplete="off" autocapitalize="off" spellcheck="false">
+        <button class="main-btn ai-save" disabled>${esc(t().aiSave)}</button><div class="ai-err hidden"></div></div>`));
+      const inp = body.querySelector(".ai-keyin"), save = body.querySelector(".ai-save"), err = body.querySelector(".ai-err");
+      body.querySelector(".ai-get").onclick = () => { const u = "https://aistudio.google.com/apikey"; if (tg && tg.openLink) tg.openLink(u); else window.open(u, "_blank"); };
+      inp.oninput = () => { save.disabled = inp.value.trim().length < 20; };
+      save.onclick = () => {
+        const k = inp.value.trim().replace(/\s/g, "");
+        if (!/^(AIza|sk-ant)/.test(k)) { err.textContent = t().aiBadKey; err.classList.remove("hidden"); return; }
+        saveAiKey(k); renderHelper();
+      };
+      return;
+    }
+    panel.querySelector(".ai-new").onclick = () => { aiChat = []; renderHelper(); };
+    panel.querySelector(".ai-keybtn").onclick = () => { const go = ok => { if (ok) { saveAiKey(null); aiChat = []; renderHelper(); } };
+      if (tg && tg.showConfirm && tg.isVersionAtLeast && tg.isVersionAtLeast("6.2")) tg.showConfirm(t().aiRemove + "?", go); else go(window.confirm(t().aiRemove + "?")); };
+    const log = h(`<div class="ai-log"></div>`);
+    log.appendChild(h(`<div class="ai-msg bot">${esc(t().aiHello)}</div>`));
+    aiChat.forEach(m => log.appendChild(h(`<div class="ai-msg ${m.role === "user" ? "me" : "bot"}">${esc(m.text)}</div>`)));
+    if (aiBusy) log.appendChild(h(`<div class="ai-msg bot muted">${esc(t().aiThinking)}</div>`));
+    body.appendChild(log);
+    if (!aiChat.length) {
+      const sug = h(`<div class="ai-sug"></div>`);
+      t().aiSuggest.forEach(q => { const b = h(`<button>${esc(q)}</button>`); b.onclick = () => send(q); sug.appendChild(b); });
+      body.appendChild(sug);
+    }
+    const form = h(`<form class="ai-form"><input class="ai-in" placeholder="${esc(t().aiPlaceholder)}" enterkeyhint="send"><button class="ai-send" aria-label="${esc(t().aiSend)}">➤</button></form>`);
+    body.appendChild(form);
+    const inp = form.querySelector(".ai-in");
+    form.onsubmit = e => { e.preventDefault(); send(inp.value); };
+    log.scrollTop = log.scrollHeight;
+    async function send(q) {
+      q = String(q || "").trim(); if (!q || aiBusy) return;
+      aiChat.push({ role: "user", text: q }); aiBusy = true; renderHelper();
+      try { aiChat.push({ role: "assistant", text: await aiAsk() }); }
+      catch (e) { aiChat.pop(); aiChat.push({ role: "user", text: q }); aiChat.push({ role: "assistant", text: `${t().aiError} ${e.message}` }); }
+      aiBusy = false;
+      if (!document.getElementById("ai").classList.contains("hidden")) renderHelper();
+    }
+  }
+  function setupHelper() {
+    loadAiKey();
+    const fab = document.getElementById("ai-fab");
+    fab.onclick = openHelper;
+    fab.classList.remove("hidden");
+  }
+
   // ---------- boot ----------
   async function boot() {
     if (ALLOWED_USERS.length) {
@@ -452,7 +684,7 @@
       if (!ALLOWED_USERS.includes(uid)) { app.innerHTML = `<div class="loading">🔒 Artolingo is private.<br><small>id: ${esc(uid || "none")}</small></div>`; return; }
     }
     if (tg) { try { tg.ready(); tg.expand(); tg.setHeaderColor && tg.setHeaderColor("secondary_bg_color"); } catch (e) {} }
-    const v = "?v=4";
+    const v = "?v=6";
     const [p, c, s, g] = await Promise.all([
       fetch("content/paintings.json" + v).then(r => r.json()),
       fetch("content/lessons.json" + v).then(r => r.json()),
@@ -460,6 +692,8 @@
       fetch("content/glossary.json" + v).then(r => r.json()).catch(() => null)
     ]);
     paintings = p; course = c; state = s; if (g) glossary = g;
+    setupViewer();
+    setupHelper();
     buildTermRe();
     if (tg && tg.colorScheme === "dark") document.documentElement.style.colorScheme = "dark";
     renderHome();

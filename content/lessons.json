@@ -44,12 +44,12 @@
        "ru": "Несколько быстрых оранжевых мазков"
       },
       {
-       "en": "Hundreds of fine strokes",
-       "ru": "Сотни тонких штрихов"
+       "en": "One solid orange disc, carefully outlined",
+       "ru": "Один сплошной оранжевый диск с чётким контуром"
       },
       {
-       "en": "A smooth blended surface",
-       "ru": "Гладкая растушёвка"
+       "en": "Tiny orange dots placed side by side",
+       "ru": "Крошечные оранжевые точки, поставленные рядом"
       }
      ],
      "answer": 0,
@@ -83,16 +83,16 @@
      },
      "options": [
       {
-       "en": "Visible brushstrokes and no fine detail",
-       "ru": "Видны мазки и нет мелких деталей"
+       "en": "Visible brushstrokes and almost no detail",
+       "ru": "Видны мазки и почти нет деталей"
       },
       {
-       "en": "It was painted on cardboard",
-       "ru": "Она написана на картоне"
+       "en": "Its colors were too bright for a sunrise",
+       "ru": "Цвета слишком яркие для рассвета"
       },
       {
-       "en": "It had no signature",
-       "ru": "На ней нет подписи"
+       "en": "The sun was painted in an impossible spot",
+       "ru": "Солнце написано в невозможном месте"
       }
      ],
      "answer": 0,
@@ -109,16 +109,16 @@
      },
      "options": [
       {
-       "en": "The light changes within minutes",
-       "ru": "Свет меняется за минуты"
+       "en": "The light changed within minutes",
+       "ru": "Свет менялся за считаные минуты"
       },
       {
-       "en": "Paint was expensive",
-       "ru": "Краски были дорогими"
+       "en": "Oil paint outdoors dried within minutes",
+       "ru": "Масляная краска на улице высыхала за минуты"
       },
       {
-       "en": "Outdoor painting was illegal",
-       "ru": "Писать на улице было запрещено"
+       "en": "Critics wanted proof the scene was real",
+       "ru": "Критики требовали доказательств, что сцена настоящая"
       }
      ],
      "answer": 0,
@@ -143,12 +143,12 @@
        "ru": "Свет в этот час"
       },
       {
-       "en": "The cathedral's architecture",
-       "ru": "Архитектура собора"
+       "en": "The Gothic stonework of the facade",
+       "ru": "Готическая каменная резьба фасада"
       },
       {
-       "en": "The weather forecast",
-       "ru": "Погода"
+       "en": "How the building aged over the years",
+       "ru": "Как здание старело с годами"
       }
      ],
      "answer": 0,
@@ -192,12 +192,12 @@
        "ru": "Дневной свет на воде"
       },
       {
-       "en": "Polished smooth surface",
-       "ru": "Гладкая полированная поверхность"
+       "en": "A carefully staged, posed group",
+       "ru": "Тщательно выстроенная позирующая группа"
       },
       {
-       "en": "A scene from mythology",
-       "ru": "Сюжет из мифологии"
+       "en": "Firm dark outlines around shapes",
+       "ru": "Чёткие тёмные контуры вокруг форм"
       }
      ],
      "answers": [
@@ -221,12 +221,12 @@
        "ru": "Мгновение света"
       },
       {
-       "en": "Famous people",
-       "ru": "Знаменитостей"
+       "en": "Nature exactly as it is",
+       "ru": "Природу в точности как есть"
       },
       {
-       "en": "Ancient history",
-       "ru": "Древнюю историю"
+       "en": "Their own feelings",
+       "ru": "Свои чувства"
       }
      ],
      "answer": 0,
@@ -337,12 +337,12 @@
        "ru": "Светлые пятна, разбросанные по фигурам"
       },
       {
-       "en": "Sharp shadows of every leaf",
-       "ru": "Чёткие тени каждого листа"
+       "en": "A soft even glow over the whole crowd",
+       "ru": "Мягкий ровный свет на всей толпе"
       },
       {
-       "en": "It is not shown at all",
-       "ru": "Он никак не показан"
+       "en": "Bright outlines around each dancer",
+       "ru": "Яркий контур вокруг каждого танцора"
       }
      ],
      "answer": 0,
@@ -380,12 +380,12 @@
        "ru": "Фотография и японская гравюра"
       },
       {
-       "en": "Renaissance frescoes",
-       "ru": "Фрески Возрождения"
+       "en": "Theatre stage sets",
+       "ru": "Театральные декорации"
       },
       {
-       "en": "Ancient Greek vases",
-       "ru": "Древнегреческие вазы"
+       "en": "Newspaper caricatures",
+       "ru": "Газетные карикатуры"
       }
      ],
      "answer": 0,
@@ -419,16 +419,16 @@
      },
      "options": [
       {
-       "en": "Ordinary life seemed unworthy of serious art",
+       "en": "Ordinary life seemed unworthy of art",
        "ru": "Обычная жизнь казалась недостойной искусства"
       },
       {
-       "en": "The paintings were too large",
-       "ru": "Картины были слишком большими"
+       "en": "They showed real, recognizable people",
+       "ru": "На них были узнаваемые реальные люди"
       },
       {
-       "en": "Cafés were illegal",
-       "ru": "Кафе были запрещены"
+       "en": "They looked too much like photographs",
+       "ru": "Они слишком походили на фотографии"
       }
      ],
      "answer": 0,
@@ -471,12 +471,12 @@
        "ru": "Свободные заметные мазки"
       },
       {
-       "en": "A scene from history",
-       "ru": "Исторический сюжет"
+       "en": "A formal, carefully posed portrait",
+       "ru": "Парадный, тщательно поставленный портрет"
       },
       {
-       "en": "Polished, invisible brushwork",
-       "ru": "Гладкие незаметные мазки"
+       "en": "Deep shadows from a single lamp",
+       "ru": "Глубокие тени от одного источника света"
       }
      ],
      "answers": [
@@ -500,12 +500,12 @@
        "ru": "Будничную современную жизнь"
       },
       {
-       "en": "Religious scenes",
-       "ru": "Религиозные сцены"
+       "en": "Landscapes",
+       "ru": "Пейзажи"
       },
       {
-       "en": "Portraits of kings",
-       "ru": "Портреты королей"
+       "en": "Portraits of ordinary people",
+       "ru": "Портреты простых людей"
       }
      ],
      "answer": 0,
@@ -604,12 +604,12 @@
        "ru": "Синие и сиреневые"
       },
       {
-       "en": "Black",
-       "ru": "Чёрные"
+       "en": "Pure white with a grey edge",
+       "ru": "Чисто белые с серой каймой"
       },
       {
-       "en": "Grey-brown",
-       "ru": "Серо-коричневые"
+       "en": "Warm yellowish grey",
+       "ru": "Тёплые желтовато-серые"
       }
      ],
      "answer": 0,
@@ -646,12 +646,12 @@
        "ru": "В тенях есть отражённый цвет"
       },
       {
-       "en": "Black paint was banned",
-       "ru": "Чёрная краска была запрещена"
+       "en": "Black paint cracked in cold weather",
+       "ru": "Чёрная краска трескалась на холоде"
       },
       {
-       "en": "Black was too expensive",
-       "ru": "Чёрная краска была слишком дорогой"
+       "en": "Black was the Academy's color",
+       "ru": "Чёрный был цветом Академии"
       }
      ],
      "answer": 0,
@@ -678,12 +678,12 @@
        "ru": "В глазу зрителя"
       },
       {
-       "en": "On the palette",
-       "ru": "На палитре"
+       "en": "On the palette, before painting",
+       "ru": "На палитре, до нанесения"
       },
       {
-       "en": "They never mix",
-       "ru": "Нигде"
+       "en": "On the canvas, while still wet",
+       "ru": "На холсте, пока краска сырая"
       }
      ],
      "answer": 0,
@@ -743,12 +743,12 @@
        "ru": "Заметные мазки"
       },
       {
-       "en": "Dark brown shadows",
-       "ru": "Тёмно-коричневые тени"
+       "en": "Bold dark outlines",
+       "ru": "Смелые тёмные контуры"
       },
       {
-       "en": "Smooth glossy finish",
-       "ru": "Гладкая глянцевая поверхность"
+       "en": "A carefully planned symmetry",
+       "ru": "Продуманная симметрия"
       }
      ],
      "answers": [
@@ -769,15 +769,15 @@
      "options": [
       {
        "en": "Colored by the light around it",
-       "ru": "Окрашенная светом вокруг"
+       "ru": "Окрашена светом вокруг"
       },
       {
-       "en": "Always black",
-       "ru": "Всегда чёрная"
+       "en": "A darker version of the object's color",
+       "ru": "Более тёмный цвет самого предмета"
       },
       {
-       "en": "Always grey",
-       "ru": "Всегда серая"
+       "en": "Grey, mixed from black and white",
+       "ru": "Серая, смешанная из чёрного и белого"
       }
      ],
      "answer": 0,
@@ -864,12 +864,12 @@
        "ru": "Тысячи крошечных точек чистого цвета"
       },
       {
-       "en": "Long quick strokes",
-       "ru": "Длинные быстрые мазки"
+       "en": "Short quick strokes laid side by side",
+       "ru": "Короткие быстрые мазки рядом друг с другом"
       },
       {
-       "en": "Smooth blended layers",
-       "ru": "Гладкие смешанные слои"
+       "en": "Thin glazes built up layer by layer",
+       "ru": "Тонкие прозрачные слои, один на другом"
       }
      ],
      "answer": 0,
@@ -907,12 +907,12 @@
        "ru": "Из блоков и плоскостей цвета"
       },
       {
-       "en": "Tiny dots",
-       "ru": "Из крошечных точек"
+       "en": "Soft blurred patches of light",
+       "ru": "Из мягких размытых пятен света"
       },
       {
-       "en": "Thin black outlines",
-       "ru": "Из тонких чёрных контуров"
+       "en": "Flat areas inside dark outlines",
+       "ru": "Из плоских участков в тёмных контурах"
       }
      ],
      "answer": 0,
@@ -934,12 +934,12 @@
        "ru": "Цвет передаёт видение, а не реальность"
       },
       {
-       "en": "The grass really was red",
-       "ru": "Трава правда была красной"
+       "en": "It was a field of red poppies",
+       "ru": "Это было поле красных маков"
       },
       {
-       "en": "He ran out of green",
-       "ru": "У него кончилась зелёная краска"
+       "en": "Sunset light turned the grass red",
+       "ru": "Закатный свет окрасил траву в красный"
       }
      ],
      "answer": 0,
@@ -999,12 +999,12 @@
        "ru": "Наклонённая, переставленная перспектива"
       },
       {
-       "en": "A fleeting effect of outdoor light",
-       "ru": "Мимолётный эффект дневного света"
+       "en": "Colored shadows on the tablecloth",
+       "ru": "Цветные тени на скатерти"
       },
       {
-       "en": "Quick sketchy dabs",
-       "ru": "Быстрые эскизные мазки"
+       "en": "Bright, everyday subject",
+       "ru": "Яркий будничный сюжет"
       }
      ],
      "answers": [
@@ -1028,12 +1028,12 @@
        "ru": "Структуру, теорию и символы"
       },
       {
-       "en": "Black shadows",
-       "ru": "Чёрные тени"
+       "en": "Brighter, purer colors",
+       "ru": "Более яркие и чистые цвета"
       },
       {
-       "en": "Myths and gods",
-       "ru": "Мифы и богов"
+       "en": "Painting outdoors",
+       "ru": "Работу на открытом воздухе"
       }
      ],
      "answer": 0,
@@ -1131,12 +1131,12 @@
        "ru": "Густыми закрученными мазками"
       },
       {
-       "en": "Tiny even dots",
-       "ru": "Крошечными ровными точками"
+       "en": "Dots of pure color, like Seurat",
+       "ru": "Точками чистого цвета, как у Сёра"
       },
       {
-       "en": "A smooth gradient",
-       "ru": "Гладким переходом цвета"
+       "en": "Thin quick dashes, like Monet",
+       "ru": "Тонкими быстрыми штрихами, как у Моне"
       }
      ],
      "answer": 0,
@@ -1158,12 +1158,12 @@
        "ru": "Яркие плоские цвета и наклонённая перспектива"
       },
       {
-       "en": "Photographic accuracy",
-       "ru": "Фотографическая точность"
+       "en": "Soft pale colors and a perfectly level floor",
+       "ru": "Мягкие бледные цвета и ровный пол"
       },
       {
-       "en": "Dark gloomy tones",
-       "ru": "Тёмные мрачные тона"
+       "en": "It is painted in tiny dots",
+       "ru": "Она написана крошечными точками"
       }
      ],
      "answer": 0,
@@ -1185,12 +1185,12 @@
        "ru": "Грозовое небо, чёрные вороны, дороги в никуда"
       },
       {
-       "en": "Calm pastel colors",
-       "ru": "Спокойные пастельные цвета"
+       "en": "Muddy brown colors and a night scene",
+       "ru": "Грязно-коричневые тона и ночная сцена"
       },
       {
-       "en": "A crowd of people",
-       "ru": "Толпа людей"
+       "en": "A lonely figure walking away",
+       "ru": "Одинокая фигура, уходящая вдаль"
       }
      ],
      "answer": 0,
@@ -1262,12 +1262,12 @@
        "ru": "Цвету и вихрям линий, выражающим чувство"
       },
       {
-       "en": "Dots of pure color",
-       "ru": "Точкам чистого цвета"
+       "en": "Thick paint piled up on the canvas",
+       "ru": "Густой краске, наложенной на холст"
       },
       {
-       "en": "Light reflected on water",
-       "ru": "Отражению света в воде"
+       "en": "The habit of painting the night sky",
+       "ru": "Привычке писать ночное небо"
       }
      ],
      "answer": 0,
@@ -1288,12 +1288,12 @@
        "ru": "Свои чувства"
       },
       {
-       "en": "Exact light effects",
-       "ru": "Точные эффекты света"
+       "en": "The southern sunlight",
+       "ru": "Южное солнце"
       },
       {
-       "en": "Ancient myths",
-       "ru": "Древние мифы"
+       "en": "Peasant life",
+       "ru": "Крестьянскую жизнь"
       }
      ],
      "answer": 0,
